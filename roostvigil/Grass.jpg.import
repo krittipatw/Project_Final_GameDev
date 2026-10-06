@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnug4u0oh3x8n"
-path.s3tc="res://.godot/imported/Horror.png-a7ad3777a736cd410851bf970e1102b8.s3tc.ctex"
+uid="uid://dw11tatqokw1w"
+path.s3tc="res://.godot/imported/Grass.jpg-a4e8f1e686036a507eda5451d19ab92c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Horror.png"
-dest_files=["res://.godot/imported/Horror.png-a7ad3777a736cd410851bf970e1102b8.s3tc.ctex"]
+source_file="res://Grass.jpg"
+dest_files=["res://.godot/imported/Grass.jpg-a4e8f1e686036a507eda5451d19ab92c.s3tc.ctex"]
 
 [params]
 

@@ -1,5 +1,5 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1791295216
+::res://::1791297729
 01 - Wavelengths - Wavelenghts.ogg::AudioStreamOggVorbis::305794995737819180::1791293857::1791293857::1::::<><><>0<>0<>cdcd42fe60745165437ffb86ddb29363<>res://.godot/imported/01 - Wavelengths - Wavelenghts.ogg-b9e689280f6e45d61d0ac683df22151b.oggvorbisstr::
 02 - Kukoo - kuokoo.ogg::AudioStreamOggVorbis::4856466570031420469::1791293857::1791293857::1::::<><><>0<>0<>4a22b7d7bc8c9280e9c96b58eb63e4b3<>res://.godot/imported/02 - Kukoo - kuokoo.ogg-9b1011d52b6b598468cc32249f5f8699.oggvorbisstr::
 03 - spook-fi - Spook-Fi.ogg::AudioStreamOggVorbis::489726493648091151::1791293857::1791293857::1::::<><><>0<>0<>b706f1a56ef47af68db5a05e91fcc092<>res://.godot/imported/03 - spook-fi - Spook-Fi.ogg-414351daa6e9d059e88fb6447e6b2d87.oggvorbisstr::
@@ -11,10 +11,11 @@
 09 - hollow call - Halllow Call.ogg::AudioStreamOggVorbis::660631606854407688::1791293857::1791293857::1::::<><><>0<>0<>183bf1f8a726c5931a253055875b0e31<>res://.godot/imported/09 - hollow call - Halllow Call.ogg-0e0d4f618d359dae0f8787c95ed2bac1.oggvorbisstr::
 10 - a formula - A Formula (2021_01_29 05_31_01 UTC).ogg::AudioStreamOggVorbis::4295686254452333561::1791293857::1791293857::1::::<><><>0<>0<>3f22e0da1269dbeb278364fda5be08ba<>res://.godot/imported/10 - a formula - A Formula (2021_01_29 05_31_01 UTC).ogg-a23f2995946cac795f73d93506d40dcb.oggvorbisstr::
 desktop.ini::TextFile::-1::1791293857::0::1::::<><><>0<>0<><>::
-Horror.png::CompressedTexture2D::3340580385782250139::1791293857::1791293857::1::::<><><>0<>0<>291fb870bb076f6a04703a3b494bf278<>res://.godot/imported/Horror.png-a7ad3777a736cd410851bf970e1102b8.ctex::
+Grass.jpg::CompressedTexture2D::8758703034715069650::1791297706::1791297729::1::::<><><>0<>0<>004fdd203e0d34afdd1fc18bbfdf96eb<>res://.godot/imported/Grass.jpg-a4e8f1e686036a507eda5451d19ab92c.s3tc.ctex::
+Horror.png::CompressedTexture2D::3340580385782250139::1791293857::1791297518::1::::<><><>0<>0<>ec23bc548f66feed599876a938e59c53<>res://.godot/imported/Horror.png-a7ad3777a736cd410851bf970e1102b8.s3tc.ctex::
 icon.svg::CompressedTexture2D::1302822273084641005::1791281029::1791281029::1::::<><><>0<>0<>134bedc47880350765b199bac62e9605<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 LICENSE.txt::TextFile::-1::1791293963::0::1::::<><><>0<>0<><>::
-Read Me.txt::TextFile::-1::1791293857::0::1::::<><><>0<>0<><>::
+Read Me.txt::TextFile::-1::1791295434::0::1::::<><><>0<>0<><>::
 Readme.txt::TextFile::-1::1791293963::0::1::::<><><>0<>0<><>::
 ::res://addons/::1791294110
 ::res://addons/Color grading/::1791294107
@@ -51,14 +52,14 @@ Tileset Spring.png::CompressedTexture2D::1468570375814750024::1791294110::179129
 ::res://asset/Human/::1791294774
 Adventurer.fbx::PackedScene::3012870666367065404::1791294493::1791294774::1::::<><><>0<>0<>85f5dcc9dc78013655dac37f1cda6b5f<>res://.godot/imported/Adventurer.fbx-350257536f1ba3cdb2cf5f511be85783.scn::
 Casual_Hoodie.fbx::PackedScene::1340152669431266394::1791294493::1791294774::1::::<><><>0<>0<>5b3f5ae85b44689cbc2a746c22d92d60<>res://.godot/imported/Casual_Hoodie.fbx-334b0a28ebfd34a94d036b9709d3e2c4.scn::
-::res://asset/Materials/::1791293967
+::res://asset/Materials/::1791297243
 Bark.tres::StandardMaterial3D::8772171929962712363::1791293963::0::1::::<><><>0<>0<><>::uid://b8qxvb3q8bug3::::res://Foliage Sample Pack/Textures/Bark1.png
 CloverMouseEars.tres::StandardMaterial3D::2900260851937004257::1791293963::0::1::::<><><>0<>0<><>::uid://c5sad278kd1sa::::res://Foliage Sample Pack/Textures/Grassy Vegetation1.png
-Foliage1.tres::StandardMaterial3D::6749466007860156108::1791293963::0::1::::<><><>0<>0<><>::uid://dlxclw1f8i0vx::::res://Foliage Sample Pack/Textures/Forage1.png
+Foliage1.tres::StandardMaterial3D::6749466007860156108::1791297243::0::1::::<><><>0<>0<><>::uid://dlxclw1f8i0vx::::res://Textures/Forage1.png
 GrassyVegetation.tres::StandardMaterial3D::6331244102853346381::1791293963::0::1::::<><><>0<>0<><>::uid://djxyy88vdendp::::res://Foliage Sample Pack/Textures/Clover Mouse Ears.png
 JelloBush.tres::StandardMaterial3D::2958707828121293806::1791293963::0::1::::<><><>0<>0<><>::uid://c6le1rv2485bq::::res://Foliage Sample Pack/Textures/Plant JelloBush.png
 SimpleBrush.tres::StandardMaterial3D::3194998654239512505::1791293963::0::1::::<><><>0<>0<><>::uid://dvmat81f2s5b7::::res://Foliage Sample Pack/Textures/Plant1.png
-::res://asset/Models/::1791293968
+::res://asset/Models/::1791295218
 Plant_JelloBush_Slim.fbx::PackedScene::1539560687328870318::1791293963::1791295217::1::::<><><>0<>0<>82835d6b0703242c8a81db233d12ef75<>res://.godot/imported/Plant_JelloBush_Slim.fbx-3bbd90c4f867cbefe066e5fb70dae342.scn::uid://c6le1rv2485bq::::res://textures/Plant JelloBush.png
 Plant_Simple_Brush_Regular.fbx::PackedScene::3294681383026169136::1791293963::1791295217::1::::<><><>0<>0<>26c4f6059a3bbf604d3da5b45d711c36<>res://.godot/imported/Plant_Simple_Brush_Regular.fbx-f2aaa063b1c1e2e2c43379908cb42348.scn::uid://dvmat81f2s5b7::::res://textures/Plant1.png
 Tree_Juniper_Dead.fbx::PackedScene::2438866196620774158::1791293963::1791295217::1::::<><><>0<>0<>4370743b6ccf7064b20e3986ca3905f4<>res://.godot/imported/Tree_Juniper_Dead.fbx-52e871a99b5412abc825d5518ac4c7d5.scn::uid://b8qxvb3q8bug3::::res://textures/Bark1.png
@@ -89,8 +90,7 @@ FlashLight_Set_2_Emissive.png::CompressedTexture2D::8236543944935876093::1791294
 ::res://asset/OBJ/TEXTURES/DIRT/::1791294772
 FlashLight_Set_2_BaseColor.png::CompressedTexture2D::3193941401737001088::1791294493::1791294772::1::::<><><>0<>0<>04d68fe00d7cd4d77eb26634a4872711<>res://.godot/imported/FlashLight_Set_2_BaseColor.png-017f83485f6ff846244b4b9bc174d1ac.ctex::
 FlashLight_Set_2_Emissive.png::CompressedTexture2D::7741549591224607278::1791294493::1791294772::1::::<><><>0<>0<>adf9fa6b85f6dad4e0feba2f9a23087f<>res://.godot/imported/FlashLight_Set_2_Emissive.png-5bba1c453187d706b23655da541fe839.ctex::
-::res://asset/Platform/::1791294772
-model.obj::Mesh::2269965348966731272::1791294493::1791294772::1::::<><><>0<>0<>d55d388ec8419c72677277b3ff21a2cc<>res://.godot/imported/model.obj-9cbb37115ca84b38b630253f8c96e21f.mesh<*>res://.godot/imported/model.obj-9cbb37115ca84b38b630253f8c96e21f.mesh::
+::res://asset/Platform/::1791297482
 ::res://Compositor/::1791294107
 ::res://Compositor/Color grading/::1791294107
 blur_downscale.glsl::RDShaderFile::3803105570285214588::1791294101::1791294101::1::::<><><>0<>0<>e7759f6d535cfbcda0bd8926b379ce0d<>res://.godot/imported/blur_downscale.glsl-514dc0a75f64c7d6c3f3c4e2067386b2.res::
@@ -107,17 +107,21 @@ TexturePreview.gd::GDScript::5337053893109473019::1791294101::0::1::::TexturePre
 Texture_preview.glsl::RDShaderFile::8457158349495723588::1791294101::1791294101::1::::<><><>0<>0<>e9eb497be156bcaa7d33d6e803004664<>res://.godot/imported/Texture_preview.glsl-f15bd38944e6a642db90b8585a6a41ee.res::
 ::res://Compositor/General/Includes/::1791294107
 scene_data.glsl::::-1::1791294101::1791294101::1::::<><><>0<>0<>c7d9d5d81e92e5de66ebbae501da85e2<>::
-::res://Human/::1791294493
-::res://Platform/::1791294493
-::res://Scenes/::1791295190
+::res://Platform/::1791296366
+::res://Platform/code/::1791296368
+::res://Scenes/::1791296996
+level.tscn::PackedScene::8858109991488563779::1791296996::0::1::::<><><>0<>0<><>::uid://b6no1rx3nmb6g::::res://Scenes/code/player.tscn<>uid://ba0n1gbstodko::::res://asset/Models/Tree_Juniper_Dead.fbx<>uid://b875jgmtvfdrm::::res://asset/Models/Tree_Juniper_Regular.fbx<>uid://v61lstfiaa3w::::res://asset/Models/Plant_JelloBush_Slim.fbx
 plant_jello_bush_slim.tscn::PackedScene::2778393652266986340::1791295190::0::1::::<><><>0<>0<><>::res://Foliage Sample Pack/Materials/JelloBush.tres
 plant_simple_brush.tscn::PackedScene::6620081465934625011::1791295190::0::1::::<><><>0<>0<><>::res://Foliage Sample Pack/Materials/SimpleBrush.tres
+player.gd::GDScript::7662749106164704602::1791296465::0::1::::<>CharacterBody3D<><>0<>0<><>::
 tree_juniper.tscn::PackedScene::3834763836578065671::1791295190::0::1::::<><><>0<>0<><>::res://Foliage Sample Pack/Materials/Bark.tres
 tree_juniper_regular.tscn::PackedScene::7479298017972068737::1791295190::0::1::::<><><>0<>0<><>::res://Foliage Sample Pack/Materials/Bark.tres<>res://Foliage Sample Pack/Materials/Foliage1.tres
 ug_grass_regular_.tscn::PackedScene::8803312642723813540::1791295190::0::1::::<><><>0<>0<><>::res://Foliage Sample Pack/Materials/GrassyVegetation.tres
 ug_mouse_ears.tscn::PackedScene::7738707069446193799::1791295190::0::1::::<><><>0<>0<><>::res://Foliage Sample Pack/Materials/GrassyVegetation.tres
-ug_simple_clovers.tscn::PackedScene::5985332421020088411::1791293963::0::1::::<><><>0<>0<><>::uid://djxyy88vdendp::::res://Foliage Sample Pack/Textures/Clover Mouse Ears.png
-::res://Textures/::1791293967
+ug_simple_clovers.tscn::PackedScene::5985332421020088411::1791296996::0::1::::<><><>0<>0<><>::uid://djxyy88vdendp::::res://Textures/Clover Mouse Ears.png
+::res://Scenes/code/::1791296416
+player.tscn::PackedScene::4590009145532631960::1791296416::0::1::::<><><>0<>0<><>::uid://dhf5mgee3n467::::res://Scenes/player.gd
+::res://Textures/::1791295216
 Bark1.png::CompressedTexture2D::4737116656867759952::1791293963::1791295216::1::::<><><>0<>0<>20a3932804d031891ff3a245d0a2b497<>res://.godot/imported/Bark1.png-ec6b3464c74ad5638d4dae902102f0a3.s3tc.ctex::
 Clover Mouse Ears.png::CompressedTexture2D::7839944184252507865::1791293963::1791293965::1::::<><><>0<>0<>6b68bb40597ae2b05a427650b2620a62<>res://.godot/imported/Clover Mouse Ears.png-6b9a53dd3c0af6691cf83d392217a8f3.s3tc.ctex::
 Forage1.png::CompressedTexture2D::7978962293109759285::1791293963::1791293964::1::::<><><>0<>0<>5c8b60e56f827fbe436be5fee9c996c0<>res://.godot/imported/Forage1.png-71cd552d72a815413ea7b25d5ec1b006.s3tc.ctex::
