@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ngrme3o8wwxs"
-path.s3tc="res://.godot/imported/FlashLight_Set_2_2_FlashLight_Set_2_BaseColor.png-8b3814204661ccf1ba0c85a53cba92a1.s3tc.ctex"
+uid="uid://barg3rahnass"
+path.s3tc="res://.godot/imported/FlashLight_Set_2_3_FlashLight_Set_2_BaseColor.png-c336a1587ced510de13a3dd35b7c5ccf.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://OBJ/GLB/FlashLight_Set_2_2_FlashLight_Set_2_BaseColor.png"
-dest_files=["res://.godot/imported/FlashLight_Set_2_2_FlashLight_Set_2_BaseColor.png-8b3814204661ccf1ba0c85a53cba92a1.s3tc.ctex"]
+source_file="res://asset/OBJ/GLB/FlashLight_Set_2_3_FlashLight_Set_2_BaseColor.png"
+dest_files=["res://.godot/imported/FlashLight_Set_2_3_FlashLight_Set_2_BaseColor.png-c336a1587ced510de13a3dd35b7c5ccf.s3tc.ctex"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bi6psl47bpyie"
-path="res://.godot/imported/Adventurer.fbx-1bbf85e2c3a0a8b9e4382160e672bda2.scn"
+path="res://.godot/imported/Adventurer.fbx-350257536f1ba3cdb2cf5f511be85783.scn"
 
 [deps]
 
-source_file="res://Human/Adventurer.fbx"
-dest_files=["res://.godot/imported/Adventurer.fbx-1bbf85e2c3a0a8b9e4382160e672bda2.scn"]
+source_file="res://asset/Human/Adventurer.fbx"
+dest_files=["res://.godot/imported/Adventurer.fbx-350257536f1ba3cdb2cf5f511be85783.scn"]
 
 [params]
 

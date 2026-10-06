@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://tdgebgcxl70a"
-path="res://.godot/imported/Casual_Hoodie.fbx-d8ead09cc0da9b2b9a3071c84d719931.scn"
+uid="uid://623sdbb2pwdk"
+path="res://.godot/imported/FlashLight_Set_2_3.fbx-3b10175fcf03e47cfa6fc77a4e41e963.scn"
 
 [deps]
 
-source_file="res://Human/Casual_Hoodie.fbx"
-dest_files=["res://.godot/imported/Casual_Hoodie.fbx-d8ead09cc0da9b2b9a3071c84d719931.scn"]
+source_file="res://asset/OBJ/FBX/FlashLight_Set_2_3.fbx"
+dest_files=["res://.godot/imported/FlashLight_Set_2_3.fbx-3b10175fcf03e47cfa6fc77a4e41e963.scn"]
 
 [params]
 

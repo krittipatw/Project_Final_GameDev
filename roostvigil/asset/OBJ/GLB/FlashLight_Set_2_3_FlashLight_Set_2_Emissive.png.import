@@ -2,20 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpl3w7047jb30"
-path="res://.godot/imported/FlashLight_Set_2_Emissive.png-e4e3a6c402234dd6f63e197da939fc4b.ctex"
+uid="uid://chrokddjwyujh"
+path.s3tc="res://.godot/imported/FlashLight_Set_2_3_FlashLight_Set_2_Emissive.png-08d07c5a046279c23a613f0644c8a256.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+generator_parameters={
+"md5": "92abf5903836d1ac3752fcd627c5d7df"
 }
 
 [deps]
 
-source_file="res://OBJ/TEXTURES/CLEAN/FlashLight_Set_2_Emissive.png"
-dest_files=["res://.godot/imported/FlashLight_Set_2_Emissive.png-e4e3a6c402234dd6f63e197da939fc4b.ctex"]
+source_file="res://asset/OBJ/GLB/FlashLight_Set_2_3_FlashLight_Set_2_Emissive.png"
+dest_files=["res://.godot/imported/FlashLight_Set_2_3_FlashLight_Set_2_Emissive.png-08d07c5a046279c23a613f0644c8a256.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -23,7 +27,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -37,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
