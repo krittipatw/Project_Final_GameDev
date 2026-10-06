@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bm676kx0p8o2k"
-path="res://.godot/imported/Plant_Simple_Brush_Regular.fbx-2782f2e70fca21d20396b3c42aedce02.scn"
+uid="uid://bmlfyf3vk31a3"
+path="res://.godot/imported/UG_Simple_Clovers.fbx-937c6528c32935ba884bdb70dfab28be.scn"
 
 [deps]
 
-source_file="res://Models/Plant_Simple_Brush_Regular.fbx"
-dest_files=["res://.godot/imported/Plant_Simple_Brush_Regular.fbx-2782f2e70fca21d20396b3c42aedce02.scn"]
+source_file="res://asset/Models/UG_Simple_Clovers.fbx"
+dest_files=["res://.godot/imported/UG_Simple_Clovers.fbx-937c6528c32935ba884bdb70dfab28be.scn"]
 
 [params]
 

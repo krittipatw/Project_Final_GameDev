@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://buvuaae2u1ilb"]
 
-[ext_resource type="Material" uid="uid://dw8kni51br60f" path="res://Foliage Sample Pack/Materials/Bark.tres" id="1_m0fsq"]
+[ext_resource type="Material" path="res://Foliage Sample Pack/Materials/Bark.tres" id="1_m0fsq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j52wm"]
 resource_name = "Trunk Branch.001"

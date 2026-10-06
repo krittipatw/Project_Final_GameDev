@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://v61lstfiaa3w"
-path="res://.godot/imported/Plant_JelloBush_Slim.fbx-1b8eb612f47bcf7dabeff0872e746187.scn"
+uid="uid://bm676kx0p8o2k"
+path="res://.godot/imported/Plant_Simple_Brush_Regular.fbx-f2aaa063b1c1e2e2c43379908cb42348.scn"
 
 [deps]
 
-source_file="res://Models/Plant_JelloBush_Slim.fbx"
-dest_files=["res://.godot/imported/Plant_JelloBush_Slim.fbx-1b8eb612f47bcf7dabeff0872e746187.scn"]
+source_file="res://asset/Models/Plant_Simple_Brush_Regular.fbx"
+dest_files=["res://.godot/imported/Plant_Simple_Brush_Regular.fbx-f2aaa063b1c1e2e2c43379908cb42348.scn"]
 
 [params]
 

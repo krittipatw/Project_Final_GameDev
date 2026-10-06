@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bmlfyf3vk31a3"
-path="res://.godot/imported/UG_Simple_Clovers.fbx-98ff433e27e34e41378c6e32ffb1df34.scn"
+uid="uid://b4hml3r1ff12o"
+path="res://.godot/imported/UG_Mouse_Ears.fbx-42d6240572877989d259c8aaace88d00.scn"
 
 [deps]
 
-source_file="res://Models/UG_Simple_Clovers.fbx"
-dest_files=["res://.godot/imported/UG_Simple_Clovers.fbx-98ff433e27e34e41378c6e32ffb1df34.scn"]
+source_file="res://asset/Models/UG_Mouse_Ears.fbx"
+dest_files=["res://.godot/imported/UG_Mouse_Ears.fbx-42d6240572877989d259c8aaace88d00.scn"]
 
 [params]
 

@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://c1k21lmo6sxkd"]
 
-[ext_resource type="Material" uid="uid://blrxfqfr13me8" path="res://Foliage Sample Pack/Materials/SimpleBrush.tres" id="1_go8pk"]
+[ext_resource type="Material" path="res://Foliage Sample Pack/Materials/SimpleBrush.tres" id="1_go8pk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k0c2x"]
 resource_name = "Plant1"
