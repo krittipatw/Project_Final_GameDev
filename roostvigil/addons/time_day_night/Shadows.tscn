@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dqypivfdtjr6c"]
+
+[ext_resource type="Shader" uid="uid://b2uypgywsrd0p" path="res://addons/time_day_night/ShadowShader.gdshader" id="1_lsm5b"]
+[ext_resource type="Script" uid="uid://bxymcfxsb4gvh" path="res://addons/time_day_night/shadows.gd" id="2_43svl"]
+
+[sub_resource type="Gradient" id="Gradient_kdopp"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_chn1i"]
+gradient = SubResource("Gradient_kdopp")
+fill_to = Vector2(0.430199, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7no6b"]
+shader = ExtResource("1_lsm5b")
+shader_parameter/color = Color(0, 0, 0, 0.27450982)
+shader_parameter/angle = 180.22400856064
+shader_parameter/max_dist = 20.00000095
+shader_parameter/gradientTexture = SubResource("GradientTexture2D_chn1i")
+
+[node name="Shadows" type="Polygon2D" unique_id=1437648145]
+material = SubResource("ShaderMaterial_7no6b")
+polygon = PackedVector2Array(333, -20, -128, -21, -128, 238, 329, 238)
+script = ExtResource("2_43svl")
+margin = null

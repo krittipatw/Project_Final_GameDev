@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b5xiie10kqdre"]
+
+[ext_resource type="Script" uid="uid://cdsujx7shrcgo" path="res://addons/time_day_night/day_night.gd" id="1_eeaov"]
+
+[node name="LightControl" type="CanvasModulate" unique_id=619250075]
+script = ExtResource("1_eeaov")

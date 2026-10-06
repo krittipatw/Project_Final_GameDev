@@ -1,0 +1,211 @@
+[gd_scene format=4 uid="uid://pq8xcj6qepvu"]
+
+[ext_resource type="Texture2D" uid="uid://u6ne0kbosod1" path="res://addons/time_day_night/demo/Tileset Spring.png" id="1_36yxq"]
+[ext_resource type="Script" uid="uid://cviy0v5ccf0lp" path="res://addons/time_day_night/time_ui.gd" id="2_ypffr"]
+[ext_resource type="PackedScene" uid="uid://drotx7icj3xw5" path="res://addons/time_day_night/time_system_ui_node.tscn" id="3_1krj2"]
+[ext_resource type="Script" uid="uid://714n22lqgq2d" path="res://addons/time_day_night/time_system_ui.gd" id="4_sttkj"]
+[ext_resource type="Script" uid="uid://cdsujx7shrcgo" path="res://addons/time_day_night/day_night.gd" id="5_1krj2"]
+[ext_resource type="Script" uid="uid://dy6t3ck0xhv8p" path="res://addons/time_day_night/outdoorcamera.gd" id="5_tyve0"]
+[ext_resource type="PackedScene" uid="uid://b5xiie10kqdre" path="res://addons/time_day_night/light_control.tscn" id="6_ybdkr"]
+[ext_resource type="PackedScene" uid="uid://dqypivfdtjr6c" path="res://addons/time_day_night/Shadows.tscn" id="7_kxncp"]
+[ext_resource type="Shader" uid="uid://b2uypgywsrd0p" path="res://addons/time_day_night/ShadowShader.gdshader" id="8_l0vyp"]
+[ext_resource type="Script" uid="uid://bxymcfxsb4gvh" path="res://addons/time_day_night/shadows.gd" id="8_sttkj"]
+[ext_resource type="Texture2D" uid="uid://bxssa0gowpv6c" path="res://addons/time_day_night/demo/Idle.png" id="9_w6vec"]
+[ext_resource type="Script" uid="uid://b5i13sd56sv2h" path="res://addons/time_day_night/demo/controllerdemo.gd" id="12_sttkj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gil8p"]
+texture = ExtResource("1_36yxq")
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+8:1/0 = 0
+9:1/0 = 0
+11:1/0 = 0
+8:2/0 = 0
+9:2/0 = 0
+10:2/0 = 0
+11:2/0 = 0
+8:3/0 = 0
+9:3/0 = 0
+10:3/0 = 0
+11:3/0 = 0
+8:4/0 = 0
+9:4/0 = 0
+10:4/0 = 0
+11:4/0 = 0
+8:5/0 = 0
+9:5/0 = 0
+11:5/0 = 0
+8:6/0 = 0
+10:6/0 = 0
+11:6/0 = 0
+8:7/0 = 0
+9:7/0 = 0
+10:7/0 = 0
+11:7/0 = 0
+9:8/0 = 0
+10:8/0 = 0
+11:8/0 = 0
+9:9/0 = 0
+11:9/0 = 0
+9:10/0 = 0
+10:10/0 = 0
+11:10/0 = 0
+9:11/0 = 0
+10:11/0 = 0
+11:11/0 = 0
+9:12/0 = 0
+10:12/0 = 0
+11:12/0 = 0
+9:13/0 = 0
+11:13/0 = 0
+8:14/0 = 0
+9:14/0 = 0
+10:14/0 = 0
+11:14/0 = 0
+8:15/0 = 0
+9:15/0 = 0
+10:15/0 = 0
+11:15/0 = 0
+8:16/0 = 0
+9:16/0 = 0
+10:16/0 = 0
+11:16/0 = 0
+8:17/0 = 0
+9:17/0 = 0
+11:17/0 = 0
+8:18/0 = 0
+9:18/0 = 0
+10:18/0 = 0
+11:18/0 = 0
+8:19/0 = 0
+9:19/0 = 0
+10:19/0 = 0
+11:19/0 = 0
+8:8/0 = 0
+8:9/0 = 0
+8:10/0 = 0
+8:11/0 = 0
+8:12/0 = 0
+8:13/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_0jx0b"]
+sources/0 = SubResource("TileSetAtlasSource_gil8p")
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7i5w8"]
+polygon = PackedVector2Array(0, -1, 6, -1, 8, 1, 6, 3, 0, 3, -3, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1krj2"]
+bg_color = Color(0.28118682, 0.28118688, 0.28118682, 0.6)
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="Gradient" id="Gradient_kdopp"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_chn1i"]
+gradient = SubResource("Gradient_kdopp")
+fill_to = Vector2(0.430199, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7no6b"]
+shader = ExtResource("8_l0vyp")
+shader_parameter/color = Color(0, 0, 0, 0.27450982)
+shader_parameter/angle = 180.22400856064
+shader_parameter/max_dist = 20.00000095
+shader_parameter/gradientTexture = SubResource("GradientTexture2D_chn1i")
+
+[node name="Demo" type="Node2D" unique_id=1354652577]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1851017301]
+texture_filter = 3
+tile_map_data = PackedByteArray("AAABAAQAAAAIAAAAAAABAAUAAAAIAAEAAAABAAYAAAAIAAEAAAABAAcAAAAIAAEAAAABAAgAAAAIAAEAAAABAAkAAAAIAAEAAAABAAoAAAAIAAEAAAABAAsAAAAIAAEAAAABAAwAAAAIAAEAAAABAA0AAAAIAAEAAAABAA4AAAAIAAMAAAACAAQAAAAKAAAAAAACAAUAAAAJAAIAAAACAAYAAAAJAAIAAAACAAcAAAAJAAIAAAACAAgAAAAJAAIAAAACAAkAAAAJAAIAAAACAAoAAAAJAAIAAAACAAsAAAAJAAIAAAACAAwAAAAJAAIAAAACAA0AAAAJAAIAAAACAA4AAAAJAAMAAAADAAQAAAAKAAAAAAADAAUAAAAJAAIAAAADAAYAAAAJAAIAAAADAAcAAAAJAAIAAAADAAgAAAAJAAIAAAADAAkAAAAJAAIAAAADAAoAAAAJAAIAAAADAAsAAAAJAAIAAAADAAwAAAAJAAIAAAADAA0AAAAJAAIAAAADAA4AAAAJAAMAAAAEAAQAAAAKAAAAAAAEAAUAAAAJAAIAAAAEAAYAAAAJAAIAAAAEAAcAAAAJAAIAAAAEAAgAAAAJAAIAAAAEAAkAAAAJAAIAAAAEAAoAAAAJAAIAAAAEAAsAAAAJAAIAAAAEAAwAAAAJAAIAAAAEAA0AAAAJAAIAAAAEAA4AAAAJAAMAAAAFAAQAAAAKAAAAAAAFAAUAAAAJAAIAAAAFAAYAAAAJAAIAAAAFAAcAAAAJAAIAAAAFAAgAAAAJAAIAAAAFAAkAAAAJAAIAAAAFAAoAAAAJAAIAAAAFAAsAAAAJAAIAAAAFAAwAAAAJAAIAAAAFAA0AAAAJAAIAAAAFAA4AAAAJAAMAAAAGAAQAAAAKAAAAAAAGAAUAAAAJAAIAAAAGAAYAAAAJAAIAAAAGAAcAAAAJAAIAAAAGAAgAAAAIAAgAAAAGAAkAAAAIAAkAAAAGAAoAAAAIAAsAAAAGAAsAAAAJAAIAAAAGAAwAAAAJAAIAAAAGAA0AAAAJAAIAAAAGAA4AAAAJAAMAAAAHAAQAAAAKAAAAAAAHAAUAAAAJAAIAAAAHAAYAAAAJAAIAAAAHAAcAAAAJAAIAAAAHAAgAAAAKAAgAAAAHAAkAAAAJAAoAAAAHAAoAAAAJAAsAAAAHAAsAAAAJAAIAAAAHAAwAAAAJAAIAAAAHAA0AAAAJAAIAAAAHAA4AAAAJAAMAAAAIAAQAAAAKAAAAAAAIAAUAAAAJAAIAAAAIAAYAAAAJAAIAAAAIAAcAAAAJAAIAAAAIAAgAAAAKAAgAAAAIAAkAAAAJAAoAAAAIAAoAAAAJAAsAAAAIAAsAAAAJAAIAAAAIAAwAAAAJAAIAAAAIAA0AAAAJAAIAAAAIAA4AAAAJAAMAAAAJAAQAAAAKAAAAAAAJAAUAAAAJAAIAAAAJAAYAAAAJAAIAAAAJAAcAAAAJAAIAAAAJAAgAAAAKAAgAAAAJAAkAAAAJAAoAAAAJAAoAAAAJAAsAAAAJAAsAAAAJAAIAAAAJAAwAAAAJAAIAAAAJAA0AAAAJAAIAAAAJAA4AAAAJAAMAAAAKAAQAAAAKAAAAAAAKAAUAAAAJAAIAAAAKAAYAAAAJAAIAAAAKAAcAAAAJAAIAAAAKAAgAAAAKAAgAAAAKAAkAAAAJAAoAAAAKAAoAAAAJAAsAAAAKAAsAAAAJAAIAAAAKAAwAAAAJAAIAAAAKAA0AAAAJAAIAAAAKAA4AAAAJAAMAAAALAAQAAAAKAAAAAAALAAUAAAAJAAIAAAALAAYAAAAJAAIAAAALAAcAAAAJAAIAAAALAAgAAAALAAgAAAALAAkAAAALAAoAAAALAAoAAAALAAsAAAALAAsAAAAJAAIAAAALAAwAAAAJAAIAAAALAA0AAAAJAAIAAAALAA4AAAAJAAMAAAAMAAQAAAAKAAAAAAAMAAUAAAAJAAIAAAAMAAYAAAAJAAIAAAAMAAcAAAAJAAIAAAAMAAgAAAAJAAIAAAAMAAkAAAAJAAIAAAAMAAoAAAAJAAIAAAAMAAsAAAAJAAIAAAAMAAwAAAAJAAIAAAAMAA0AAAAJAAIAAAAMAA4AAAAJAAMAAAANAAQAAAAKAAAAAAANAAUAAAAJAAIAAAANAAYAAAAJAAIAAAANAAcAAAAJAAIAAAANAAgAAAAJAAIAAAANAAkAAAAJAAIAAAANAAoAAAAJAAIAAAANAAsAAAAJAAIAAAANAAwAAAAJAAIAAAANAA0AAAAJAAIAAAANAA4AAAAJAAMAAAAOAAQAAAAKAAAAAAAOAAUAAAAJAAIAAAAOAAYAAAAJAAIAAAAOAAcAAAAJAAIAAAAOAAgAAAAJAAIAAAAOAAkAAAAJAAIAAAAOAAoAAAAJAAIAAAAOAAsAAAAJAAIAAAAOAAwAAAAJAAIAAAAOAA0AAAAJAAIAAAAOAA4AAAAJAAMAAAAPAAQAAAAKAAAAAAAPAAUAAAAJAAIAAAAPAAYAAAAJAAIAAAAPAAcAAAAJAAIAAAAPAAgAAAAJAAIAAAAPAAkAAAAJAAIAAAAPAAoAAAAJAAIAAAAPAAsAAAAJAAIAAAAPAAwAAAAJAAIAAAAPAA0AAAAJAAIAAAAPAA4AAAAJAAMAAAAQAAQAAAAKAAAAAAAQAAUAAAAJAAIAAAAQAAYAAAAJAAIAAAAQAAcAAAAJAAIAAAAQAAgAAAAJAAIAAAAQAAkAAAAJAAIAAAAQAAoAAAAJAAIAAAAQAAsAAAAJAAIAAAAQAAwAAAAJAAIAAAAQAA0AAAAJAAIAAAAQAA4AAAAJAAMAAAARAAQAAAAKAAAAAAARAAUAAAAJAAIAAAARAAYAAAAJAAIAAAARAAcAAAAJAAIAAAARAAgAAAAJAAIAAAARAAkAAAAJAAIAAAARAAoAAAAJAAIAAAARAAsAAAAJAAIAAAARAAwAAAAJAAIAAAARAA0AAAAJAAIAAAARAA4AAAAJAAMAAAASAAQAAAAKAAAAAAASAAUAAAAJAAIAAAASAAYAAAAJAAIAAAASAAcAAAAJAAIAAAASAAgAAAAJAAIAAAASAAkAAAAJAAIAAAASAAoAAAAJAAIAAAASAAsAAAAJAAIAAAASAAwAAAAJAAIAAAASAA0AAAAJAAIAAAASAA4AAAAJAAMAAAATAAQAAAAKAAAAAAATAAUAAAAJAAIAAAATAAYAAAAJAAIAAAATAAcAAAAJAAIAAAATAAgAAAAJAAIAAAATAAkAAAAJAAIAAAATAAoAAAAJAAIAAAATAAsAAAAJAAIAAAATAAwAAAAJAAIAAAATAA0AAAAJAAIAAAATAA4AAAAJAAMAAAAUAAQAAAAKAAAAAAAUAAUAAAAJAAIAAAAUAAYAAAAJAAIAAAAUAAcAAAAJAAIAAAAUAAgAAAAJAAIAAAAUAAkAAAAJAAIAAAAUAAoAAAAJAAIAAAAUAAsAAAAJAAIAAAAUAAwAAAAJAAIAAAAUAA0AAAAJAAIAAAAUAA4AAAAJAAMAAAAVAAQAAAAKAAAAAAAVAAUAAAAJAAIAAAAVAAYAAAAJAAIAAAAVAAcAAAAJAAIAAAAVAAgAAAAJAAIAAAAVAAkAAAAJAAIAAAAVAAoAAAAJAAIAAAAVAAsAAAAJAAIAAAAVAAwAAAAJAAIAAAAVAA0AAAAJAAIAAAAVAA4AAAAJAAMAAAAWAAQAAAALAAAAAAAWAAUAAAALAAIAAAAWAAYAAAALAAIAAAAWAAcAAAALAAIAAAAWAAgAAAALAAIAAAAWAAkAAAALAAIAAAAWAAoAAAALAAIAAAAWAAsAAAALAAIAAAAWAAwAAAALAAIAAAAWAA0AAAALAAIAAAAWAA4AAAALAAMAAAA=")
+tile_set = SubResource("TileSet_0jx0b")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1467623494]
+z_index = 1
+texture_filter = 3
+position = Vector2(147, 151)
+texture = ExtResource("9_w6vec")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Sprite2D" unique_id=811878832]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(-2, 8)
+occluder = SubResource("OccluderPolygon2D_7i5w8")
+
+[node name="controller" type="CanvasLayer" parent="." unique_id=301407691]
+
+[node name="PanelContainer" type="PanelContainer" parent="controller" unique_id=566223631]
+offset_right = 186.0
+offset_bottom = 101.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1krj2")
+script = ExtResource("12_sttkj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="controller/PanelContainer" unique_id=1418233411]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="controller/PanelContainer/VBoxContainer" unique_id=30298434]
+layout_mode = 2
+text = "Real seconds to game minutes"
+
+[node name="HSlider" type="HSlider" parent="controller/PanelContainer/VBoxContainer" unique_id=119921090]
+layout_mode = 2
+min_value = 0.01
+max_value = 1.0
+step = 0.01
+value = 0.09999999999999999
+
+[node name="currentvalue" type="Label" parent="controller/PanelContainer/VBoxContainer" unique_id=1701036678]
+layout_mode = 2
+text = "5"
+horizontal_alignment = 1
+
+[node name="CheckButton" type="CheckButton" parent="controller/PanelContainer/VBoxContainer" unique_id=2014514861]
+layout_mode = 2
+text = "Freez Time"
+
+[node name="OutdoorCam" type="Camera2D" parent="." unique_id=1973139009]
+position = Vector2(176, 155)
+zoom = Vector2(3, 3)
+script = ExtResource("5_tyve0")
+metadata/_custom_type_script = "uid://dy6t3ck0xhv8p"
+
+[node name="LightControl" type="CanvasModulate" parent="OutdoorCam" unique_id=619250075 instance=ExtResource("6_ybdkr")]
+script = ExtResource("5_1krj2")
+
+[node name="Shadows" type="Polygon2D" parent="OutdoorCam" unique_id=1437648145 instance=ExtResource("7_kxncp")]
+material = SubResource("ShaderMaterial_7no6b")
+polygon = PackedVector2Array(-324.3333, -202.5, 324.3333, -202.5, 324.3333, 202.5, -324.3333, 202.5)
+script = ExtResource("8_sttkj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=438980215]
+
+[node name="TimeUI" type="Control" parent="CanvasLayer" unique_id=1366844077]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("2_ypffr")
+metadata/_custom_type_script = "uid://cviy0v5ccf0lp"
+
+[node name="Time_system_UI" type="PanelContainer" parent="CanvasLayer/TimeUI" unique_id=1707048705 instance=ExtResource("3_1krj2")]
+layout_mode = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -297.0
+offset_top = -140.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("4_sttkj")
+
+[connection signal="value_changed" from="controller/PanelContainer/VBoxContainer/HSlider" to="controller/PanelContainer" method="_on_h_slider_value_changed"]
+[connection signal="toggled" from="controller/PanelContainer/VBoxContainer/CheckButton" to="controller/PanelContainer" method="_on_check_button_toggled"]

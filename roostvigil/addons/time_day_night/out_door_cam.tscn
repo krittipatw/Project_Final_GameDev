@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://88nip2runtwn"]
+
+[ext_resource type="Script" uid="uid://dy6t3ck0xhv8p" path="res://addons/time_day_night/outdoorcamera.gd" id="1_pofeu"]
+[ext_resource type="PackedScene" uid="uid://dqypivfdtjr6c" path="res://addons/time_day_night/Shadows.tscn" id="2_vpmbo"]
+[ext_resource type="Shader" uid="uid://b2uypgywsrd0p" path="res://addons/time_day_night/ShadowShader.gdshader" id="3_6erl4"]
+[ext_resource type="PackedScene" uid="uid://b5xiie10kqdre" path="res://addons/time_day_night/light_control.tscn" id="4_iv8jw"]
+
+[sub_resource type="Gradient" id="Gradient_kdopp"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_chn1i"]
+gradient = SubResource("Gradient_kdopp")
+fill_to = Vector2(0.430199, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7no6b"]
+shader = ExtResource("3_6erl4")
+shader_parameter/color = Color(0, 0, 0, 0.27450982)
+shader_parameter/angle = 180.22400856064
+shader_parameter/max_dist = 20.00000095
+shader_parameter/gradientTexture = SubResource("GradientTexture2D_chn1i")
+
+[node name="Out_Door_Cam" type="Camera2D" unique_id=550129951]
+script = ExtResource("1_pofeu")
+metadata/_custom_type_script = "uid://dy6t3ck0xhv8p"
+
+[node name="Shadows" parent="." unique_id=1437648145 instance=ExtResource("2_vpmbo")]
+material = SubResource("ShaderMaterial_7no6b")
+polygon = PackedVector2Array(-773, -407.5, 773, -407.5, 773, 407.5, -773, 407.5)
+margin = 100.0
+
+[node name="LightControl" parent="." unique_id=619250075 instance=ExtResource("4_iv8jw")]
