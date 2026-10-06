@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dyg61ov5r7dt8"]
 
-[ext_resource type="PackedScene" uid="uid://b6no1rx3nmb6g" path="res://Scenes/code/player.tscn" id="1_6phgx"]
+[ext_resource type="PackedScene" uid="uid://b6no1rx3nmb6g" path="res://Scenes/player.tscn" id="1_6phgx"]
 [ext_resource type="PackedScene" uid="uid://ba0n1gbstodko" path="res://asset/Models/Tree_Juniper_Dead.fbx" id="2_81xng"]
 [ext_resource type="PackedScene" uid="uid://b875jgmtvfdrm" path="res://asset/Models/Tree_Juniper_Regular.fbx" id="3_wqkje"]
 [ext_resource type="PackedScene" uid="uid://v61lstfiaa3w" path="res://asset/Models/Plant_JelloBush_Slim.fbx" id="4_81xng"]

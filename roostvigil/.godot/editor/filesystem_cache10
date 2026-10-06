@@ -1,5 +1,5 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1791305160
+::res://::1791305268
 01 - Wavelengths - Wavelenghts.ogg::AudioStreamOggVorbis::305794995737819180::1791297587::1791297644::1::::<><><>0<>0<>cdcd42fe60745165437ffb86ddb29363<>res://.godot/imported/01 - Wavelengths - Wavelenghts.ogg-b9e689280f6e45d61d0ac683df22151b.oggvorbisstr::
 02 - Kukoo - kuokoo.ogg::AudioStreamOggVorbis::4856466570031420469::1791297587::1791297644::1::::<><><>0<>0<>4a22b7d7bc8c9280e9c96b58eb63e4b3<>res://.godot/imported/02 - Kukoo - kuokoo.ogg-9b1011d52b6b598468cc32249f5f8699.oggvorbisstr::
 03 - spook-fi - Spook-Fi.ogg::AudioStreamOggVorbis::489726493648091151::1791297587::1791297644::1::::<><><>0<>0<>b706f1a56ef47af68db5a05e91fcc092<>res://.godot/imported/03 - spook-fi - Spook-Fi.ogg-414351daa6e9d059e88fb6447e6b2d87.oggvorbisstr::
@@ -83,12 +83,12 @@ FlashLight_Set_2_2_FlashLight_Set_2_Emissive.png::CompressedTexture2D::839672848
 FlashLight_Set_2_3.glb::PackedScene::2307099247853028184::1791284116::1791292352::1::::<><><>0<>0<>d9d1cbbdbb65b1f9046d0aa4920fe52a<>res://.godot/imported/FlashLight_Set_2_3.glb-3a5bf88526037321583998396f32ab2d.scn::uid://barg3rahnass::::res://asset/OBJ/GLB/FlashLight_Set_2_3_FlashLight_Set_2_BaseColor.png<>uid://chrokddjwyujh::::res://asset/OBJ/GLB/FlashLight_Set_2_3_FlashLight_Set_2_Emissive.png
 FlashLight_Set_2_3_FlashLight_Set_2_BaseColor.png::CompressedTexture2D::71233244203836686::1791284116::1791292352::1::::<><><>0<>0<>171251a30eab7d7199c4ab1f6cb8bb8c<>res://.godot/imported/FlashLight_Set_2_3_FlashLight_Set_2_BaseColor.png-c336a1587ced510de13a3dd35b7c5ccf.s3tc.ctex::
 FlashLight_Set_2_3_FlashLight_Set_2_Emissive.png::CompressedTexture2D::5300125753152973065::1791284116::1791292352::1::::<><><>0<>0<>ace63d70bc8db8623edc226c0353bbbf<>res://.godot/imported/FlashLight_Set_2_3_FlashLight_Set_2_Emissive.png-08d07c5a046279c23a613f0644c8a256.s3tc.ctex::
-::res://asset/OBJ/Lantern/::1791305160
+::res://asset/OBJ/Lantern/::1791305168
 lantern_01_cc0_clip_ready_v1.glb::PackedScene::5493094281863510737::1791297587::1791305168::1::::<><><>0<>0<>9b908b07a0d2281b0349e628d7b4b463<>res://.godot/imported/lantern_01_cc0_clip_ready_v1.glb-83c25e6b00760c4d99e3b539c6f3fcc4.scn::uid://y0cb85riu1p8::::res://asset/OBJ/Lantern/lantern_01_cc0_clip_ready_v1_Lantern_01_brass_diff.jpg<>uid://du3qc8kep83dm::::res://asset/OBJ/Lantern/lantern_01_cc0_clip_ready_v1_Lantern_01_brass_metallic-Lantern_01_brass_roughness.jpg<>uid://gifcje4qpmeq::::res://asset/OBJ/Lantern/lantern_01_cc0_clip_ready_v1_Lantern_01_brass_nor_gl.jpg<>uid://buvromqkeq55p::::res://asset/OBJ/Lantern/lantern_01_cc0_clip_ready_v1_Lantern_01_brass_diff-Lantern_01_brass_opacity.jpg
-lantern_01_cc0_clip_ready_v1_Lantern_01_brass_nor_gl.jpg::CompressedTexture2D::437955720641295840::1791305166::1791305168::1::::<><><>0<>0<>fe90a8bf03626ae2d0bb825a557df615<>res://.godot/imported/lantern_01_cc0_clip_ready_v1_Lantern_01_brass_nor_gl.jpg-4ebdcfb3e747cb357b8ad1a814e7abd4.s3tc.ctex::
+lantern_01_cc0_clip_ready_v1_Lantern_01_brass_diff-Lantern_01_brass_opacity.jpg::CompressedTexture2D::3834607334738139011::1791305167::1791305168::1::::<><><>0<>0<>d67c5472597caf04b7599a9a5c17039a<>res://.godot/imported/lantern_01_cc0_clip_ready_v1_Lantern_01_brass_diff-Lantern_01_brass_opacity.jpg-3982eb108e628302343867b6cbfbeb7d.s3tc.ctex::
 lantern_01_cc0_clip_ready_v1_Lantern_01_brass_diff.jpg::CompressedTexture2D::1736266691342306247::1791305167::1791305168::1::::<><><>0<>0<>d47a9270cc7a0b87e7abcb22365a5877<>res://.godot/imported/lantern_01_cc0_clip_ready_v1_Lantern_01_brass_diff.jpg-3b4f21df69485c81b923600e3240fd4b.s3tc.ctex::
 lantern_01_cc0_clip_ready_v1_Lantern_01_brass_metallic-Lantern_01_brass_roughness.jpg::CompressedTexture2D::8621818293347412954::1791305167::1791305168::1::::<><><>0<>0<>c213acce44a623ab8ab019f795796383<>res://.godot/imported/lantern_01_cc0_clip_ready_v1_Lantern_01_brass_metallic-Lantern_01_brass_roughness.jpg-09c98b823e3791ffdb405915eb3e9f4d.s3tc.ctex::
-lantern_01_cc0_clip_ready_v1_Lantern_01_brass_diff-Lantern_01_brass_opacity.jpg::CompressedTexture2D::3834607334738139011::1791305167::1791305168::1::::<><><>0<>0<>d67c5472597caf04b7599a9a5c17039a<>res://.godot/imported/lantern_01_cc0_clip_ready_v1_Lantern_01_brass_diff-Lantern_01_brass_opacity.jpg-3982eb108e628302343867b6cbfbeb7d.s3tc.ctex::
+lantern_01_cc0_clip_ready_v1_Lantern_01_brass_nor_gl.jpg::CompressedTexture2D::437955720641295840::1791305166::1791305168::1::::<><><>0<>0<>fe90a8bf03626ae2d0bb825a557df615<>res://.godot/imported/lantern_01_cc0_clip_ready_v1_Lantern_01_brass_nor_gl.jpg-4ebdcfb3e747cb357b8ad1a814e7abd4.s3tc.ctex::
 ::res://asset/OBJ/TEXTURES/::1791284116
 ::res://asset/OBJ/TEXTURES/CLEAN/::1791292352
 FlashLight_Set_2_BaseColor.png::CompressedTexture2D::8323334333318510471::1791284116::1791292352::1::::<><><>0<>0<>38fa2c4f1aa98a20540e2faad586e971<>res://.godot/imported/FlashLight_Set_2_BaseColor.png-f941dfa093bfb9cd2ee73eaa6ae63206.ctex::
@@ -113,20 +113,21 @@ TexturePreview.gd::GDScript::5337053893109473019::1791297587::0::1::::TexturePre
 Texture_preview.glsl::RDShaderFile::8457158349495723588::1791297587::1791297644::1::::<><><>0<>0<>e9eb497be156bcaa7d33d6e803004664<>res://.godot/imported/Texture_preview.glsl-f15bd38944e6a642db90b8585a6a41ee.res::
 ::res://Compositor/General/Includes/::1791297587
 scene_data.glsl::::-1::1791297587::1791297587::0::::<><><>0<>0<>eee310571a4cbc4a9673c1f44f9e584b<>::
-::res://Scenes/::1791305160
-level.tscn::PackedScene::8858109991488563779::1791305160::0::1::::<><><>0<>0<><>::
+::res://Scenes/::1791305180
+level.tscn::PackedScene::8858109991488563779::1791305166::0::1::::<><><>0<>0<><>::uid://b6no1rx3nmb6g::::res://Scenes/code/player.tscn<>uid://ba0n1gbstodko::::res://asset/Models/Tree_Juniper_Dead.fbx<>uid://b875jgmtvfdrm::::res://asset/Models/Tree_Juniper_Regular.fbx<>uid://v61lstfiaa3w::::res://asset/Models/Plant_JelloBush_Slim.fbx
 main_menu.gd::GDScript::2199244493428255851::1791305160::0::1::::<>Control<><>0<>0<><>::
-main_menu.tscn::PackedScene::905860353928489991::1791305160::0::1::::<><><>0<>0<><>::
+main_menu.tscn::PackedScene::905860353928489991::1791305166::0::1::::<><><>0<>0<><>::uid://6lliah263ir0::::res://Scenes/main_menu.gd
 plant_jello_bush_slim.tscn::PackedScene::2778393652266986340::1791297587::0::1::::<><><>0<>0<><>::res://Foliage Sample Pack/Materials/JelloBush.tres
 plant_simple_brush.tscn::PackedScene::6620081465934625011::1791297587::0::1::::<><><>0<>0<><>::res://Foliage Sample Pack/Materials/SimpleBrush.tres
 player.gd::GDScript::7662749106164704602::1791305160::0::1::::<>CharacterBody3D<><>0<>0<><>::
+player_1.tscn::PackedScene::6067848658945737329::1791305180::0::1::::<><><>0<>0<><>::res://Scenes/GDscript/player_1.gd
+player.tscn::PackedScene::4590009145532631960::1791305160::0::1::::<><><>0<>0<><>::uid://dhf5mgee3n467::::res://Scenes/player.gd
 tree_juniper.tscn::PackedScene::3834763836578065671::1791297587::0::1::::<><><>0<>0<><>::res://Foliage Sample Pack/Materials/Bark.tres
 tree_juniper_regular.tscn::PackedScene::7479298017972068737::1791297587::0::1::::<><><>0<>0<><>::res://Foliage Sample Pack/Materials/Bark.tres<>res://Foliage Sample Pack/Materials/Foliage1.tres
 ug_grass_regular_.tscn::PackedScene::8803312642723813540::1791297587::0::1::::<><><>0<>0<><>::res://Foliage Sample Pack/Materials/GrassyVegetation.tres
 ug_mouse_ears.tscn::PackedScene::7738707069446193799::1791297587::0::1::::<><><>0<>0<><>::res://Foliage Sample Pack/Materials/GrassyVegetation.tres
 ug_simple_clovers.tscn::PackedScene::5985332421020088411::1791305160::0::1::::<><><>0<>0<><>::uid://djxyy88vdendp::::res://Foliage Sample Pack/Textures/Clover Mouse Ears.png
 ::res://Scenes/code/::1791305160
-player.tscn::PackedScene::4590009145532631960::1791305160::0::1::::<><><>0<>0<><>::uid://dhf5mgee3n467::::res://Scenes/player.gd
 ::res://Textures/::1791297645
 Bark1.png::CompressedTexture2D::4737116656867759952::1791297587::1791297644::1::::<><><>0<>0<>20a3932804d031891ff3a245d0a2b497<>res://.godot/imported/Bark1.png-ec6b3464c74ad5638d4dae902102f0a3.s3tc.ctex::
 Clover Mouse Ears.png::CompressedTexture2D::7839944184252507865::1791297587::1791297645::1::::<><><>0<>0<>6b68bb40597ae2b05a427650b2620a62<>res://.godot/imported/Clover Mouse Ears.png-6b9a53dd3c0af6691cf83d392217a8f3.s3tc.ctex::
