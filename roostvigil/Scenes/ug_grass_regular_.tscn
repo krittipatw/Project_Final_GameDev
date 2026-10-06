@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dxonjjv1wbos7"]
 
-[ext_resource type="Material" uid="uid://cwg5wvfu0rj30" path="res://Foliage Sample Pack/Materials/GrassyVegetation.tres" id="1_s4eyv"]
+[ext_resource type="Material" path="res://Foliage Sample Pack/Materials/GrassyVegetation.tres" id="1_s4eyv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bmra8"]
 resource_name = "Grassy Vegetation1"

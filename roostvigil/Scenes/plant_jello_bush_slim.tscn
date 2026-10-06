@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://bft40ctwp3y25"]
 
-[ext_resource type="Material" uid="uid://bifhqroikstwg" path="res://Foliage Sample Pack/Materials/JelloBush.tres" id="1_d6pvd"]
+[ext_resource type="Material" path="res://Foliage Sample Pack/Materials/JelloBush.tres" id="1_d6pvd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8edwo"]
 resource_name = "Plant JelloBush"

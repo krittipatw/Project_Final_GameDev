@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dy45b1erh6fe6"
-path="res://.godot/imported/UG_Grass_Regular_.fbx-171f8b684ea3a9e43c950b4c1e16be5d.scn"
+uid="uid://ba0n1gbstodko"
+path="res://.godot/imported/Tree_Juniper_Dead.fbx-52e871a99b5412abc825d5518ac4c7d5.scn"
 
 [deps]
 
-source_file="res://Models/UG_Grass_Regular_.fbx"
-dest_files=["res://.godot/imported/UG_Grass_Regular_.fbx-171f8b684ea3a9e43c950b4c1e16be5d.scn"]
+source_file="res://asset/Models/Tree_Juniper_Dead.fbx"
+dest_files=["res://.godot/imported/Tree_Juniper_Dead.fbx-52e871a99b5412abc825d5518ac4c7d5.scn"]
 
 [params]
 

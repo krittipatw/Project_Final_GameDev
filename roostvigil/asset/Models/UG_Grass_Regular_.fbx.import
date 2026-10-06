@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://b4hml3r1ff12o"
-path="res://.godot/imported/UG_Mouse_Ears.fbx-d9ea8b3d1f8a0579ce31aacfbb3ba55e.scn"
+uid="uid://dy45b1erh6fe6"
+path="res://.godot/imported/UG_Grass_Regular_.fbx-cebb88be9646eaf3209deaca83a7b872.scn"
 
 [deps]
 
-source_file="res://Models/UG_Mouse_Ears.fbx"
-dest_files=["res://.godot/imported/UG_Mouse_Ears.fbx-d9ea8b3d1f8a0579ce31aacfbb3ba55e.scn"]
+source_file="res://asset/Models/UG_Grass_Regular_.fbx"
+dest_files=["res://.godot/imported/UG_Grass_Regular_.fbx-cebb88be9646eaf3209deaca83a7b872.scn"]
 
 [params]
 
