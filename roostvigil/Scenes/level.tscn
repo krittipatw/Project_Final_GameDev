@@ -1,21 +1,34 @@
 [gd_scene format=3 uid="uid://dyg61ov5r7dt8"]
 
+[ext_resource type="Texture2D" uid="uid://cq0bebl4fcumr" path="res://asset/forest_3.png" id="1_0f350"]
 [ext_resource type="PackedScene" uid="uid://b6no1rx3nmb6g" path="res://Scenes/player.tscn" id="1_6phgx"]
 [ext_resource type="PackedScene" uid="uid://ba0n1gbstodko" path="res://asset/Models/Tree_Juniper_Dead.fbx" id="2_81xng"]
+[ext_resource type="Texture2D" uid="uid://cs2dto5xxn7lc" path="res://asset/wood_house_2.jpg" id="2_bvt00"]
 [ext_resource type="PackedScene" uid="uid://b875jgmtvfdrm" path="res://asset/Models/Tree_Juniper_Regular.fbx" id="3_wqkje"]
 [ext_resource type="PackedScene" uid="uid://v61lstfiaa3w" path="res://asset/Models/Plant_JelloBush_Slim.fbx" id="4_81xng"]
+[ext_resource type="PackedScene" uid="uid://bt6gysljnshgo" path="res://asset/forest.glb" id="6_8c0lf"]
+[ext_resource type="PackedScene" uid="uid://dobm1s0sd36uo" path="res://asset/wood_house.glb" id="8_oqgf2"]
+[ext_resource type="PackedScene" uid="uid://bx3ew1v8kpwt3" path="res://asset/ghost_girl_animated.glb" id="9_qxfql"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_754fn"]
+albedo_texture = ExtResource("1_0f350")
 
 [sub_resource type="BoxMesh" id="BoxMesh_13qdw"]
 size = Vector3(1, 1.1445313, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xrivr"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ha31o"]
+albedo_texture = ExtResource("2_bvt00")
+
 [node name="level" type="Node3D" unique_id=693394831]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.79959, 0)
 
 [node name="floor" type="StaticBody3D" parent="." unique_id=517417246]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="floor" unique_id=1528143483]
 transform = Transform3D(52.51952, 0, 0, 0, 0.38928875, 0, 0, 0, 54.641308, 0.09204483, 0.11629629, 0.12425518)
+material_override = SubResource("StandardMaterial3D_754fn")
 mesh = SubResource("BoxMesh_13qdw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=1536456302]
@@ -26,6 +39,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.438644, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="floor2" unique_id=486800634]
 transform = Transform3D(5.5471816, 0, 0, 0, 0.25086263, 0, 0, 0, 5.252341, 0.3095157, -1.09589, 0.7133253)
+material_override = SubResource("StandardMaterial3D_ha31o")
 mesh = SubResource("BoxMesh_13qdw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="floor2" unique_id=38127247]
@@ -42,3 +56,12 @@ transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 3.5697432, 0.13573933, 0.0100
 
 [node name="Plant_JelloBush_Slim" parent="." unique_id=1168885204 instance=ExtResource("4_81xng")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1277952, 0, -8.308967)
+
+[node name="Forest_Scene" parent="." unique_id=628709874 instance=ExtResource("6_8c0lf")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -33.12163, -1.7588768, -38.866257)
+
+[node name="Woodhouse_Scene2" parent="." unique_id=536633560 instance=ExtResource("8_oqgf2")]
+transform = Transform3D(-0.00017966933, -2.6968082e-05, -0.024999341, 0.00058843027, 0.02499305, -3.1189644e-05, 0.024992429, -0.0005886388, -0.0001789846, 3.1729898, 8.476176, 2.175239)
+
+[node name="Sketchfab_Scene" parent="." unique_id=174685549 instance=ExtResource("9_qxfql")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.191164, 0, -4.46562)
