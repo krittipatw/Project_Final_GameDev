@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqt5docyx4hel"
-path="res://.godot/imported/FlashLight_Set_2_BaseColor.png-0db9c6937aeae8655880043936192051.ctex"
+uid="uid://blrf0o8b8ckn5"
+path="res://.godot/imported/FlashLight_Set_2_BaseColor.png-017f83485f6ff846244b4b9bc174d1ac.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://OBJ/TEXTURES/CLEAN/FlashLight_Set_2_BaseColor.png"
-dest_files=["res://.godot/imported/FlashLight_Set_2_BaseColor.png-0db9c6937aeae8655880043936192051.ctex"]
+source_file="res://asset/OBJ/TEXTURES/DIRT/FlashLight_Set_2_BaseColor.png"
+dest_files=["res://.godot/imported/FlashLight_Set_2_BaseColor.png-017f83485f6ff846244b4b9bc174d1ac.ctex"]
 
 [params]
 
