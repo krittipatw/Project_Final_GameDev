@@ -1,6 +1,35 @@
-[gd_scene format=3 uid="uid://m52ngfosoxet"]
+[gd_scene format=3 uid="uid://bv654dkv5sqr7"]
 
-[ext_resource type="Script" uid="uid://6lliah263ir0" path="res://Scenes/main_menu.gd" id="1_menu"]
+[sub_resource type="GDScript" id="GDScript_erv1k"]
+script/source = "extends Control
+
+## หน้าเมนูก่อนเริ่มเกม (Roostvigil)
+## ตอนนี้ปุ่ม Start ยังไม่เปลี่ยนฉาก เปลี่ยน GAME_READY เป็น true เมื่อเกมพร้อม
+
+const GAME_READY := false
+
+@export_file(\"*.tscn\") var game_scene: String = \"res://Scenes/level.tscn\"
+
+@onready var start_button: Button = %StartButton
+@onready var quit_button: Button = %QuitButton
+
+
+func _ready() -> void:
+	start_button.pressed.connect(_on_start_pressed)
+	quit_button.pressed.connect(_on_quit_pressed)
+	start_button.grab_focus()
+
+
+func _on_start_pressed() -> void:
+	if GAME_READY:
+		get_tree().change_scene_to_file(game_scene)
+	else:
+		print(\"Start pressed (เกมยังไม่พร้อม)\")
+
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()
+"
 
 [sub_resource type="StyleBoxFlat" id="btn_normal"]
 bg_color = Color(0.08, 0.04, 0.04, 1)
@@ -33,7 +62,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_menu")
+script = SubResource("GDScript_erv1k")
 
 [node name="Background" type="ColorRect" parent="." unique_id=1947907272]
 layout_mode = 1
@@ -60,7 +89,7 @@ theme_override_constants/separation = 18
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8, 0.15, 0.15, 1)
 theme_override_font_sizes/font_size = 84
-text = "ROOSTVIGIL"
+text = "ROOST VIGIL"
 horizontal_alignment = 1
 
 [node name="Spacer" type="Control" parent="Center/VBox" unique_id=835410931]
