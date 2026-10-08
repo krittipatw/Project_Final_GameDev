@@ -1,5 +1,5 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1791455473
+::res://::1791470866
 01 - Wavelengths - Wavelenghts.ogg::AudioStreamOggVorbis::305794995737819180::1791299370::1791299425::1::::<><><>0<>0<>cdcd42fe60745165437ffb86ddb29363<>res://.godot/imported/01 - Wavelengths - Wavelenghts.ogg-b9e689280f6e45d61d0ac683df22151b.oggvorbisstr::
 02 - Kukoo - kuokoo.ogg::AudioStreamOggVorbis::4856466570031420469::1791299370::1791299425::1::::<><><>0<>0<>4a22b7d7bc8c9280e9c96b58eb63e4b3<>res://.godot/imported/02 - Kukoo - kuokoo.ogg-9b1011d52b6b598468cc32249f5f8699.oggvorbisstr::
 03 - spook-fi - Spook-Fi.ogg::AudioStreamOggVorbis::489726493648091151::1791299370::1791299425::1::::<><><>0<>0<>b706f1a56ef47af68db5a05e91fcc092<>res://.godot/imported/03 - spook-fi - Spook-Fi.ogg-414351daa6e9d059e88fb6447e6b2d87.oggvorbisstr::
@@ -13,7 +13,7 @@
 Grass.jpg::CompressedTexture2D::8758703034715069650::1791299371::1791299426::1::::<><><>0<>0<>004fdd203e0d34afdd1fc18bbfdf96eb<>res://.godot/imported/Grass.jpg-a4e8f1e686036a507eda5451d19ab92c.s3tc.ctex::
 Horror.png::CompressedTexture2D::3340580385782250139::1791299371::1791299426::1::::<><><>0<>0<>ec23bc548f66feed599876a938e59c53<>res://.godot/imported/Horror.png-a7ad3777a736cd410851bf970e1102b8.s3tc.ctex::
 icon.svg::CompressedTexture2D::1302822273084641005::1791299372::1791299372::1::::<><><>0<>0<>134bedc47880350765b199bac62e9605<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-LICENSE.txt::TextFile::-1::1791449306::0::1::::<><><>0<>0<><>::
+LICENSE.txt::TextFile::-1::1791456113::0::1::::<><><>0<>0<><>::
 Read Me.txt::TextFile::-1::1791299371::0::1::::<><><>0<>0<><>::
 Readme.txt::TextFile::-1::1791299371::0::1::::<><><>0<>0<><>::
 ::res://addons/::1791299397
@@ -47,8 +47,8 @@ controllerdemo.gd::GDScript::4510230610367753585::1791299371::0::1::::<>PanelCon
 Demo.tscn::PackedScene::1087907553036542938::1791299371::0::1::::<><><>0<>0<><>::uid://u6ne0kbosod1::::res://addons/time_day_night/demo/Tileset Spring.png<>uid://cviy0v5ccf0lp::::res://addons/time_day_night/time_ui.gd<>uid://drotx7icj3xw5::::res://addons/time_day_night/time_system_ui_node.tscn<>uid://714n22lqgq2d::::res://addons/time_day_night/time_system_ui.gd<>uid://cdsujx7shrcgo::::res://addons/time_day_night/day_night.gd<>uid://dy6t3ck0xhv8p::::res://addons/time_day_night/outdoorcamera.gd<>uid://b5xiie10kqdre::::res://addons/time_day_night/light_control.tscn<>uid://dqypivfdtjr6c::::res://addons/time_day_night/Shadows.tscn<>uid://b2uypgywsrd0p::::res://addons/time_day_night/ShadowShader.gdshader<>uid://bxymcfxsb4gvh::::res://addons/time_day_night/shadows.gd<>uid://bxssa0gowpv6c::::res://addons/time_day_night/demo/Idle.png<>uid://b5i13sd56sv2h::::res://addons/time_day_night/demo/controllerdemo.gd
 Idle.png::CompressedTexture2D::4039017115829408524::1791299371::1791299425::1::::<><><>0<>0<>a3ae8096ecc65ba6e5439958c99b1509<>res://.godot/imported/Idle.png-f65f78987a81d9b50c1af9fd6f780206.ctex::
 Tileset Spring.png::CompressedTexture2D::1468570375814750024::1791299371::1791299425::1::::<><><>0<>0<>788df9f4c5400610fd94e0b9e0919d4e<>res://.godot/imported/Tileset Spring.png-ce784e4d9a292aa242789f125331f0b3.ctex::
-::res://asset/::1791455473
-Forest.glb::PackedScene::3784412547042043830::1791307173::1791453980::1::::<><><>0<>0<>630573127fff16142b8a5a9ac63f03d6<>res://.godot/imported/Forest.glb-4f22a6b724c253de35a9dbd4a6ab91b2.scn::uid://c5o11n4g6ckmo::::res://asset/Forest_0.jpg<>uid://cteqyluwfulxp::::res://asset/Forest_1.png<>uid://dncet4015sd04::::res://asset/Forest_2.png<>uid://bmi4krbfqsdbh::::res://asset/Forest_3.png<>uid://dafme5216ov24::::res://asset/Forest_4.png<>uid://c0enrji7qgkwo::::res://asset/Forest_5.png<>uid://52qr5cwpg6g4::::res://asset/Forest_6.png
+::res://asset/::1791455474
+Forest.glb::PackedScene::3784412547042043830::1791307173::1791453980::1::::<><><>0<>0<>630573127fff16142b8a5a9ac63f03d6<>res://.godot/imported/Forest.glb-4f22a6b724c253de35a9dbd4a6ab91b2.scn::
 Forest_0.jpg::CompressedTexture2D::6909033765454475342::1791453979::1791453980::1::::<><><>0<>0<>a1d0ad523a08ffd83eb93adf5f8b0a47<>res://.godot/imported/Forest_0.jpg-46ff889585bfc7329180ae7e89ceafc1.s3tc.ctex::
 Forest_1.png::CompressedTexture2D::6115701848123037945::1791453979::1791453980::1::::<><><>0<>0<>6a3375619f91fb1de900e430e1217eab<>res://.godot/imported/Forest_1.png-6c7787bf132ec519c35985b16bcf2834.s3tc.ctex::
 Forest_2.png::CompressedTexture2D::8076124134956490091::1791453979::1791453980::1::::<><><>0<>0<>168c8d0e961722c1c00fd3c87d39c667<>res://.godot/imported/Forest_2.png-6f2d84b8053e539a62bfc8b3122d451b.s3tc.ctex::
@@ -57,6 +57,8 @@ Forest_4.png::CompressedTexture2D::7170321305571965671::1791453979::1791453980::
 Forest_5.png::CompressedTexture2D::6536640135299747794::1791453979::1791453980::1::::<><><>0<>0<>a9c74eac3a78ae5ca78121695141ef81<>res://.godot/imported/Forest_5.png-31f5d6a0cd607db41c5acf06a660f7d3.s3tc.ctex::
 Forest_6.png::CompressedTexture2D::2162406918691241541::1791453979::1791453980::1::::<><><>0<>0<>43a4d580d1f5b6dc7f045dd5b9c3530d<>res://.godot/imported/Forest_6.png-21c82a7add3ecdd806f9a9dc0f58f4c8.s3tc.ctex::
 Ghost-creture.glb::PackedScene::6432104331762486168::1791455425::1791455474::1::::<><><>0<>0<>9ba0623ace1bfa942d646ae366471267<>res://.godot/imported/Ghost-creture.glb-8057b464937be0577936da21a37f4add.scn::uid://bt8mj30d3n15d::::res://asset/Ghost-creture_0.png<>uid://bepc47k2y53pd::::res://asset/Ghost-creture_1.png
+Ghost-creture_0.png::CompressedTexture2D::3788879364206210735::1791455473::1791455474::1::::<><><>0<>0<>685a6ac8d5561c7684237e0f805edfe7<>res://.godot/imported/Ghost-creture_0.png-f9a0f6aa8fa91837172c8bb2851507b3.s3tc.ctex::
+Ghost-creture_1.png::CompressedTexture2D::2698316644020191425::1791455474::1791455474::1::::<><><>0<>0<>862fcc62be1683671d26f7188b762361<>res://.godot/imported/Ghost-creture_1.png-826021258b5403e85716c027cd896fe8.s3tc.ctex::
 Ghost-girl.glb::PackedScene::4058850219479837682::1791307881::1791454205::1::::<><><>0<>0<>b1e3c4d65849596163c5dada8cba334d<>res://.godot/imported/Ghost-girl.glb-7e473a9a8bc0eba460234d0661188407.scn::uid://bmye8dj4oj4xc::::res://asset/Ghost-girl_7.png<>uid://bpq8fk48xbfp0::::res://asset/Ghost-girl_2.png<>uid://donlx51iexpys::::res://asset/Ghost-girl_3.png<>uid://b61k0er8q8bra::::res://asset/Ghost-girl_4.png
 Ghost-girl_0.png::CompressedTexture2D::7753762990377716883::1791454201::1791454201::1::::<><><>0<>0<>ce9b239ce159de3977ab390f8085ec9f<>res://.godot/imported/Ghost-girl_0.png-4d6e3cc6d38086f9b0e3d4599c7a0242.ctex::
 Ghost-girl_1.png::CompressedTexture2D::163562502847185243::1791454201::1791454201::1::::<><><>0<>0<>4cd570a7b392da74436df43da6dbf31e<>res://.godot/imported/Ghost-girl_1.png-b0a445dbc9ddc3193b4aa7875a35c620.ctex::
@@ -83,8 +85,6 @@ Object-watchtower.glb::PackedScene::6038503283633440::1791449946::1791454297::1:
 Object-watchtower_0.png::CompressedTexture2D::8264115799322630715::1791454296::1791454297::1::::<><><>0<>0<>a874f9cebccc335b38630314565823f9<>res://.godot/imported/Object-watchtower_0.png-ea4b776c3e55d62bc8dca9f69ed7bdeb.s3tc.ctex::
 Object-watchtower_1.png::CompressedTexture2D::8375855557495249861::1791454296::1791454297::1::::<><><>0<>0<>94b281cd8d8a13debbc920797ff88fcd<>res://.godot/imported/Object-watchtower_1.png-b74b8d687a8227a5e4f08e9b82f59f9f.s3tc.ctex::
 Object-watchtower_2.png::CompressedTexture2D::234358415544371636::1791454297::1791454297::1::::<><><>0<>0<>d882e0cde5d250963f231bda6a962acb<>res://.godot/imported/Object-watchtower_2.png-75adde352eb5e0f229252012906fbc1d.s3tc.ctex::
-Ghost-creture_0.png::CompressedTexture2D::3788879364206210735::1791455473::1791455474::1::::<><><>0<>0<>685a6ac8d5561c7684237e0f805edfe7<>res://.godot/imported/Ghost-creture_0.png-f9a0f6aa8fa91837172c8bb2851507b3.s3tc.ctex::
-Ghost-creture_1.png::CompressedTexture2D::2698316644020191425::1791455474::1791455474::1::::<><><>0<>0<>862fcc62be1683671d26f7188b762361<>res://.godot/imported/Ghost-creture_1.png-826021258b5403e85716c027cd896fe8.s3tc.ctex::
 ::res://asset/Human/::1791299429
 Adventurer.fbx::PackedScene::3012870666367065404::1791299371::1791299428::1::::<><><>0<>0<>85f5dcc9dc78013655dac37f1cda6b5f<>res://.godot/imported/Adventurer.fbx-350257536f1ba3cdb2cf5f511be85783.scn::
 Casual_Hoodie.fbx::PackedScene::1340152669431266394::1791299371::1791299429::1::::<><><>0<>0<>5b3f5ae85b44689cbc2a746c22d92d60<>res://.godot/imported/Casual_Hoodie.fbx-334b0a28ebfd34a94d036b9709d3e2c4.scn::
@@ -149,8 +149,8 @@ TexturePreview.gd::GDScript::5337053893109473019::1791299371::0::1::::TexturePre
 Texture_preview.glsl::RDShaderFile::8457158349495723588::1791299371::1791299425::1::::<><><>0<>0<>e9eb497be156bcaa7d33d6e803004664<>res://.godot/imported/Texture_preview.glsl-f15bd38944e6a642db90b8585a6a41ee.res::
 ::res://Compositor/General/Includes/::1791299397
 scene_data.glsl::::-1::1791299371::1791299371::0::::<><><>0<>0<>eee310571a4cbc4a9673c1f44f9e584b<>::
-::res://Scenes/::1791455269
-level.tscn::PackedScene::8858109991488563779::1791455269::0::1::::<><><>0<>0<><>::uid://b6no1rx3nmb6g::::res://Scenes/player.tscn<>uid://baq46e6wl6fl0::::res://asset/Ghost-grandpa.glb<>uid://c6pn8g2j5my::::res://asset/Object-watchtower.glb<>uid://bt6gysljnshgo::::res://asset/Forest.glb<>uid://c8b40uywpg50p::::res://asset/Ghost-sirenhead.glb<>uid://crttehgacdelm::::res://asset/Ghost-smily.glb<>uid://bx3ew1v8kpwt3::::res://asset/Ghost-girl.glb
+::res://Scenes/::1791470847
+level.tscn::PackedScene::8858109991488563779::1791470847::0::1::::<><><>0<>0<><>::uid://b6no1rx3nmb6g::::res://Scenes/player.tscn<>uid://baq46e6wl6fl0::::res://asset/Ghost-grandpa.glb<>uid://c6pn8g2j5my::::res://asset/Object-watchtower.glb<>uid://bt6gysljnshgo::::res://asset/Forest.glb<>uid://c8b40uywpg50p::::res://asset/Ghost-sirenhead.glb<>uid://crttehgacdelm::::res://asset/Ghost-smily.glb<>uid://cxv023klhr00k::::res://asset/Ghost-creture.glb<>uid://bx3ew1v8kpwt3::::res://asset/Ghost-girl.glb
 main_menu.gd::GDScript::2199244493428255851::1791308457::0::1::::<>Control<><>0<>0<><>::
 main_menu.tscn::PackedScene::905860353928489991::1791308457::0::1::::<><><>0<>0<><>::uid://6lliah263ir0::::res://Scenes/main_menu.gd
 plant_jello_bush_slim.tscn::PackedScene::2778393652266986340::1791299371::0::1::::<><><>0<>0<><>::res://Foliage Sample Pack/Materials/JelloBush.tres
