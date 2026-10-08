@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmi4krbfqsdbh"
-path.s3tc="res://.godot/imported/Forest_3.png-497811b27de109f39d4d69d5ff12d17d.s3tc.ctex"
+uid="uid://ck7ekf5oi30kb"
+path.s3tc="res://.godot/imported/Ghost-smily_0.png-154d60a1106549501082bc6db64e88c7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "5065c1e7788dd442b3bafd19a01b72fe"
+"md5": "df49a58a79ab64fdc6f7da9d467a1fd9"
 }
 
 [deps]
 
-source_file="res://asset/Forest_3.png"
-dest_files=["res://.godot/imported/Forest_3.png-497811b27de109f39d4d69d5ff12d17d.s3tc.ctex"]
+source_file="res://asset/Ghost-smily_0.png"
+dest_files=["res://.godot/imported/Ghost-smily_0.png-154d60a1106549501082bc6db64e88c7.s3tc.ctex"]
 
 [params]
 

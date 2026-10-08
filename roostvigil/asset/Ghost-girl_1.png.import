@@ -2,35 +2,34 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8l8w1i33pm78"
-path.s3tc="res://.godot/imported/ghost_girl_animated_2.png-a53887547cd1dfe91d6942a5c55d5280.s3tc.ctex"
+uid="uid://clh36hbldtg2"
+path="res://.godot/imported/Ghost-girl_1.png-b0a445dbc9ddc3193b4aa7875a35c620.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
-"md5": "097bb0c828e621c67011f04f482f8301"
+"md5": "fd304a5c56120900338224a548068c64"
 }
 
 [deps]
 
-source_file="res://asset/ghost_girl_animated_2.png"
-dest_files=["res://.godot/imported/ghost_girl_animated_2.png-a53887547cd1dfe91d6942a5c55d5280.s3tc.ctex"]
+source_file="res://asset/Ghost-girl_1.png"
+dest_files=["res://.godot/imported/Ghost-girl_1.png-b0a445dbc9ddc3193b4aa7875a35c620.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=1
+compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=1
-roughness/src_normal="res://asset/ghost_girl_animated_2.png"
+roughness/mode=0
+roughness/src_normal=""
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
@@ -41,4 +40,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

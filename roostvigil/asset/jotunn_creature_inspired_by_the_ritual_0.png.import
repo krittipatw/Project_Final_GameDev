@@ -2,23 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgnafrq8qh4du"
-path="res://.godot/imported/ghost_girl_animated_6.png-96f1a3a89aa4d5b7c69810300eee0f79.ctex"
+uid="uid://c7rgfgembegnb"
+path.s3tc="res://.godot/imported/jotunn_creature_inspired_by_the_ritual_0.png-f323c865de7b503ed037f61c7033a2d0.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
-"md5": "d558cf8f608fb8bf0c57a9cc5c05dfee"
+"md5": "a2ecbc2c639e9987cde62017182328bd"
 }
 
 [deps]
 
-source_file="res://asset/ghost_girl_animated_6.png"
-dest_files=["res://.godot/imported/ghost_girl_animated_6.png-96f1a3a89aa4d5b7c69810300eee0f79.ctex"]
+source_file="res://asset/jotunn_creature_inspired_by_the_ritual_0.png"
+dest_files=["res://.godot/imported/jotunn_creature_inspired_by_the_ritual_0.png-f323c865de7b503ed037f61c7033a2d0.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

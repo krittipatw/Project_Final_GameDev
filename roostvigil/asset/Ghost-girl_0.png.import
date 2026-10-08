@@ -2,19 +2,19 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://q5h1lvfq1vqd"
-path="res://.godot/imported/ghost_girl_animated_5.png-fdd58b33bca9e05fd96262ddca693f72.ctex"
+uid="uid://dip8lxhl33qpv"
+path="res://.godot/imported/Ghost-girl_0.png-4d6e3cc6d38086f9b0e3d4599c7a0242.ctex"
 metadata={
 "vram_texture": false
 }
 generator_parameters={
-"md5": "bd60fafa8b80fb553a7664701cd440b7"
+"md5": "a05be80d654410339b22baaf51d02bab"
 }
 
 [deps]
 
-source_file="res://asset/ghost_girl_animated_5.png"
-dest_files=["res://.godot/imported/ghost_girl_animated_5.png-fdd58b33bca9e05fd96262ddca693f72.ctex"]
+source_file="res://asset/Ghost-girl_0.png"
+dest_files=["res://.godot/imported/Ghost-girl_0.png-4d6e3cc6d38086f9b0e3d4599c7a0242.ctex"]
 
 [params]
 

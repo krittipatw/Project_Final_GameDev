@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cso3lg3wwomae"
-path.s3tc="res://.godot/imported/forest_1.png-afab27c221fb3deacab7f09273cc7388.s3tc.ctex"
+uid="uid://cteqyluwfulxp"
+path.s3tc="res://.godot/imported/Forest_1.png-6c7787bf132ec519c35985b16bcf2834.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://asset/forest_1.png"
-dest_files=["res://.godot/imported/forest_1.png-afab27c221fb3deacab7f09273cc7388.s3tc.ctex"]
+source_file="res://asset/Forest_1.png"
+dest_files=["res://.godot/imported/Forest_1.png-6c7787bf132ec519c35985b16bcf2834.s3tc.ctex"]
 
 [params]
 

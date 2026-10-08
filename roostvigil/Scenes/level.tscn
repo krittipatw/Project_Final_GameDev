@@ -1,14 +1,19 @@
 [gd_scene format=3 uid="uid://dyg61ov5r7dt8"]
 
-[ext_resource type="Texture2D" uid="uid://cq0bebl4fcumr" path="res://asset/forest_3.png" id="1_0f350"]
 [ext_resource type="PackedScene" uid="uid://b6no1rx3nmb6g" path="res://Scenes/player.tscn" id="1_6phgx"]
-[ext_resource type="PackedScene" uid="uid://ba0n1gbstodko" path="res://asset/Models/Tree_Juniper_Dead.fbx" id="2_81xng"]
-[ext_resource type="PackedScene" uid="uid://c6pn8g2j5my" path="res://asset/watch_tower_remastered_wide.glb" id="6_0f350"]
-[ext_resource type="PackedScene" uid="uid://bt6gysljnshgo" path="res://asset/forest.glb" id="6_8c0lf"]
-[ext_resource type="PackedScene" uid="uid://bx3ew1v8kpwt3" path="res://asset/ghost_girl_animated.glb" id="9_qxfql"]
+[ext_resource type="PackedScene" uid="uid://baq46e6wl6fl0" path="res://asset/Ghost-grandpa.glb" id="5_8c0lf"]
+[ext_resource type="PackedScene" uid="uid://c6pn8g2j5my" path="res://asset/Object-watchtower.glb" id="6_0f350"]
+[ext_resource type="PackedScene" uid="uid://bt6gysljnshgo" path="res://asset/Forest.glb" id="6_8c0lf"]
+[ext_resource type="PackedScene" uid="uid://c8b40uywpg50p" path="res://asset/Ghost-sirenhead.glb" id="6_754fn"]
+[ext_resource type="PackedScene" uid="uid://crttehgacdelm" path="res://asset/Ghost-smily.glb" id="7_bvt00"]
+[ext_resource type="PackedScene" uid="uid://cxv023klhr00k" path="res://asset/Ghost-creture.glb" id="8_754fn"]
+[ext_resource type="PackedScene" uid="uid://bx3ew1v8kpwt3" path="res://asset/Ghost-girl.glb" id="9_qxfql"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_81xng"]
+load_path = "res://.godot/imported/forest_3.png-1966708644e72404e68e53d61486d946.s3tc.ctex"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_754fn"]
-albedo_texture = ExtResource("1_0f350")
+albedo_texture = SubResource("CompressedTexture2D_81xng")
 
 [sub_resource type="BoxMesh" id="BoxMesh_13qdw"]
 size = Vector3(1, 1.1445313, 1)
@@ -36,16 +41,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.438644, 0)
 shape = SubResource("BoxShape3D_xrivr")
 
 [node name="player" parent="." unique_id=2047164040 instance=ExtResource("1_6phgx")]
-transform = Transform3D(-0.012667775, 0, 0.73989934, 0, 0.74000776, 0, -0.73989934, 0, -0.012667775, 0.4791601, 8.918131, 2.7486799)
+transform = Transform3D(-0.012667775, 0, 0.73989934, 0, 0.74000776, 0, -0.73989934, 0, -0.012667775, -1.577882, 8.918131, -1.4371951)
 
-[node name="Tree_Juniper_Dead" parent="." unique_id=54487634 instance=ExtResource("2_81xng")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8260818, 0.19321585, -13.08049)
-
-[node name="Forest_Scene" parent="." unique_id=628709874 instance=ExtResource("6_8c0lf")]
+[node name="Forest" parent="." unique_id=628709874 instance=ExtResource("6_8c0lf")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -33.12163, -1.7588768, -38.866257)
 
-[node name="Sketchfab_Scene" parent="." unique_id=174685549 instance=ExtResource("9_qxfql")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.191164, 0.32797813, -4.46562)
+[node name="Obiect-WatchTower" parent="." unique_id=1190922382 instance=ExtResource("6_0f350")]
+transform = Transform3D(-0.9862619, 0, 0.16518913, 0, 1, 0, -0.16518913, 0, -0.9862619, -1.0379814, -1.7136917, -0.58840203)
 
-[node name="Sketchfab_Scene2" parent="." unique_id=1190922382 instance=ExtResource("6_0f350")]
-transform = Transform3D(-0.017118454, 0, 0.9998535, 0, 1, 0, -0.9998535, 0, -0.017118454, -1.0379814, -1.7136917, -0.58840203)
+[node name="Ghost-Girl" parent="." unique_id=174685549 instance=ExtResource("9_qxfql")]
+transform = Transform3D(0.41929263, 0, 0.90785116, 0, 1, 0, -0.90785116, 0, 0.41929263, -12.191164, -1.5759764, -4.46562)
+
+[node name="Ghost-Grandpa" parent="." unique_id=1588729380 instance=ExtResource("5_8c0lf")]
+transform = Transform3D(40, 0, 0, 0, 40, 0, 0, 0, 40, -7.152791, -4.513051, -4.7545195)
+
+[node name="Ghost-SirenHead" parent="." unique_id=2073323314 instance=ExtResource("6_754fn")]
+transform = Transform3D(1.345126, 0, 4.8156657, 0, 5, 0, -4.8156657, 0, 1.345126, -11.49585, -3.5976667, -14.889917)
+
+[node name="Ghost-Slimy" parent="." unique_id=1892204089 instance=ExtResource("7_bvt00")]
+transform = Transform3D(0.002721556, -0.00072210975, 0.009595399, 0.0001970406, 0.009973894, 0.00069470674, -0.009620515, 0, 0.0027286795, -11.967955, -1.6018152, -4.3986874)
+
+[node name="Ghost-Creture" parent="." unique_id=222081185 instance=ExtResource("8_754fn")]
+transform = Transform3D(0.10359892, 0, 0.69229126, 0, 0.7, 0, -0.69229126, 0, 0.10359892, -12.195056, -1.8318882, -6.279886)

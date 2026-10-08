@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bt6gysljnshgo"
-path="res://.godot/imported/Forest.glb-4f22a6b724c253de35a9dbd4a6ab91b2.scn"
+uid="uid://c8b40uywpg50p"
+path="res://.godot/imported/Ghost-sirenhead.glb-0a6c482528906d8a7dbc9782288c6654.scn"
 
 [deps]
 
-source_file="res://asset/Forest.glb"
-dest_files=["res://.godot/imported/Forest.glb-4f22a6b724c253de35a9dbd4a6ab91b2.scn"]
+source_file="res://asset/Ghost-sirenhead.glb"
+dest_files=["res://.godot/imported/Ghost-sirenhead.glb-0a6c482528906d8a7dbc9782288c6654.scn"]
 
 [params]
 

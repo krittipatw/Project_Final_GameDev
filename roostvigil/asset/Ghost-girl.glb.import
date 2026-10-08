@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bt6gysljnshgo"
-path="res://.godot/imported/Forest.glb-4f22a6b724c253de35a9dbd4a6ab91b2.scn"
+uid="uid://bx3ew1v8kpwt3"
+path="res://.godot/imported/Ghost-girl.glb-7e473a9a8bc0eba460234d0661188407.scn"
 
 [deps]
 
-source_file="res://asset/Forest.glb"
-dest_files=["res://.godot/imported/Forest.glb-4f22a6b724c253de35a9dbd4a6ab91b2.scn"]
+source_file="res://asset/Ghost-girl.glb"
+dest_files=["res://.godot/imported/Ghost-girl.glb-7e473a9a8bc0eba460234d0661188407.scn"]
 
 [params]
 

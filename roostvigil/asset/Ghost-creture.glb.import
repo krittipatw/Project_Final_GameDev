@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bt6gysljnshgo"
-path="res://.godot/imported/Forest.glb-4f22a6b724c253de35a9dbd4a6ab91b2.scn"
+uid="uid://cxv023klhr00k"
+path="res://.godot/imported/Ghost-creture.glb-8057b464937be0577936da21a37f4add.scn"
 
 [deps]
 
-source_file="res://asset/Forest.glb"
-dest_files=["res://.godot/imported/Forest.glb-4f22a6b724c253de35a9dbd4a6ab91b2.scn"]
+source_file="res://asset/Ghost-creture.glb"
+dest_files=["res://.godot/imported/Ghost-creture.glb-8057b464937be0577936da21a37f4add.scn"]
 
 [params]
 

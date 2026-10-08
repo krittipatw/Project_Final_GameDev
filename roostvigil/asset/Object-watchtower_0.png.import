@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmi4krbfqsdbh"
-path.s3tc="res://.godot/imported/Forest_3.png-497811b27de109f39d4d69d5ff12d17d.s3tc.ctex"
+uid="uid://dp0g1rp0nybf4"
+path.s3tc="res://.godot/imported/Object-watchtower_0.png-ea4b776c3e55d62bc8dca9f69ed7bdeb.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "5065c1e7788dd442b3bafd19a01b72fe"
+"md5": "bdcbb3915f8eee50032f6fbd7058dced"
 }
 
 [deps]
 
-source_file="res://asset/Forest_3.png"
-dest_files=["res://.godot/imported/Forest_3.png-497811b27de109f39d4d69d5ff12d17d.s3tc.ctex"]
+source_file="res://asset/Object-watchtower_0.png"
+dest_files=["res://.godot/imported/Object-watchtower_0.png-ea4b776c3e55d62bc8dca9f69ed7bdeb.s3tc.ctex"]
 
 [params]
 

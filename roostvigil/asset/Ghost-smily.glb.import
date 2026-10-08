@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bt6gysljnshgo"
-path="res://.godot/imported/Forest.glb-4f22a6b724c253de35a9dbd4a6ab91b2.scn"
+uid="uid://crttehgacdelm"
+path="res://.godot/imported/Ghost-smily.glb-ed4bb0a81eab510101a01fbed73b4682.scn"
 
 [deps]
 
-source_file="res://asset/Forest.glb"
-dest_files=["res://.godot/imported/Forest.glb-4f22a6b724c253de35a9dbd4a6ab91b2.scn"]
+source_file="res://asset/Ghost-smily.glb"
+dest_files=["res://.godot/imported/Ghost-smily.glb-ed4bb0a81eab510101a01fbed73b4682.scn"]
 
 [params]
 

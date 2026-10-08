@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bx3ew1v8kpwt3"
-path="res://.godot/imported/ghost_girl_animated.glb-fe9293400aed430c86e4fa15b6b049f5.scn"
+uid="uid://baq46e6wl6fl0"
+path="res://.godot/imported/Ghost-grandpa.glb-ee982926e58c9d162b223cfa3139d9f3.scn"
 
 [deps]
 
-source_file="res://asset/ghost_girl_animated.glb"
-dest_files=["res://.godot/imported/ghost_girl_animated.glb-fe9293400aed430c86e4fa15b6b049f5.scn"]
+source_file="res://asset/Ghost-grandpa.glb"
+dest_files=["res://.godot/imported/Ghost-grandpa.glb-ee982926e58c9d162b223cfa3139d9f3.scn"]
 
 [params]
 

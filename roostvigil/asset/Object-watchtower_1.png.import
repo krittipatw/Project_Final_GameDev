@@ -2,23 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n5j1wcjavbam"
-path="res://.godot/imported/ghost_girl_animated_8.png-9127199c574d50d85f6b8d647e5c72b8.ctex"
+uid="uid://drlld8ur0dsm4"
+path.s3tc="res://.godot/imported/Object-watchtower_1.png-b74b8d687a8227a5e4f08e9b82f59f9f.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
-"md5": "71541d1c7d0fe43e94d2a2fa03f6cd48"
+"md5": "be4bdf17fd45a738e1ac0b8ebb8fd8ad"
 }
 
 [deps]
 
-source_file="res://asset/ghost_girl_animated_8.png"
-dest_files=["res://.godot/imported/ghost_girl_animated_8.png-9127199c574d50d85f6b8d647e5c72b8.ctex"]
+source_file="res://asset/Object-watchtower_1.png"
+dest_files=["res://.godot/imported/Object-watchtower_1.png-b74b8d687a8227a5e4f08e9b82f59f9f.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -28,8 +29,8 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=8
+roughness/src_normal="res://asset/Object-watchtower_2.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

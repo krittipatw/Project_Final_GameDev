@@ -2,24 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmi4krbfqsdbh"
-path.s3tc="res://.godot/imported/Forest_3.png-497811b27de109f39d4d69d5ff12d17d.s3tc.ctex"
+uid="uid://bdttf868nqapv"
+path="res://.godot/imported/Ghost-girl_8.png-849afe8903ee4420eb20d490af7a1692.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
-"md5": "5065c1e7788dd442b3bafd19a01b72fe"
+"md5": "71541d1c7d0fe43e94d2a2fa03f6cd48"
 }
 
 [deps]
 
-source_file="res://asset/Forest_3.png"
-dest_files=["res://.godot/imported/Forest_3.png-497811b27de109f39d4d69d5ff12d17d.s3tc.ctex"]
+source_file="res://asset/Ghost-girl_8.png"
+dest_files=["res://.godot/imported/Ghost-girl_8.png-849afe8903ee4420eb20d490af7a1692.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -41,4 +40,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

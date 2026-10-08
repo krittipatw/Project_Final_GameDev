@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c6pn8g2j5my"
-path="res://.godot/imported/watch_tower_remastered_wide.glb-2880ba4306f7b09bf08448c869b227ca.scn"
+path="res://.godot/imported/Object-watchtower.glb-6ed1a5285ef1798827957840a7aa63e2.scn"
 
 [deps]
 
-source_file="res://asset/watch_tower_remastered_wide.glb"
-dest_files=["res://.godot/imported/watch_tower_remastered_wide.glb-2880ba4306f7b09bf08448c869b227ca.scn"]
+source_file="res://asset/Object-watchtower.glb"
+dest_files=["res://.godot/imported/Object-watchtower.glb-6ed1a5285ef1798827957840a7aa63e2.scn"]
 
 [params]
 
