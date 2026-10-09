@@ -1,6 +1,6 @@
-Camera3D
-WorldEnvironment
 CollisionShape3D
 CharacterBody3D
+Camera3D
+WorldEnvironment
 StaticBody3D
 MeshInstance3D

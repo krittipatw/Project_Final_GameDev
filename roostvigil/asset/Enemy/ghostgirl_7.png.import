@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drgpnjiyp5qa1"
-path.s3tc="res://.godot/imported/radio_1.png-00b4bd06a626012a0e68b7d47e0df377.s3tc.ctex"
+uid="uid://b0rngomym4kx8"
+path.s3tc="res://.godot/imported/ghostgirl_7.png-b6ab8f08772bcdfdf39ecec75a93af65.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f40bb88e8c0054f4c6aa18ae4b035c1a"
+"md5": "3c960d9ae414ebf459f896cedcf81a9b"
 }
 
 [deps]
 
-source_file="res://asset/Object/Texture/radio_1.png"
-dest_files=["res://.godot/imported/radio_1.png-00b4bd06a626012a0e68b7d47e0df377.s3tc.ctex"]
+source_file="res://asset/Enemy/ghostgirl_7.png"
+dest_files=["res://.godot/imported/ghostgirl_7.png-b6ab8f08772bcdfdf39ecec75a93af65.s3tc.ctex"]
 
 [params]
 
@@ -25,12 +25,12 @@ compress/lossy_quality=0.7
 compress/uastc_level=0
 compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
-compress/normal_map=0
+compress/normal_map=1
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=8
-roughness/src_normal="res://asset/Object/radio_2.png"
+roughness/mode=1
+roughness/src_normal="res://asset/Enemy/ghostgirl_7.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

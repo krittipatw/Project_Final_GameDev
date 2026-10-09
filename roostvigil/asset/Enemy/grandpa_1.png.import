@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drgpnjiyp5qa1"
-path.s3tc="res://.godot/imported/radio_1.png-00b4bd06a626012a0e68b7d47e0df377.s3tc.ctex"
+uid="uid://bwll0qla2cns3"
+path.s3tc="res://.godot/imported/grandpa_1.png-a72d3bf71502298cd273b921528d63a7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f40bb88e8c0054f4c6aa18ae4b035c1a"
+"md5": "d1316a1c2e95d60fb8b95f803c0734ac"
 }
 
 [deps]
 
-source_file="res://asset/Object/Texture/radio_1.png"
-dest_files=["res://.godot/imported/radio_1.png-00b4bd06a626012a0e68b7d47e0df377.s3tc.ctex"]
+source_file="res://asset/Enemy/grandpa_1.png"
+dest_files=["res://.godot/imported/grandpa_1.png-a72d3bf71502298cd273b921528d63a7.s3tc.ctex"]
 
 [params]
 
@@ -29,8 +29,8 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=8
-roughness/src_normal="res://asset/Object/radio_2.png"
+roughness/mode=0
+roughness/src_normal=""
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2
