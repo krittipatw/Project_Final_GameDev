@@ -1,6 +1,10 @@
-Camera3D
-WorldEnvironment
-CollisionShape3D
-CharacterBody3D
-StaticBody3D
 MeshInstance3D
+StaticBody3D
+CollisionShape3D
+Label
+DirectionalLight3D
+WorldEnvironment
+Camera3D
+Node3D
+CharacterBody3D
+CSGBox3D

@@ -2,7 +2,7 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://syvnwliq628g"
+uid="uid://bu7hxsvh6oga0"
 path.s3tc="res://.godot/imported/WatchTower_2.png-5988c60c49a31ee93f4073683f38a24b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
@@ -30,7 +30,7 @@ compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=1
-roughness/src_normal="res://asset/WatchTower_2.png"
+roughness/src_normal="res://asset/Platform/WatchTower_2.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

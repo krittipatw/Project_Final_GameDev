@@ -2,23 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpf4h4r6wu1tf"
-path="res://.godot/imported/radio_3.png-93bfafa3f2e8cd1797039b88052e5808.ctex"
+uid="uid://dfs407oagjf60"
+path.s3tc="res://.godot/imported/forest_2.png-4f43e42790e1075a598e71dfe17ef47f.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
-"md5": "deb1e1e415bca9bbef21843fe2557144"
+"md5": "002724e2c1976c1837fc756b28a73feb"
 }
 
 [deps]
 
-source_file="res://asset/Object/radio_3.png"
-dest_files=["res://.godot/imported/radio_3.png-93bfafa3f2e8cd1797039b88052e5808.ctex"]
+source_file="res://asset/Platform/Texture/forest_2.png"
+dest_files=["res://.godot/imported/forest_2.png-4f43e42790e1075a598e71dfe17ef47f.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

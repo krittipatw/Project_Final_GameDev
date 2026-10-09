@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://boavu1r15ksm1"]
+
+[ext_resource type="PackedScene" uid="uid://c6pn8g2j5my" path="res://asset/Platform/WatchTower.glb" id="1_fqjbj"]
+
+[node name="Sketchfab_Scene" unique_id=2069175028 instance=ExtResource("1_fqjbj")]
