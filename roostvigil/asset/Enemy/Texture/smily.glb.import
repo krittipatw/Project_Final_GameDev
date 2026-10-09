@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://crttehgacdelm"
-path="res://.godot/imported/smily.glb-a9f1602e2a7ad23a383ca06be3cbd9d8.scn"
+path="res://.godot/imported/smily.glb-fa6bd016ad68cf9cbab5680e43597641.scn"
 
 [deps]
 
-source_file="res://asset/Enemy/smily.glb"
-dest_files=["res://.godot/imported/smily.glb-a9f1602e2a7ad23a383ca06be3cbd9d8.scn"]
+source_file="res://asset/Enemy/Texture/smily.glb"
+dest_files=["res://.godot/imported/smily.glb-fa6bd016ad68cf9cbab5680e43597641.scn"]
 
 [params]
 
