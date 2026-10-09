@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://crttehgacdelm"
-path="res://.godot/imported/smily.glb-fa6bd016ad68cf9cbab5680e43597641.scn"
+uid="uid://bt6gysljnshgo"
+path="res://.godot/imported/forest.glb-e90d6eae4d2055efb2a9e9109cc8b1a7.scn"
 
 [deps]
 
-source_file="res://asset/Enemy/Texture/smily.glb"
-dest_files=["res://.godot/imported/smily.glb-fa6bd016ad68cf9cbab5680e43597641.scn"]
+source_file="res://asset/Platform/forest.glb"
+dest_files=["res://.godot/imported/forest.glb-e90d6eae4d2055efb2a9e9109cc8b1a7.scn"]
 
 [params]
 

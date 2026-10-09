@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://de7g7055oprac"
-path.s3tc="res://.godot/imported/radio_1.png-7c8a79065e0de5b0fba17a18170dcf3a.s3tc.ctex"
+uid="uid://b1syc2b05o74h"
+path.s3tc="res://.godot/imported/forest_2.png-4f43e42790e1075a598e71dfe17ef47f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f40bb88e8c0054f4c6aa18ae4b035c1a"
+"md5": "002724e2c1976c1837fc756b28a73feb"
 }
 
 [deps]
 
-source_file="res://asset/Object/radio_1.png"
-dest_files=["res://.godot/imported/radio_1.png-7c8a79065e0de5b0fba17a18170dcf3a.s3tc.ctex"]
+source_file="res://asset/Platform/Texture/forest_2.png"
+dest_files=["res://.godot/imported/forest_2.png-4f43e42790e1075a598e71dfe17ef47f.s3tc.ctex"]
 
 [params]
 
@@ -29,8 +29,8 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=8
-roughness/src_normal="res://asset/Object/radio_2.png"
+roughness/mode=0
+roughness/src_normal=""
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

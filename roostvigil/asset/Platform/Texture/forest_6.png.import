@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bwll0qla2cns3"
-path.s3tc="res://.godot/imported/grandpa_1.png-a72d3bf71502298cd273b921528d63a7.s3tc.ctex"
+uid="uid://btt7p2krfxdll"
+path.s3tc="res://.godot/imported/forest_6.png-f8f9988fd3a944f2735a21d7dee8523c.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "d1316a1c2e95d60fb8b95f803c0734ac"
+"md5": "0292367dc938f063c050356da5616a40"
 }
 
 [deps]
 
-source_file="res://asset/Enemy/grandpa_1.png"
-dest_files=["res://.godot/imported/grandpa_1.png-a72d3bf71502298cd273b921528d63a7.s3tc.ctex"]
+source_file="res://asset/Platform/Texture/forest_6.png"
+dest_files=["res://.godot/imported/forest_6.png-f8f9988fd3a944f2735a21d7dee8523c.s3tc.ctex"]
 
 [params]
 
