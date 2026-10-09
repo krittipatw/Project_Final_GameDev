@@ -38,13 +38,13 @@ size = Vector3(179.95549, 435.48218, 179.95549)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.79959, 0)
 
 [node name="player" parent="." unique_id=2047164040 instance=ExtResource("1_6phgx")]
-transform = Transform3D(-0.012667775, 0, 0.73989934, 0, 0.74000776, 0, -0.73989934, 0, -0.012667775, -1.7131617, 8.752688, -1.4785078)
+transform = Transform3D(-0.012667775, 0, 0.73989934, 0, 0.74000776, 0, -0.73989934, 0, -0.012667775, -1.7131617, 9.047896, -1.4785078)
 
 [node name="Forest" parent="." unique_id=628709874 instance=ExtResource("6_8c0lf")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -33.05035, -1.758873, -38.929073)
 
 [node name="Object_2" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(628709874, 765458911) index="0" unique_id=1982846368]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14872575, 0.5743525, 0.006350875)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.027553558, 0.06552935, 0.045775175)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_2" index="0" unique_id=1544042066]
 
@@ -68,6 +68,10 @@ shape = SubResource("CylinderShape3D_xrivr")
 
 [node name="CollisionShape3D19" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=384935883]
 transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, -0.41865683, 1.6647158, -3.7408147)
+shape = SubResource("CylinderShape3D_xrivr")
+
+[node name="CollisionShape3D57" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=2089622740]
+transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, -2.653253, 1.664716, -6.4413834)
 shape = SubResource("CylinderShape3D_xrivr")
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=495607689]
@@ -96,6 +100,30 @@ shape = SubResource("CylinderShape3D_xrivr")
 
 [node name="CollisionShape3D21" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=1036341273]
 transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, 5.6818466, 1.6347072, -0.44883108)
+shape = SubResource("CylinderShape3D_xrivr")
+
+[node name="CollisionShape3D37" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=1593739064]
+transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, 4.7334704, 1.6347072, 0.83576417)
+shape = SubResource("CylinderShape3D_xrivr")
+
+[node name="CollisionShape3D38" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=1501482340]
+transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, 3.8570874, 1.6347072, 0.4249637)
+shape = SubResource("CylinderShape3D_xrivr")
+
+[node name="CollisionShape3D39" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=1636432368]
+transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, 4.2644563, 1.6347072, 1.5653803)
+shape = SubResource("CylinderShape3D_xrivr")
+
+[node name="CollisionShape3D40" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=866086407]
+transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, 3.5617125, 1.6347072, 1.7895544)
+shape = SubResource("CylinderShape3D_xrivr")
+
+[node name="CollisionShape3D41" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=197783310]
+transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, 2.439728, 1.6347072, 2.0280125)
+shape = SubResource("CylinderShape3D_xrivr")
+
+[node name="CollisionShape3D42" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=170560650]
+transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, 2.03901, 1.6347072, 1.4079382)
 shape = SubResource("CylinderShape3D_xrivr")
 
 [node name="CollisionShape3D22" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=696496945]
@@ -174,6 +202,10 @@ shape = SubResource("CylinderShape3D_xrivr")
 transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, 2.2757144, 1.6347072, 0.74657893)
 shape = SubResource("CylinderShape3D_xrivr")
 
+[node name="CollisionShape3D43" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=1354644152]
+transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, 3.0658903, 1.6347072, -0.58701944)
+shape = SubResource("CylinderShape3D_xrivr")
+
 [node name="CollisionShape3D15" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=1558044046]
 transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, 1.0577159, 1.6347072, 0.27202916)
 shape = SubResource("CylinderShape3D_xrivr")
@@ -188,6 +220,74 @@ shape = SubResource("CylinderShape3D_xrivr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=1080528696]
 transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, 0.21799088, 1.6113368, -0.107503176)
+shape = SubResource("CylinderShape3D_xrivr")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=187428443]
+transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, -0.21096444, 1.611337, -1.0357242)
+shape = SubResource("CylinderShape3D_xrivr")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=35545393]
+transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, 0.51027465, 1.611337, -0.8842912)
+shape = SubResource("CylinderShape3D_xrivr")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=898826224]
+transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, 0.6761739, 1.611337, -1.564769)
+shape = SubResource("CylinderShape3D_xrivr")
+
+[node name="CollisionShape3D44" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=1303008161]
+transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, -0.8835325, 1.611337, -1.4296601)
+shape = SubResource("CylinderShape3D_xrivr")
+
+[node name="CollisionShape3D45" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=1289595385]
+transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, -1.0619984, 1.611337, -1.0240026)
+shape = SubResource("CylinderShape3D_xrivr")
+
+[node name="CollisionShape3D46" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=1204456652]
+transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, -1.9430323, 1.6611674, -1.3217983)
+shape = SubResource("CylinderShape3D_xrivr")
+
+[node name="CollisionShape3D47" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=1685495027]
+transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, -2.1763167, 1.6611674, -0.35349655)
+shape = SubResource("CylinderShape3D_xrivr")
+
+[node name="CollisionShape3D48" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=206903114]
+transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, -2.2993593, 1.6611674, -1.9692303)
+shape = SubResource("CylinderShape3D_xrivr")
+
+[node name="CollisionShape3D49" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=348180712]
+transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, -2.9942021, 1.6611674, -1.7681291)
+shape = SubResource("CylinderShape3D_xrivr")
+
+[node name="CollisionShape3D50" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=1198207418]
+transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, -3.9685802, 1.6611674, -1.9385939)
+shape = SubResource("CylinderShape3D_xrivr")
+
+[node name="CollisionShape3D51" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=1969098160]
+transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, -4.902657, 1.6611674, -2.1421785)
+shape = SubResource("CylinderShape3D_xrivr")
+
+[node name="CollisionShape3D52" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=1867150018]
+transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, -5.104362, 1.6611674, -1.6694589)
+shape = SubResource("CylinderShape3D_xrivr")
+
+[node name="CollisionShape3D53" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=1052958177]
+transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, -5.849027, 1.6611673, -2.2387128)
+shape = SubResource("CylinderShape3D_xrivr")
+
+[node name="Font" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=1455633648]
+transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, -7.0540137, 1.6611673, -3.1259084)
+shape = SubResource("CylinderShape3D_xrivr")
+
+[node name="CollisionShape3D55" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=391472283]
+transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, -7.3057685, 1.6611671, -1.0702062)
+shape = SubResource("CylinderShape3D_xrivr")
+
+[node name="CollisionShape3D56" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=1918335875]
+transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, -6.806067, 1.6611674, -1.5445981)
+shape = SubResource("CylinderShape3D_xrivr")
+
+[node name="CollisionShape3D54" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=697236197]
+transform = Transform3D(1, 0, 0, 0, 1, 3.5527137e-15, 0, -3.5527137e-15, 1, -7.6535554, 1.6611671, -0.6710324)
 shape = SubResource("CylinderShape3D_xrivr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_14" parent_id_path=PackedInt32Array(628709874, 1315361849) index="0" unique_id=1422579738]
@@ -256,12 +356,16 @@ shape = SubResource("CylinderShape3D_13qdw")
 transform = Transform3D(1, 0, 0, 0, -0.0077728885, -0.9999698, 0, 0.9999698, -0.0077728885, 3.605518, -0.8829882, 0.98645747)
 shape = SubResource("CylinderShape3D_13qdw")
 
+[node name="CollisionShape3D18" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_14/StaticBody3D" unique_id=1121849600]
+transform = Transform3D(1, 0, 0, 0, -0.0077728885, -0.9999698, 0, 0.9999698, -0.0077728885, 1.3234789, -1.3087943, 0.98645747)
+shape = SubResource("CylinderShape3D_13qdw")
+
 [node name="CollisionShape3D8" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_14/StaticBody3D" unique_id=63226943]
 transform = Transform3D(1, 0, 0, 0, -0.0077728885, -0.9999698, 0, 0.9999698, -0.0077728885, 4.606465, -0.44431424, 0.98645747)
 shape = SubResource("CylinderShape3D_13qdw")
 
 [node name="Obiect-WatchTower" parent="." unique_id=1190922382 instance=ExtResource("6_0f350")]
-transform = Transform3D(-0.9862619, 0, 0.16518913, 0, 1, 0, -0.16518913, 0, -0.9862619, -1.0379814, -1.7136917, -0.58840203)
+transform = Transform3D(-0.9862619, 0, 0.16518913, 0, 1, 0, -0.16518913, 0, -0.9862619, -2.2647462, -1.5617542, -1.1270251)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Obiect-WatchTower/Sketchfab_model/bf5d80bd0a4b404da2233dcd6e783991_fbx/RootNode/Watch tower/Watch tower_Watch tower_0" parent_id_path=PackedInt32Array(1190922382, 1439154237) index="0" unique_id=1735316766]
 
@@ -269,24 +373,24 @@ transform = Transform3D(-0.9862619, 0, 0.16518913, 0, 1, 0, -0.16518913, 0, -0.9
 shape = SubResource("ConcavePolygonShape3D_bvt00")
 
 [node name="Object-Radio" parent="." unique_id=656197896 instance=ExtResource("4_qxfql")]
-transform = Transform3D(4.2495937, 0, 2.6345687, 0, 5, 0, -2.6345687, 0, 4.2495937, -1.9333344, 8.234205, -3.5668652)
+transform = Transform3D(4.2495937, 0, 2.6345687, 0, 5, 0, -2.6345687, 0, 4.2495937, -3.095435, 8.376979, -4.153656)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Object-Radio/Sketchfab_model/482667c85c584977b9e75de699b8244d_fbx/RootNode/MDCNRCTUP740_LOD0" parent_id_path=PackedInt32Array(656197896, 484041093) index="1" unique_id=178818386]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.82731247, 8.326424, -0.3462894)
 shape = SubResource("BoxShape3D_crh0w")
 
 [node name="Object-Flashlight" parent="." unique_id=801034623 instance=ExtResource("5_ha31o")]
-transform = Transform3D(-0.08276566, 0, -0.05612349, 0, 0.1, 0, 0.05612349, 0, -0.08276566, -1.042161, 8.319942, -3.4029222)
+transform = Transform3D(-0.076508574, 0, -0.06439284, 0, 0.1, 0, 0.06439284, 0, -0.076508574, -2.5571628, 8.481707, -3.5405328)
 
 [node name="Object-Battery1" parent="." unique_id=1615914225 instance=ExtResource("6_pa6b8")]
-transform = Transform3D(-0.0007805112, 0.04999391, 0, -0.04999391, -0.0007805112, 0, 0, 0, 0.05, -0.1850734, 8.283313, -3.6144702)
+transform = Transform3D(0.00075199036, -0.048167072, -0.013392815, -0.049993902, -0.00078051107, 0, -0.00020906483, 0.013391184, -0.048172943, -1.9015561, 8.433149, -4.27365)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Object-Battery1/Sketchfab_model/918d400666ac466c94e311d9ce6d0264_fbx/RootNode/Cylinder" parent_id_path=PackedInt32Array(1615914225, 167877023) index="3" unique_id=1914810554]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.101181, 0)
 shape = SubResource("BoxShape3D_c7le1")
 
 [node name="Object-Battery2" parent="." unique_id=532032004 instance=ExtResource("6_pa6b8")]
-transform = Transform3D(0.049991503, 0.00092155766, 0, -0.00092155766, 0.049991503, 0, 0, 0, 0.049999997, -0.1850734, 8.330395, -3.4654367)
+transform = Transform3D(0.049991503, 0.00092155766, 0, -0.00092155766, 0.049991503, 0, 0, 0, 0.049999997, -1.8601446, 8.492394, -4.437269)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Object-Battery2/Sketchfab_model/918d400666ac466c94e311d9ce6d0264_fbx/RootNode/Cylinder" parent_id_path=PackedInt32Array(532032004, 167877023) index="3" unique_id=841067153]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.101181, 0)
