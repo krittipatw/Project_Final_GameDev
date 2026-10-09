@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dosf52cf4tujl"
-path.s3tc="res://.godot/imported/radio_0.png-76dce47e77977d72d88e82b8a931555e.s3tc.ctex"
+uid="uid://cds5mop0goklf"
+path.s3tc="res://.godot/imported/grandpa_1.png-a72d3bf71502298cd273b921528d63a7.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "7f07362df1b5ef1ff9c432fbebfdd73b"
+"md5": "d1316a1c2e95d60fb8b95f803c0734ac"
 }
 
 [deps]
 
-source_file="res://asset/Object/radio_0.png"
-dest_files=["res://.godot/imported/radio_0.png-76dce47e77977d72d88e82b8a931555e.s3tc.ctex"]
+source_file="res://asset/Enemy/grandpa_1.png"
+dest_files=["res://.godot/imported/grandpa_1.png-a72d3bf71502298cd273b921528d63a7.s3tc.ctex"]
 
 [params]
 

@@ -2,23 +2,24 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpf4h4r6wu1tf"
-path="res://.godot/imported/radio_3.png-93bfafa3f2e8cd1797039b88052e5808.ctex"
+uid="uid://cuerwyo27tcgu"
+path.s3tc="res://.godot/imported/grandpa_2.png-9d81f5be7da038450feaa0816f976c1d.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 generator_parameters={
-"md5": "deb1e1e415bca9bbef21843fe2557144"
+"md5": "1c8c0846490689dbdc046e4aaa5da897"
 }
 
 [deps]
 
-source_file="res://asset/Object/radio_3.png"
-dest_files=["res://.godot/imported/radio_3.png-93bfafa3f2e8cd1797039b88052e5808.ctex"]
+source_file="res://asset/Enemy/grandpa_2.png"
+dest_files=["res://.godot/imported/grandpa_2.png-9d81f5be7da038450feaa0816f976c1d.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -40,4 +41,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0

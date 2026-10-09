@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://tqrtfjd0c1v8"
-path.s3tc="res://.godot/imported/Forest_4.png-efc67883b82c9158f04f419346f7b7f2.s3tc.ctex"
+uid="uid://b65wi2r78dqi0"
+path.s3tc="res://.godot/imported/creature_0.png-f5d0cf269309a215f7a0be74706c0325.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "f83f1cda628e4c0b36ad376f64b67cc0"
+"md5": "a2ecbc2c639e9987cde62017182328bd"
 }
 
 [deps]
 
-source_file="res://asset/Platform/Texture/Forest_4.png"
-dest_files=["res://.godot/imported/Forest_4.png-efc67883b82c9158f04f419346f7b7f2.s3tc.ctex"]
+source_file="res://asset/Enemy/creature_0.png"
+dest_files=["res://.godot/imported/creature_0.png-f5d0cf269309a215f7a0be74706c0325.s3tc.ctex"]
 
 [params]
 
