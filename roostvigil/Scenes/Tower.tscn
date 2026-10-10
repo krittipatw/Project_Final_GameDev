@@ -47,7 +47,7 @@ sky = SubResource("Sky_b1lj4")
 [node name="Forest" parent="." unique_id=628709874 instance=ExtResource("1_sijes")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -33.05035, -1.758873, -38.929073)
 
-[node name="Object_2" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(628709874, 1086397293) index="0" unique_id=64653920]
+[node name="Object_2" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(628709874, 1008060660) index="0" unique_id=2050476367]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14872575, 0.5743525, 0.006350875)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_2" index="0" unique_id=1544042066]
@@ -55,23 +55,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14872575, 0.5743525, 0.006
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_2/StaticBody3D" unique_id=1089263950]
 shape = SubResource("ConcavePolygonShape3D_754fn")
 
-[node name="Object_10" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(628709874, 1086397293) index="8" unique_id=477082350]
+[node name="Object_10" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(628709874, 1008060660) index="8" unique_id=91619022]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6071215, 0, 0)
 
-[node name="Object_11" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(628709874, 1086397293) index="9" unique_id=1775901492]
+[node name="Object_11" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(628709874, 1008060660) index="9" unique_id=1269735827]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4775075, 0, 0)
 
-[node name="Object_12" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(628709874, 1086397293) index="10" unique_id=1358935603]
+[node name="Object_12" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(628709874, 1008060660) index="10" unique_id=1764818058]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3256476, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13" parent_id_path=PackedInt32Array(628709874, 1185677770) index="0" unique_id=1364511748]
+[node name="StaticBody3D" type="StaticBody3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13" parent_id_path=PackedInt32Array(628709874, 1193382338) index="0" unique_id=1364511748]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 2.4114594)
 
 [node name="all tree collisionD2" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=619275475]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 2.4114594, 0)
 shape = SubResource("ConcavePolygonShape3D_oqgf2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_14" parent_id_path=PackedInt32Array(628709874, 1849555851) index="0" unique_id=1422579738]
+[node name="StaticBody3D" type="StaticBody3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_14" parent_id_path=PackedInt32Array(628709874, 1861780248) index="0" unique_id=1422579738]
 
 [node name="all tree" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_14/StaticBody3D" unique_id=487729405]
 shape = SubResource("ConcavePolygonShape3D_qxfql")
@@ -79,7 +79,7 @@ shape = SubResource("ConcavePolygonShape3D_qxfql")
 [node name="Obiect-WatchTower" parent="." unique_id=1190922382 instance=ExtResource("1_ry8d0")]
 transform = Transform3D(0.99998915, 0, 0.0046761744, 0, 1, 0, -0.0046761744, 0, 0.99998915, -71.84267, -1.7136917, -48.270256)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Obiect-WatchTower/Sketchfab_model/bf5d80bd0a4b404da2233dcd6e783991_fbx/RootNode/Watch tower/Watch tower_Watch tower_0" parent_id_path=PackedInt32Array(1190922382, 1716901695) index="0" unique_id=1735316766]
+[node name="StaticBody3D" type="StaticBody3D" parent="Obiect-WatchTower/Sketchfab_model/bf5d80bd0a4b404da2233dcd6e783991_fbx/RootNode/Watch tower/Watch tower_Watch tower_0" parent_id_path=PackedInt32Array(1190922382, 1437277563) index="0" unique_id=1735316766]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Obiect-WatchTower/Sketchfab_model/bf5d80bd0a4b404da2233dcd6e783991_fbx/RootNode/Watch tower/Watch tower_Watch tower_0/StaticBody3D" unique_id=1046923931]
 shape = SubResource("ConcavePolygonShape3D_bvt00")
@@ -87,7 +87,7 @@ shape = SubResource("ConcavePolygonShape3D_bvt00")
 [node name="Object-Radio" parent="." unique_id=656197896 instance=ExtResource("3_sdt0m")]
 transform = Transform3D(-3.830245, 0, -3.2139106, 0, 5, 0, 3.2139106, 0, -3.830245, -70.53338, 8.234205, -45.376427)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Object-Radio/Sketchfab_model/482667c85c584977b9e75de699b8244d_fbx/RootNode/MDCNRCTUP740_LOD0" parent_id_path=PackedInt32Array(656197896, 379184518) index="1" unique_id=178818386]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Object-Radio/Sketchfab_model/482667c85c584977b9e75de699b8244d_fbx/RootNode/MDCNRCTUP740_LOD0" parent_id_path=PackedInt32Array(656197896, 737850049) index="1" unique_id=178818386]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.82731247, 8.326424, -0.3462894)
 shape = SubResource("BoxShape3D_crh0w")
 
@@ -97,17 +97,17 @@ transform = Transform3D(0.042759918, 0, 0.09039685, 0, 0.1, 0, -0.09039685, 0, 0
 [node name="Object-Battery1" parent="." unique_id=1615914225 instance=ExtResource("5_ijg82")]
 transform = Transform3D(-0.0007805112, 0.04999391, 0, -0.04999391, -0.0007805112, 0, 0, 0, 0.05, -71.870544, 8.283313, -45.317074)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Object-Battery1/Sketchfab_model/918d400666ac466c94e311d9ce6d0264_fbx/RootNode/Cylinder" parent_id_path=PackedInt32Array(1615914225, 217375299) index="3" unique_id=1914810554]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Object-Battery1/Sketchfab_model/918d400666ac466c94e311d9ce6d0264_fbx/RootNode/Cylinder" parent_id_path=PackedInt32Array(1615914225, 187078613) index="3" unique_id=1914810554]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.101181, 0)
 shape = SubResource("BoxShape3D_c7le1")
 
 [node name="Object-Battery2" parent="." unique_id=532032004 instance=ExtResource("5_ijg82")]
 transform = Transform3D(0.049991503, 0.00092155766, 0, -0.00092155766, 0.049991503, 0, 0, 0, 0.049999997, -71.920456, 8.330395, -45.124405)
 
-[node name="Cylinder_-Mat_0" parent="Object-Battery2/Sketchfab_model/918d400666ac466c94e311d9ce6d0264_fbx/RootNode/Cylinder" parent_id_path=PackedInt32Array(532032004, 217375299) index="1" unique_id=915235012]
+[node name="Cylinder_-Mat_0" parent="Object-Battery2/Sketchfab_model/918d400666ac466c94e311d9ce6d0264_fbx/RootNode/Cylinder" parent_id_path=PackedInt32Array(532032004, 187078613) index="1" unique_id=343853691]
 transform = Transform3D(0.99999994, 1.8626451e-09, -4.135903e-25, -1.8626451e-09, 0.99999994, 0, 4.135903e-25, 0, 0.99999994, -0.359375, 19.398438, 0)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Object-Battery2/Sketchfab_model/918d400666ac466c94e311d9ce6d0264_fbx/RootNode/Cylinder" parent_id_path=PackedInt32Array(532032004, 217375299) index="3" unique_id=841067153]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Object-Battery2/Sketchfab_model/918d400666ac466c94e311d9ce6d0264_fbx/RootNode/Cylinder" parent_id_path=PackedInt32Array(532032004, 187078613) index="3" unique_id=841067153]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.101181, 0)
 shape = SubResource("BoxShape3D_2klc5")
 
