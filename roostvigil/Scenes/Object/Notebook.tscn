@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://clabrtl68y5is"]
+
+[ext_resource type="Script" uid="uid://bjyhcf034i2bx" path="res://Scenes/code/Notebook.gd" id="1_t8j07"]
+[ext_resource type="PackedScene" uid="uid://c40bgolobi08" path="res://asset/Object/Notebook.glb" id="2_rjs86"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xrivr"]
+size = Vector3(0.67993164, 0.07727051, 0.86087036)
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=1439344814]
+script = ExtResource("1_t8j07")
+
+[node name="Notebook_glb" parent="." unique_id=847327672 instance=ExtResource("2_rjs86")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.122514725, 0, 0.70083594)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1622141057]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1373291, 0.039245605, 0.50353646)
+shape = SubResource("BoxShape3D_xrivr")

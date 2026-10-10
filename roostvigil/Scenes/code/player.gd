@@ -15,16 +15,43 @@ var head_start_y := 0.0
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var interact_ray: RayCast3D = $Head/Camera3D/InteractRay
-@onready var prompt_label: Label = get_node_or_null("../CanvasLayer/PromptLabel")
+@onready var prompt_label: Label = get_tree().current_scene.get_node_or_null("CanvasLayer/PromptLabel")
 
-func _ready():
+func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	head_start_y = head.position.y
 
-func _unhandled_input(event):
+	if prompt_label:
+		prompt_label.visible = false
+	else:
+		push_warning("PromptLabel not found - ตรวจ path ของ prompt_label")
+
+	if interact_ray == null:
+		push_warning("InteractRay not found - ตรวจ path ของ interact_ray")
+
+# ---------- State ----------
+func _ui_open() -> bool:
+	var ui = get_tree().get_first_node_in_group("notebook_ui")
+	return ui != null and ui.visible
+
+func _can_control() -> bool:
+	return not _ui_open() and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED
+
+# ---------- Input ----------
+func _unhandled_input(event: InputEvent) -> void:
+	# ถ้า UI สมุดเปิดอยู่ ไม่หมุนกล้อง ไม่ interact
+	if _ui_open():
+		return
+
+	# เมาส์ถูกปลดอยู่ (กด ESC ไว้) คลิกเพื่อกลับเข้าเกม
+	if Input.get_mouse_mode() != Input.MOUSE_MODE_CAPTURED:
+		if event is InputEventMouseButton and event.pressed:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		return
+
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * SENSITIVITY)
-		camera.rotate_x(event.relative.y * SENSITIVITY)
+		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-40), deg_to_rad(60))
 
 	if event.is_action_pressed("Interact"):
@@ -33,14 +60,20 @@ func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
+# ---------- Movement ----------
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	var can_control := _can_control()
+
+	if can_control and Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
-	var input_dir := Input.get_vector("move-left", "move-right", "move-forward", "move-backward")
+	var input_dir := Vector2.ZERO
+	if can_control:
+		input_dir = Input.get_vector("move-left", "move-right", "move-forward", "move-backward")
+
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED
@@ -92,6 +125,12 @@ func _try_interact() -> void:
 func _update_prompt() -> void:
 	if prompt_label == null:
 		return
+
+	# ซ่อน prompt ตอน UI เปิดอยู่
+	if _ui_open():
+		prompt_label.visible = false
+		return
+
 	var target = _get_interactable()
 	if target:
 		var text := "Interact"
