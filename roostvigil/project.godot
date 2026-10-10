@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Roostvigil"
-run/main_scene="uid://dyg61ov5r7dt8"
+run/main_scene="uid://12stoskfdj07"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

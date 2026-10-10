@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bwdt4engvq0nk"]
+
+[sub_resource type="SystemFont" id="SystemFont_wi6ju"]
+
+[node name="NotebookUi" type="CanvasLayer" unique_id=437851235]
+
+[node name="Control" type="Control" parent="." unique_id=1034532183]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="ColorRect" parent="Control" unique_id=1329206968]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 349.0
+offset_bottom = 228.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07058824, 0.07058824, 0.07058824, 0.59607846)
+
+[node name="Panel" type="Panel" parent="Control" unique_id=1195999539]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 116.0
+offset_top = 29.0
+offset_right = 233.0
+offset_bottom = 187.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TitleLabel" type="Label" parent="Control/Panel" unique_id=1887150348]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 5.0
+offset_right = 103.0
+offset_bottom = 28.0
+theme_override_fonts/font = SubResource("SystemFont_wi6ju")
+theme_override_font_sizes/font_size = 11
+text = "Ivan's Diary"
+horizontal_alignment = 1
