@@ -29,12 +29,16 @@ var has_flashlight := false
 var flashlight_on := false
 var battery := BATTERY_MAX
 
+# ข้อความแจ้งเตือน
+var message_token := 0
+
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var interact_ray: RayCast3D = $Head/Camera3D/InteractRay
 @onready var flashlight_light: SpotLight3D = $Head/Camera3D/Flashlight
 @onready var prompt_label: Label = get_tree().current_scene.get_node_or_null("CanvasLayer/PromptLabel")
 @onready var battery_label: Label = get_tree().current_scene.get_node_or_null("CanvasLayer/BatteryLabel")
+@onready var message_label: Label = get_tree().current_scene.get_node_or_null("CanvasLayer/MessageLabel")
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -51,10 +55,15 @@ func _ready() -> void:
 	else:
 		push_warning("BatteryLabel not found - ตรวจ path ของ battery_label")
 
+	if message_label:
+		message_label.visible = false
+	else:
+		push_warning("MessageLabel not found - ตรวจ path ของ message_label")
+
 	if flashlight_light:
 		flashlight_light.visible = false
 	else:
-		push_warning("Flashlight (SpotLight3D) not found - ตรวจ path ของ flashlight_light")
+		push_warning("Flashlight (SpotLight3D) not found - ตรวจชื่อ node ว่าเป็น Flashlight")
 
 	if interact_ray == null:
 		push_warning("InteractRay not found - ตรวจ path ของ interact_ray")
@@ -93,6 +102,19 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
+# ---------- Message ----------
+func show_message(text: String, duration: float = 2.0) -> void:
+	if message_label == null:
+		return
+	message_token += 1
+	var token := message_token
+	message_label.text = text
+	message_label.visible = true
+	await get_tree().create_timer(duration).timeout
+	# ซ่อนเฉพาะเมื่อไม่มีข้อความใหม่มาแทนที่ระหว่างรอ
+	if token == message_token and message_label:
+		message_label.visible = false
+
 # ---------- Flashlight ----------
 func pick_up_flashlight() -> void:
 	has_flashlight = true
@@ -103,6 +125,18 @@ func pick_up_flashlight() -> void:
 func add_battery(amount: float) -> void:
 	battery = clamp(battery + amount, 0.0, BATTERY_MAX)
 	_update_battery_label()
+
+# เรียกจาก BatteryPickup คืนค่า true ถ้าเก็บสำเร็จ (แบตก้อนนั้นจะหายไป)
+func try_add_battery(amount: float) -> bool:
+	if not has_flashlight:
+		show_message("You need a flashlight first")
+		return false
+	# แบตเกิน (100 - amount) เช่น 76% ขึ้นไป ถือว่ายังพอ เก็บไม่ได้
+	if battery > BATTERY_MAX - amount:
+		show_message("Battery still good")
+		return false
+	add_battery(amount)
+	return true
 
 func _toggle_flashlight() -> void:
 	if not has_flashlight:

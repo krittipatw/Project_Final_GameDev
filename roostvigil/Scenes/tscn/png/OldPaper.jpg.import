@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://datvch4fxhrru"
-path="res://.godot/imported/OldPaper.jpg-fe3f207a2be354aee5940f5d8cac31d8.ctex"
+path="res://.godot/imported/OldPaper.jpg-1d40791cc26419857edc43c7b2c96845.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Object/png/OldPaper.jpg"
-dest_files=["res://.godot/imported/OldPaper.jpg-fe3f207a2be354aee5940f5d8cac31d8.ctex"]
+source_file="res://Scenes/tscn/png/OldPaper.jpg"
+dest_files=["res://.godot/imported/OldPaper.jpg-1d40791cc26419857edc43c7b2c96845.ctex"]
 
 [params]
 

@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://12stoskfdj07"]
 
-[ext_resource type="PackedScene" uid="uid://clabrtl68y5is" path="res://Scenes/Object/Notebook.tscn" id="1_wqkje"]
+[ext_resource type="PackedScene" uid="uid://clabrtl68y5is" path="res://Scenes/tscn/Notebook.tscn" id="1_wqkje"]
 [ext_resource type="PackedScene" uid="uid://5dn2j4rea1f" path="res://Scenes/FlashlightPickup.tscn" id="2_0f350"]
-[ext_resource type="PackedScene" uid="uid://bwdt4engvq0nk" path="res://Scenes/Object/NotebookUI.tscn" id="4_81xng"]
+[ext_resource type="PackedScene" uid="uid://bwdt4engvq0nk" path="res://Scenes/tscn/NotebookUI.tscn" id="4_81xng"]
 [ext_resource type="PackedScene" uid="uid://c6pn8g2j5my" path="res://asset/Platform/WatchTower.glb" id="6_0f350"]
 [ext_resource type="PackedScene" uid="uid://bt6gysljnshgo" path="res://asset/Platform/forest.glb" id="6_8c0lf"]
+[ext_resource type="PackedScene" uid="uid://uyug7yc8hyxh" path="res://Scenes/BatteryPickup.tscn" id="7_8c0lf"]
 [ext_resource type="PackedScene" uid="uid://b6no1rx3nmb6g" path="res://Scenes/player.tscn" id="11_qxfql"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_754fn"]
@@ -27,6 +28,8 @@ sky_material = SubResource("ProceduralSkyMaterial_njqwk")
 [sub_resource type="Environment" id="Environment_xrivr"]
 background_mode = 2
 sky = SubResource("Sky_b1lj4")
+fog_enabled = true
+fog_light_color = Color(0.49803922, 0.5529412, 0.60784316, 1)
 
 [node name="level" type="Node3D" unique_id=693394831]
 
@@ -120,6 +123,29 @@ offset_right = 70.0
 offset_bottom = -17.0
 grow_vertical = 0
 text = "100%"
+
+[node name="MessageLabel" type="Label" parent="CanvasLayer" unique_id=450083677]
+visible = false
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -70.0
+offset_top = -92.0
+offset_right = 62.0
+offset_bottom = -69.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Battery still good"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BatteryPickup" parent="." unique_id=1598016108 instance=ExtResource("7_8c0lf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.65325, 8.307843, -44.90517)
+
+[node name="BatteryPickup2" parent="." unique_id=1808903169 instance=ExtResource("7_8c0lf")]
+transform = Transform3D(-0.036391336, -0.99933773, -0.0003497162, 0.99930537, -0.036387343, -0.008070555, 0.008052485, -0.0006431714, 0.9999674, -72.014465, 8.606098, -45.100883)
 
 [editable path="Forest"]
 [editable path="WatchTower"]
