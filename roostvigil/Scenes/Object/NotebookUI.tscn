@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://bwdt4engvq0nk"]
+
+[ext_resource type="Script" uid="uid://b8e036ndtwtx5" path="res://Scenes/code/NotebookUI.gd" id="1_j83yd"]
+[ext_resource type="Texture2D" uid="uid://datvch4fxhrru" path="res://Scenes/Object/png/OldPaper.jpg" id="2_p1d40"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aoy1x"]
+texture = ExtResource("2_p1d40")
+
+[sub_resource type="SystemFont" id="SystemFont_wi6ju"]
+subpixel_positioning = 0
+
+[node name="NotebookUi" type="CanvasLayer" unique_id=437851235]
+script = ExtResource("1_j83yd")
+
+[node name="Control" type="Control" parent="." unique_id=1034532183]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Background" type="ColorRect" parent="Control" unique_id=1329206968]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 349.0
+offset_bottom = 228.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.07058824, 0.07058824, 0.07058824, 0.59607846)
+
+[node name="Panel" type="Panel" parent="Control" unique_id=1195999539]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 116.0
+offset_top = 29.0
+offset_right = 233.0
+offset_bottom = 187.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_aoy1x")
+
+[node name="TitleLabel" type="Label" parent="Control/Panel" unique_id=1887150348]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 5.0
+offset_right = 103.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(0.48235294, 0.03137255, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_wi6ju")
+theme_override_font_sizes/font_size = 9
+text = "Ivan's Diary"
+horizontal_alignment = 1
+
+[node name="ContentLabel" type="RichTextLabel" parent="Control/Panel" unique_id=2110167561]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 23.0
+offset_right = 107.0
+offset_bottom = 148.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 5
+theme_override_font_sizes/italics_font_size = 16
+text = "Day 1
+Something"
+
+[node name="CloseButton" type="Button" parent="Control/Panel" unique_id=1139771514]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 4.0
+offset_right = 113.0
+offset_bottom = 25.0
+theme_override_colors/font_color = Color(0.8117647, 0, 0, 1)
+theme_override_font_sizes/font_size = 9
+text = "X"
