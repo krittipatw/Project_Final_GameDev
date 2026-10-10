@@ -1,3 +1,4 @@
+ColorRect
 CollisionShape3D
 StaticBody3D
 Label
@@ -7,7 +8,6 @@ Button
 RichTextLabel
 Panel
 RayCast3D
-ColorRect
 Control
 MeshInstance3D
 DirectionalLight3D
