@@ -39,44 +39,51 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 116.0
-offset_top = 29.0
-offset_right = 233.0
-offset_bottom = 187.0
+offset_left = -205.0
+offset_top = -258.0
+offset_right = 168.0
+offset_bottom = 261.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_aoy1x")
 
 [node name="TitleLabel" type="Label" parent="Control/Panel" unique_id=1887150348]
 layout_mode = 0
-offset_left = 13.0
-offset_top = 5.0
-offset_right = 103.0
-offset_bottom = 28.0
+offset_left = 141.0
+offset_top = 19.0
+offset_right = 231.0
+offset_bottom = 42.0
 theme_override_colors/font_color = Color(0.48235294, 0.03137255, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_wi6ju")
-theme_override_font_sizes/font_size = 9
+theme_override_font_sizes/font_size = 15
 text = "Ivan's Diary"
 horizontal_alignment = 1
 
 [node name="ContentLabel" type="RichTextLabel" parent="Control/Panel" unique_id=2110167561]
 layout_mode = 0
-offset_left = 11.0
-offset_top = 23.0
-offset_right = 107.0
-offset_bottom = 148.0
+offset_left = 21.0
+offset_top = 55.0
+offset_right = 350.0
+offset_bottom = 488.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 5
 theme_override_font_sizes/italics_font_size = 16
 text = "Day 1
-Something"
+Something strange happen here..
+
+Day 2
+I saw things that NOT normal at all."
 
 [node name="CloseButton" type="Button" parent="Control/Panel" unique_id=1139771514]
 layout_mode = 0
-offset_left = 99.0
-offset_top = 4.0
-offset_right = 113.0
-offset_bottom = 25.0
-theme_override_colors/font_color = Color(0.8117647, 0, 0, 1)
-theme_override_font_sizes/font_size = 9
+offset_left = 333.0
+offset_top = 5.0
+offset_right = 366.0
+offset_bottom = 53.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.7490196, 0.09411765, 0, 1)
+theme_override_colors/font_pressed_color = Color(1, 0.1764706, 0.05490196, 1)
+theme_override_colors/font_hover_color = Color(0.69411767, 0.05882353, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.69803923, 0, 0, 1)
+theme_override_font_sizes/font_size = 21
 text = "X"
