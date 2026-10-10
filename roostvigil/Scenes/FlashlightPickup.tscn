@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://5dn2j4rea1f"]
+
+[ext_resource type="Script" uid="uid://c61i58ut5gifi" path="res://Scenes/code/FlashlightPickup.gd" id="1_jte3d"]
+[ext_resource type="PackedScene" uid="uid://cfaroef5nok7o" path="res://asset/Object/flashlight.glb" id="2_fbcnx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xrivr"]
+size = Vector3(0.75644684, 0.2559204, 0.28515625)
+
+[node name="FlashlightPickup" type="StaticBody3D" unique_id=1324179059]
+script = ExtResource("1_jte3d")
+
+[node name="Sketchfab_Scene" parent="." unique_id=925907684 instance=ExtResource("2_fbcnx")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 1.1092782, 0, -0.87876344)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=916941259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8451271, 0.021881104, -0.87597656)
+shape = SubResource("BoxShape3D_xrivr")

@@ -1,7 +1,8 @@
-Label
-CanvasLayer
 CollisionShape3D
 StaticBody3D
+Label
+SpotLight3D
+CanvasLayer
 Button
 RichTextLabel
 Panel
@@ -11,4 +12,3 @@ Control
 MeshInstance3D
 DirectionalLight3D
 WorldEnvironment
-Camera3D

@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://12stoskfdj07"]
 
 [ext_resource type="PackedScene" uid="uid://clabrtl68y5is" path="res://Scenes/Object/Notebook.tscn" id="1_wqkje"]
+[ext_resource type="PackedScene" uid="uid://5dn2j4rea1f" path="res://Scenes/FlashlightPickup.tscn" id="2_0f350"]
 [ext_resource type="PackedScene" uid="uid://bwdt4engvq0nk" path="res://Scenes/Object/NotebookUI.tscn" id="4_81xng"]
 [ext_resource type="PackedScene" uid="uid://c6pn8g2j5my" path="res://asset/Platform/WatchTower.glb" id="6_0f350"]
 [ext_resource type="PackedScene" uid="uid://bt6gysljnshgo" path="res://asset/Platform/forest.glb" id="6_8c0lf"]
@@ -31,6 +32,9 @@ sky = SubResource("Sky_b1lj4")
 
 [node name="StaticBody3D" parent="." unique_id=1439344814 instance=ExtResource("1_wqkje")]
 transform = Transform3D(0.6670716, 0, 0.7449936, 0, 1, 0, -0.7449936, 0, 0.6670716, -71.062294, 8.324321, -49.389923)
+
+[node name="FlashlightPickup" parent="." unique_id=1324179059 instance=ExtResource("2_0f350")]
+transform = Transform3D(0.7928674, 0, 0.6093942, 0, 1, 0, -0.6093942, 0, 0.7928674, -71.405655, 8.385405, -44.484253)
 
 [node name="Forest" parent="." unique_id=628709874 instance=ExtResource("6_8c0lf")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -33.05035, -1.758873, -38.929073)
@@ -104,6 +108,18 @@ grow_vertical = 2
 text = "[E] Notebook"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="BatteryLabel" type="Label" parent="CanvasLayer" unique_id=909673536]
+visible = false
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 28.0
+offset_top = -40.0
+offset_right = 70.0
+offset_bottom = -17.0
+grow_vertical = 0
+text = "100%"
 
 [editable path="Forest"]
 [editable path="WatchTower"]

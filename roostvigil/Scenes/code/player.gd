@@ -1,30 +1,60 @@
 extends CharacterBody3D
 
-const SPEED = 5.0
+const WALK_SPEED = 5.0
+const SPRINT_SPEED = 8.0
+const CROUCH_SPEED = 2.5
 const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.003
 const MAX_STEP_HEIGHT = 0.4
 
-# Head bob
+# ตัวแปรสำหรับความเร็วปัจจุบัน
+var current_speed = WALK_SPEED
+
+# Head bob (เดิน/วิ่ง)
 const BOB_FREQ = 2.0
 const BOB_AMP = 0.06
 const BOB_HORIZONTAL = 0.03
 var bob_time := 0.0
 var head_start_y := 0.0
 
+# ระบบย่อตัว (Crouch)
+const CROUCH_DEPTH = 0.5		# ระยะยุบตัวลงไปเมื่อย่อ
+var head_crouch_y := 0.0
+const LERP_VAL = 10.0
+
+# ระบบไฟฉาย (Flashlight)
+const BATTERY_DRAIN_PER_SEC = 1.0	# ลดกี่ % ต่อวินาที
+const BATTERY_MAX = 100.0
+var has_flashlight := false
+var flashlight_on := false
+var battery := BATTERY_MAX
+
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var interact_ray: RayCast3D = $Head/Camera3D/InteractRay
+@onready var flashlight_light: SpotLight3D = $Head/Camera3D/Flashlight
 @onready var prompt_label: Label = get_tree().current_scene.get_node_or_null("CanvasLayer/PromptLabel")
+@onready var battery_label: Label = get_tree().current_scene.get_node_or_null("CanvasLayer/BatteryLabel")
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	head_start_y = head.position.y
+	head_crouch_y = head_start_y - CROUCH_DEPTH
 
 	if prompt_label:
 		prompt_label.visible = false
 	else:
 		push_warning("PromptLabel not found - ตรวจ path ของ prompt_label")
+
+	if battery_label:
+		battery_label.visible = false
+	else:
+		push_warning("BatteryLabel not found - ตรวจ path ของ battery_label")
+
+	if flashlight_light:
+		flashlight_light.visible = false
+	else:
+		push_warning("Flashlight (SpotLight3D) not found - ตรวจ path ของ flashlight_light")
 
 	if interact_ray == null:
 		push_warning("InteractRay not found - ตรวจ path ของ interact_ray")
@@ -57,8 +87,47 @@ func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Interact"):
 		_try_interact()
 
+	if event.is_action_pressed("flashlight"):
+		_toggle_flashlight()
+
 	if event.is_action_pressed("ui_cancel"):
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+# ---------- Flashlight ----------
+func pick_up_flashlight() -> void:
+	has_flashlight = true
+	if battery_label:
+		battery_label.visible = true
+	_update_battery_label()
+
+func add_battery(amount: float) -> void:
+	battery = clamp(battery + amount, 0.0, BATTERY_MAX)
+	_update_battery_label()
+
+func _toggle_flashlight() -> void:
+	if not has_flashlight:
+		return
+	if flashlight_on:
+		_set_flashlight(false)
+	elif battery > 0.0:
+		_set_flashlight(true)
+
+func _set_flashlight(value: bool) -> void:
+	flashlight_on = value
+	if flashlight_light:
+		flashlight_light.visible = value
+
+func _update_battery_label() -> void:
+	if battery_label:
+		battery_label.text = "Battery: %d%%" % ceili(battery)
+
+func _process(delta: float) -> void:
+	if flashlight_on:
+		battery -= BATTERY_DRAIN_PER_SEC * delta
+		if battery <= 0.0:
+			battery = 0.0
+			_set_flashlight(false)
+		_update_battery_label()
 
 # ---------- Movement ----------
 func _physics_process(delta: float) -> void:
@@ -67,7 +136,23 @@ func _physics_process(delta: float) -> void:
 
 	var can_control := _can_control()
 
-	if can_control and Input.is_action_just_pressed("jump") and is_on_floor():
+	# --- จัดการเรื่องความเร็ว (Sprint / Crouch / Walk) ---
+	var is_crouching := false
+	var is_sprinting := false
+
+	if can_control:
+		is_crouching = Input.is_action_pressed("crouch")
+		is_sprinting = Input.is_action_pressed("sprint") and not is_crouching
+
+	if is_crouching:
+		current_speed = CROUCH_SPEED
+	elif is_sprinting:
+		current_speed = SPRINT_SPEED
+	else:
+		current_speed = WALK_SPEED
+
+	# กระโดด (ถ้ากำลังย่อตัวอยู่ จะไม่อนุญาตให้กระโดด)
+	if can_control and Input.is_action_just_pressed("jump") and is_on_floor() and not is_crouching:
 		velocity.y = JUMP_VELOCITY
 
 	var input_dir := Vector2.ZERO
@@ -76,8 +161,8 @@ func _physics_process(delta: float) -> void:
 
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.x = direction.x * current_speed
+		velocity.z = direction.z * current_speed
 	else:
 		velocity.x = 0
 		velocity.z = 0
@@ -91,23 +176,32 @@ func _physics_process(delta: float) -> void:
 	if was_on_floor and is_on_wall() and direction != Vector3.ZERO and velocity.y <= 0.0:
 		_try_step_up(start_position, start_velocity, delta)
 
-	_update_head_bob(delta)
+	_update_head_bob(delta, is_sprinting, is_crouching)
 	_update_prompt()
 
-# ---------- Head Bob ----------
-func _update_head_bob(delta: float) -> void:
+# ---------- Head Bob & Crouch Position ----------
+func _update_head_bob(delta: float, is_sprinting: bool, is_crouching: bool) -> void:
 	var horizontal_speed := Vector2(velocity.x, velocity.z).length()
-	if is_on_floor() and horizontal_speed > 0.1:
+
+	# ปรับความถี่ Head Bob ตอนวิ่งให้เร็วขึ้นนิดหน่อย
+	var current_bob_freq = BOB_FREQ * 1.3 if is_sprinting else BOB_FREQ
+	var current_bob_amp = BOB_AMP * 1.5 if is_sprinting else BOB_AMP
+
+	# ตำแหน่งเป้าหมายความสูงของ Head (แยกตามสถานะ ย่อ/เดินปกติ)
+	var target_y = head_crouch_y if is_crouching else head_start_y
+
+	if is_on_floor() and horizontal_speed > 0.1 and not is_crouching:
 		bob_time += delta * horizontal_speed
 		var target := Vector3(
-			cos(bob_time * BOB_FREQ * 0.5) * BOB_HORIZONTAL,
-			head_start_y + sin(bob_time * BOB_FREQ) * BOB_AMP,
+			cos(bob_time * current_bob_freq * 0.5) * BOB_HORIZONTAL,
+			target_y + sin(bob_time * current_bob_freq) * current_bob_amp,
 			0.0
 		)
-		head.position = head.position.lerp(target, delta * 15.0)
+		head.position = head.position.lerp(target, delta * LERP_VAL)
 	else:
-		var rest := Vector3(0.0, head_start_y, 0.0)
-		head.position = head.position.lerp(rest, delta * 8.0)
+		# ถ้าไม่ได้เคลื่อนไหว หรือกำลังย่อตัว ค่อยๆ Smooth ตำแหน่งความสูง Head ไปที่เป้าหมาย
+		var rest := Vector3(0.0, target_y, 0.0)
+		head.position = head.position.lerp(rest, delta * LERP_VAL)
 
 # ---------- Interact ----------
 func _get_interactable() -> Object:
@@ -126,7 +220,6 @@ func _update_prompt() -> void:
 	if prompt_label == null:
 		return
 
-	# ซ่อน prompt ตอน UI เปิดอยู่
 	if _ui_open():
 		prompt_label.visible = false
 		return
