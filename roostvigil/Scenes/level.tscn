@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://uyug7yc8hyxh" path="res://Scenes/tscn/BatteryPickup.tscn" id="7_8c0lf"]
 [ext_resource type="PackedScene" uid="uid://dny2sm6x1dtwc" path="res://Scenes/tscn/CeilingLight.tscn" id="7_bvt00"]
 [ext_resource type="PackedScene" uid="uid://b0y517npi8g3d" path="res://Scenes/tscn/LightSwitch.tscn" id="9_oqgf2"]
+[ext_resource type="Shader" uid="uid://6gf55h21eqqo" path="res://Scenes/level.gdshader" id="11_ha31o"]
 [ext_resource type="PackedScene" uid="uid://b6no1rx3nmb6g" path="res://Scenes/player.tscn" id="11_qxfql"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_754fn"]
@@ -32,8 +33,25 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xrivr"]
 bg_color = Color(0.32172796, 0.32172796, 0.32172787, 0.7294118)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_njqwk"]
+bg_color = Color(0.54896253, 0.5489626, 0.5489625, 0.72156864)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b1lj4"]
+bg_color = Color(0.13725491, 0.34117648, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oqgf2"]
+bg_color = Color(0.24705882, 0.47058824, 0.9411765, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qxfql"]
+bg_color = Color(0.56503063, 0.5524682, 0.60604286, 0.6)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_13qdw"]
 size = Vector3(1, 22.628418, 159.54407)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xrivr"]
+shader = ExtResource("11_ha31o")
+shader_parameter/intensity = 0.0
+shader_parameter/edge_color = Color(0.6, 0, 0, 1)
 
 [node name="level" type="Node3D" unique_id=693394831]
 
@@ -188,6 +206,56 @@ max_value = 20.0
 value = 20.0
 show_percentage = false
 
+[node name="HPBar" type="ProgressBar" parent="CanvasLayer" unique_id=1890297857]
+custom_minimum_size = Vector2(220, 22)
+offset_left = 16.0
+offset_top = 45.0
+offset_right = 236.0
+offset_bottom = 72.0
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_njqwk")
+theme_override_styles/fill = SubResource("StyleBoxFlat_b1lj4")
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="CanvasLayer/HPBar" unique_id=1771455080]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 14
+text = "HP 100/100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SanityBar" type="ProgressBar" parent="CanvasLayer" unique_id=1139132213]
+custom_minimum_size = Vector2(220, 22)
+offset_left = 16.0
+offset_top = 84.0
+offset_right = 236.0
+offset_bottom = 111.0
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_oqgf2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_qxfql")
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="CanvasLayer/SanityBar" unique_id=1760372167]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 14
+text = "Sanity 100/100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="BatteryPickup" parent="." unique_id=1598016108 instance=ExtResource("7_8c0lf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.65325, 8.307843, -44.90517)
 
@@ -214,6 +282,85 @@ shape = SubResource("BoxShape3D_13qdw")
 [node name="CollisionShape3D4" type="CollisionShape3D" parent="Wall" unique_id=741490893]
 transform = Transform3D(0.003973171, 0, -0.99999213, 0, 1, 0, 0.99999213, 0, 0.003973171, -36.638878, 10.814209, 37.23384)
 shape = SubResource("BoxShape3D_13qdw")
+
+[node name="EffectsLayer" type="CanvasLayer" parent="." unique_id=1078622241]
+layer = 0
+
+[node name="Vignette" type="ColorRect" parent="EffectsLayer" unique_id=1497109955]
+material = SubResource("ShaderMaterial_xrivr")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="BlinkOverlay" type="ColorRect" parent="EffectsLayer" unique_id=1665758564]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GameOverLayer" type="CanvasLayer" parent="." unique_id=848087933]
+layer = 10
+
+[node name="DeathFade" type="ColorRect" parent="GameOverLayer" unique_id=1456225568]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="GameOverUI" type="Control" parent="GameOverLayer" unique_id=1526832896]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="GameOverLabel" type="Label" parent="GameOverLayer/GameOverUI" unique_id=1749614372]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -11.5
+offset_right = 46.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.5894587, 0.148731, 0.14100754, 1)
+theme_override_font_sizes/font_size = 64
+text = "GAME OVER"
+horizontal_alignment = 1
+
+[node name="RestartButton" type="Button" parent="GameOverLayer/GameOverUI" unique_id=425289887]
+custom_minimum_size = Vector2(160, 48)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -24.0
+offset_right = 80.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Restart
+"
 
 [editable path="Forest"]
 [editable path="WatchTower"]
