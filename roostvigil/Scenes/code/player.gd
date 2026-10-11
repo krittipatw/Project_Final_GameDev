@@ -22,6 +22,14 @@ const CROUCH_DEPTH = 0.5		# ระยะยุบตัวลงไปเมื�
 var head_crouch_y := 0.0
 const LERP_VAL = 10.0
 
+# ระบบ Stamina (หน่วยเป็น "วินาทีที่วิ่งได้")
+const STAMINA_MAX = 20.0				# วิ่งต่อเนื่องได้สูงสุดกี่วินาที
+const STAMINA_DRAIN_PER_SEC = 1.0		# ตอนวิ่ง ลดวินาทีละเท่าไหร่
+const STAMINA_RECHARGE_PER_SEC = 2.0	# ตอนไม่วิ่ง เพิ่มวินาทีละเท่าไหร่ (0 -> 10 ใช้ 5 วิ)
+const STAMINA_RESUME_AT = 10.0			# หมดแล้วต้องชาร์จถึงเท่านี้ถึงจะวิ่งได้อีก
+var stamina := STAMINA_MAX
+var exhausted := false					# true = หมดแรง กำลังพัก วิ่งไม่ได้
+
 # ระบบไฟฉาย (Flashlight)
 const BATTERY_DRAIN_PER_SEC = 1.0	# ลดกี่ % ต่อวินาที
 const BATTERY_MAX = 100.0
@@ -39,6 +47,7 @@ var message_token := 0
 @onready var prompt_label: Label = get_tree().current_scene.get_node_or_null("CanvasLayer/PromptLabel")
 @onready var battery_label: Label = get_tree().current_scene.get_node_or_null("CanvasLayer/BatteryLabel")
 @onready var message_label: Label = get_tree().current_scene.get_node_or_null("CanvasLayer/MessageLabel")
+@onready var stamina_bar: ProgressBar = get_tree().current_scene.get_node_or_null("CanvasLayer/StaminaBar")
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -59,6 +68,13 @@ func _ready() -> void:
 		message_label.visible = false
 	else:
 		push_warning("MessageLabel not found - ตรวจ path ของ message_label")
+
+	if stamina_bar:
+		stamina_bar.max_value = STAMINA_MAX
+		stamina_bar.value = STAMINA_MAX
+		stamina_bar.visible = false
+	else:
+		push_warning("StaminaBar not found - ตรวจ path ของ stamina_bar")
 
 	if flashlight_light:
 		flashlight_light.visible = false
@@ -115,6 +131,40 @@ func show_message(text: String, duration: float = 2.0) -> void:
 	if token == message_token and message_label:
 		message_label.visible = false
 
+# ---------- Stamina ----------
+# คืนค่า true ถ้า "กำลังวิ่งจริง" ในเฟรมนี้
+func _update_stamina(delta: float, wants_sprint: bool, moving: bool) -> bool:
+	var sprinting := false
+
+	if exhausted:
+		# กำลังพักอยู่ วิ่งไม่ได้ ถ้ากดวิ่งใหม่ให้ขึ้นข้อความ (เฉพาะตอนเพิ่งกด ไม่รัวทุกเฟรม)
+		if wants_sprint and Input.is_action_just_pressed("sprint"):
+			show_message("I need to rest a bit")
+	elif wants_sprint and moving:
+		sprinting = true
+
+	if sprinting:
+		stamina -= STAMINA_DRAIN_PER_SEC * delta
+		if stamina <= 0.0:
+			stamina = 0.0
+			exhausted = true
+			sprinting = false
+			show_message("I'm too tired.")
+	else:
+		stamina = min(stamina + STAMINA_RECHARGE_PER_SEC * delta, STAMINA_MAX)
+		if exhausted and stamina >= STAMINA_RESUME_AT:
+			exhausted = false
+
+	_update_stamina_bar(sprinting)
+	return sprinting
+
+func _update_stamina_bar(sprinting: bool) -> void:
+	if stamina_bar == null:
+		return
+	stamina_bar.value = stamina
+	# เต็มและไม่ได้วิ่ง = ซ่อน
+	stamina_bar.visible = stamina < STAMINA_MAX or sprinting
+
 # ---------- Flashlight ----------
 func pick_up_flashlight() -> void:
 	has_flashlight = true
@@ -170,13 +220,20 @@ func _physics_process(delta: float) -> void:
 
 	var can_control := _can_control()
 
+	var input_dir := Vector2.ZERO
+	if can_control:
+		input_dir = Input.get_vector("move-left", "move-right", "move-forward", "move-backward")
+
 	# --- จัดการเรื่องความเร็ว (Sprint / Crouch / Walk) ---
 	var is_crouching := false
-	var is_sprinting := false
+	var wants_sprint := false
 
 	if can_control:
 		is_crouching = Input.is_action_pressed("crouch")
-		is_sprinting = Input.is_action_pressed("sprint") and not is_crouching
+		wants_sprint = Input.is_action_pressed("sprint") and not is_crouching
+
+	# ผ่านระบบ Stamina ก่อนว่าวิ่งได้จริงไหม
+	var is_sprinting := _update_stamina(delta, wants_sprint, input_dir != Vector2.ZERO)
 
 	if is_crouching:
 		current_speed = CROUCH_SPEED
@@ -188,10 +245,6 @@ func _physics_process(delta: float) -> void:
 	# กระโดด (ถ้ากำลังย่อตัวอยู่ จะไม่อนุญาตให้กระโดด)
 	if can_control and Input.is_action_just_pressed("jump") and is_on_floor() and not is_crouching:
 		velocity.y = JUMP_VELOCITY
-
-	var input_dir := Vector2.ZERO
-	if can_control:
-		input_dir = Input.get_vector("move-left", "move-right", "move-forward", "move-backward")
 
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:

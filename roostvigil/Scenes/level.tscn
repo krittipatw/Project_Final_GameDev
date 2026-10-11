@@ -1,13 +1,13 @@
 [gd_scene format=3 uid="uid://12stoskfdj07"]
 
 [ext_resource type="PackedScene" uid="uid://clabrtl68y5is" path="res://Scenes/tscn/Notebook.tscn" id="1_wqkje"]
-[ext_resource type="PackedScene" uid="uid://5dn2j4rea1f" path="res://Scenes/FlashlightPickup.tscn" id="2_0f350"]
+[ext_resource type="PackedScene" uid="uid://5dn2j4rea1f" path="res://Scenes/code/FlashlightPickup.tscn" id="2_0f350"]
 [ext_resource type="PackedScene" uid="uid://bwdt4engvq0nk" path="res://Scenes/tscn/NotebookUI.tscn" id="4_81xng"]
 [ext_resource type="PackedScene" uid="uid://c6pn8g2j5my" path="res://asset/Platform/WatchTower.glb" id="6_0f350"]
 [ext_resource type="PackedScene" uid="uid://bt6gysljnshgo" path="res://asset/Platform/forest.glb" id="6_8c0lf"]
-[ext_resource type="PackedScene" uid="uid://uyug7yc8hyxh" path="res://Scenes/BatteryPickup.tscn" id="7_8c0lf"]
-[ext_resource type="PackedScene" uid="uid://dny2sm6x1dtwc" path="res://Scenes/CeilingLight.tscn" id="7_bvt00"]
-[ext_resource type="PackedScene" uid="uid://b0y517npi8g3d" path="res://Scenes/LightSwitch.tscn" id="9_oqgf2"]
+[ext_resource type="PackedScene" uid="uid://uyug7yc8hyxh" path="res://Scenes/tscn/BatteryPickup.tscn" id="7_8c0lf"]
+[ext_resource type="PackedScene" uid="uid://dny2sm6x1dtwc" path="res://Scenes/code/CeilingLight.tscn" id="7_bvt00"]
+[ext_resource type="PackedScene" uid="uid://b0y517npi8g3d" path="res://Scenes/tscn/LightSwitch.tscn" id="9_oqgf2"]
 [ext_resource type="PackedScene" uid="uid://b6no1rx3nmb6g" path="res://Scenes/player.tscn" id="11_qxfql"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_754fn"]
@@ -32,6 +32,12 @@ background_mode = 2
 sky = SubResource("Sky_b1lj4")
 fog_enabled = true
 fog_light_color = Color(0.49803922, 0.5529412, 0.60784316, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_13qdw"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xrivr"]
+bg_color = Color(0.6, 0.6, 0.6, 0.7294118)
 
 [node name="level" type="Node3D" unique_id=693394831]
 
@@ -120,9 +126,9 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 28.0
-offset_top = -40.0
+offset_top = -53.0
 offset_right = 70.0
-offset_bottom = -17.0
+offset_bottom = -30.0
 grow_vertical = 0
 text = "100%"
 
@@ -161,6 +167,23 @@ color = Color(1, 1, 1, 0.4627451)
 
 [node name="CeilingLight" parent="CanvasLayer" unique_id=17304891 instance=ExtResource("7_bvt00")]
 transform = Transform3D(0.9995959, -0.028405834, -0.0010883689, 0.028426677, 0.99886304, 0.03827142, 3.1271326e-11, -0.038286883, 0.99926674, -71.3464, 10.887944, -47.262417)
+
+[node name="StaminaBar" type="ProgressBar" parent="CanvasLayer" unique_id=1082952634]
+visible = false
+custom_minimum_size = Vector2(0, 12)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_13qdw")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xrivr")
+max_value = 20.0
+value = 20.0
+show_percentage = false
 
 [node name="BatteryPickup" parent="." unique_id=1598016108 instance=ExtResource("7_8c0lf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.65325, 8.307843, -44.90517)
