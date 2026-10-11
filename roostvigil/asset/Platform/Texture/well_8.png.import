@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c2vwfjv46wh3p"
-path.s3tc="res://.godot/imported/tumblers_2.png-61972398e0c21ce5929fb35b75cb9946.s3tc.ctex"
+uid="uid://drxgbpkad56xl"
+path.s3tc="res://.godot/imported/well_8.png-e33ac0adcad351d201dc888e3b21d66e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "7cb6e69e5a8b419df6dcb357752af4a2"
+"md5": "2972ed8901c461ed7264923e37b0b814"
 }
 
 [deps]
 
-source_file="res://asset/Object/tumblers_2.png"
-dest_files=["res://.godot/imported/tumblers_2.png-61972398e0c21ce5929fb35b75cb9946.s3tc.ctex"]
+source_file="res://asset/Platform/Texture/well_8.png"
+dest_files=["res://.godot/imported/well_8.png-e33ac0adcad351d201dc888e3b21d66e.s3tc.ctex"]
 
 [params]
 
