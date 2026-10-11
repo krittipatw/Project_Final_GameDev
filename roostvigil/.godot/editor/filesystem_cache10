@@ -1,5 +1,5 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1791712145
+::res://::1791719205
 desktop.ini::TextFile::-1::1791612696::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::1302822273084641005::1791562179::1791562201::1::::<><><>0<>0<>134bedc47880350765b199bac62e9605<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 LICENSE.txt::TextFile::-1::1791630928::0::1::::<><><>0<>0<><>::
@@ -30,17 +30,13 @@ sirenhead_0.png::CompressedTexture2D::1745587645907129757::1791612696::179161269
 smily_0.png::CompressedTexture2D::3063497004956523606::1791612696::1791612747::1::::<><><>0<>0<>a0b205a36161baf683f45ac230720bdd<>res://.godot/imported/smily_0.png-66e98cbd9270c6f7c0cebcda2b74f19d.s3tc.ctex::
 smily_1.png::CompressedTexture2D::7661886740685787331::1791612696::1791612747::1::::<><><>0<>0<>ad4927ba1b76163e63eb8d58b8f050aa<>res://.godot/imported/smily_1.png-e6d50a7aabea8c4eb9a1fb956d424f6a.s3tc.ctex::
 smily_2.png::CompressedTexture2D::5503143003351428019::1791612696::1791612747::1::::<><><>0<>0<>61c0bfa1ec9a27c1b0686c13cc08292b<>res://.godot/imported/smily_2.png-16fec740be64cb1b32bf89d4ad2fb0fd.s3tc.ctex::
-::res://asset/Object/::1791673236
+::res://asset/Object/::1791714226
 flashlight.glb::PackedScene::5124842994766483126::1791612696::1791612696::1::::<><><>0<>0<>c00cc6d0f1c0007e140072676d9739c6<>res://.godot/imported/flashlight.glb-7c5724f0a295a60a5ea54d4beeb66626.scn::
 flashlightbattery.glb::PackedScene::1013541211539027657::1791612696::1791612696::1::::<><><>0<>0<>88549b17514a11575b8f8b9190c086c5<>res://.godot/imported/flashlightbattery.glb-0c261b5f1e05c65e332ecb724e76bc84.scn::
 led_ceiling_light.glb::PackedScene::5222373671636773297::1791629284::1791629605::1::::<><><>0<>0<>1ec5ff9d67c9227f2624983ebe936af2<>res://.godot/imported/led_ceiling_light.glb-4903939092e8d6e54332494c102d6d5f.scn::
 Notebook.glb::PackedScene::201764690042775259::1791630808::1791631009::1::::<><><>0<>0<>b93517bbfdfab4f598c1fb287f619015<>res://.godot/imported/Notebook.glb-5721659f63203d31ff9d46c730197cb9.scn::uid://dsoe10pugrd3x::::res://asset/Object/Notebook_0.jpg
 radio.glb::PackedScene::7155208962996436457::1791612696::1791612696::1::::<><><>0<>0<>391bd077ed753f8ca22982daa792f0c9<>res://.godot/imported/radio.glb-10a27a7d6f8c9e0bb110ee880f663076.scn::uid://c5jbku655eq2x::::res://asset/Object/radio_0.png<>uid://c2cc2h5n6b5ek::::res://asset/Object/radio_1.png<>uid://i5abtqckjwi2::::res://asset/Object/radio_2.png
 tumblers.glb::PackedScene::1711990622195672584::1791629469::1791629618::1::::<><><>0<>0<>f31d01e548a8e641d47549e6fb0cd344<>res://.godot/imported/tumblers.glb-f3ee42b4836d114bd48f6839691cc935.scn::uid://dja2ks5ljjiti::::res://asset/Object/tumblers_3.png<>uid://bnd5oilksh1yn::::res://asset/Object/tumblers_2.png<>uid://5ld5qhnq7xf1::::res://asset/Object/tumblers_1.png<>uid://cawc46417rrn7::::res://asset/Object/tumblers_0.png
-tumblers_0.png::CompressedTexture2D::9098578871498690539::1791673235::1791673236::1::::<><><>0<>0<>354b6a21fa0fa1fcf6664c906d3b4ac8<>res://.godot/imported/tumblers_0.png-e4a0ce2551d690da973ba8c28f97feca.s3tc.ctex::
-tumblers_1.png::CompressedTexture2D::1872224282169437561::1791673235::1791673236::1::::<><><>0<>0<>1025bf279aa66648fcc65fc339fbfcdb<>res://.godot/imported/tumblers_1.png-5f0f89f851785785b8aa5ac7d2943273.s3tc.ctex::
-tumblers_2.png::CompressedTexture2D::6712637287769689955::1791673235::1791673236::1::::<><><>0<>0<>c95e28209aea99a4368bcf0b31a4deb4<>res://.godot/imported/tumblers_2.png-61972398e0c21ce5929fb35b75cb9946.s3tc.ctex::
-tumblers_3.png::CompressedTexture2D::1517241970358142785::1791673235::1791673236::1::::<><><>0<>0<>e66c57dbfc997574bb7e427132c9afe6<>res://.godot/imported/tumblers_3.png-5758978295357c7c872bc15d88f4cf96.s3tc.ctex::
 ::res://asset/Object/Texture/::1791631018
 Notebook_0.jpg::CompressedTexture2D::8451853160906535043::1791630952::1791631018::1::::<><><>0<>0<>f9635dfff6638fffd06dd80dde65b22e<>res://.godot/imported/Notebook_0.jpg-bf7e00dce0beebbc44ec4a8378a35dff.s3tc.ctex::
 radio_0.png::CompressedTexture2D::6897165751004796269::1791612696::1791612696::1::::<><><>0<>0<>d7465499a5082fde78c9882bd69fe75d<>res://.godot/imported/radio_0.png-787cb4057b3b0e3dc1df46c05221080d.s3tc.ctex::
@@ -79,8 +75,8 @@ well_9.png::CompressedTexture2D::824230029506020075::1791712121::1791712145::1::
 well_10.png::CompressedTexture2D::5338776799026921613::1791712121::1791712145::1::::<><><>0<>0<>ffd4b710d962ea8369d9d9b2423bdb76<>res://.godot/imported/well_10.png-65591b44d98a9919034419b058b69d8c.s3tc.ctex::
 ::res://Human/::1791612696
 ::res://Platform/::1791612696
-::res://Scenes/::1791710719
-level.tscn::PackedScene::1881775733496991934::1791710719::0::1::::<><><>0<>0<><>::uid://clabrtl68y5is::::res://Scenes/tscn/Notebook.tscn<>uid://5dn2j4rea1f::::res://Scenes/tscn/FlashlightPickup.tscn<>uid://bwdt4engvq0nk::::res://Scenes/tscn/NotebookUI.tscn<>uid://c6pn8g2j5my::::res://asset/Platform/WatchTower.glb<>uid://bt6gysljnshgo::::res://asset/Platform/forest.glb<>uid://uyug7yc8hyxh::::res://Scenes/tscn/BatteryPickup.tscn<>uid://dny2sm6x1dtwc::::res://Scenes/tscn/CeilingLight.tscn<>uid://b0y517npi8g3d::::res://Scenes/tscn/LightSwitch.tscn<>uid://b6no1rx3nmb6g::::res://Scenes/player.tscn
+::res://Scenes/::1791713575
+level.tscn::PackedScene::1881775733496991934::1791713575::0::1::::<><><>0<>0<><>::uid://clabrtl68y5is::::res://Scenes/tscn/Notebook.tscn<>uid://5dn2j4rea1f::::res://Scenes/tscn/FlashlightPickup.tscn<>uid://bwdt4engvq0nk::::res://Scenes/tscn/NotebookUI.tscn<>uid://cp8u6pypqgu54::::res://asset/Platform/well.glb<>uid://c6pn8g2j5my::::res://asset/Platform/WatchTower.glb<>uid://bt6gysljnshgo::::res://asset/Platform/forest.glb<>uid://uyug7yc8hyxh::::res://Scenes/tscn/BatteryPickup.tscn<>uid://dny2sm6x1dtwc::::res://Scenes/tscn/CeilingLight.tscn<>uid://b0y517npi8g3d::::res://Scenes/tscn/LightSwitch.tscn<>uid://b6no1rx3nmb6g::::res://Scenes/player.tscn
 player.tscn::PackedScene::4590009145532631960::1791707198::0::1::::<><><>0<>0<><>::uid://c2q87k87o487w::::res://Scenes/code/player.gd<>uid://dploxjwb6jiq7::::res://Scenes/code/fps.gd
 ::res://Scenes/code/::1791705669
 BatteryPickup.gd::GDScript::862408704617271163::1791663735::0::1::::<>StaticBody3D<><>0<>0<><>::
