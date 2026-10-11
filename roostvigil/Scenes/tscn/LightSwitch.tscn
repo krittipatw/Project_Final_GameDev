@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b0y517npi8g3d"]
 
-[ext_resource type="Script" uid="uid://dqkttli7ge5x" path="res://Scenes/LightSwitch.gd" id="1_2ch34"]
+[ext_resource type="Script" uid="uid://dqkttli7ge5x" path="res://Scenes/code/LightSwitch.gd" id="1_2ch34"]
 [ext_resource type="PackedScene" uid="uid://ynkiafbx08oq" path="res://asset/Object/tumblers.glb" id="2_xny18"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xrivr"]
