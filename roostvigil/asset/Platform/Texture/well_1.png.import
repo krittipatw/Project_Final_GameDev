@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2voi88s5gu1x"
-path.s3tc="res://.godot/imported/tumblers_0.png-e4a0ce2551d690da973ba8c28f97feca.s3tc.ctex"
+uid="uid://d0hlnjrn311xp"
+path.s3tc="res://.godot/imported/well_1.png-d643b1b94221bcf62f8d37fa52dbc6ca.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "e53ddca07878183e3c27cb88936674a9"
+"md5": "cd4722792b7106e43ccc9837bcf2d142"
 }
 
 [deps]
 
-source_file="res://asset/Object/tumblers_0.png"
-dest_files=["res://.godot/imported/tumblers_0.png-e4a0ce2551d690da973ba8c28f97feca.s3tc.ctex"]
+source_file="res://asset/Platform/Texture/well_1.png"
+dest_files=["res://.godot/imported/well_1.png-d643b1b94221bcf62f8d37fa52dbc6ca.s3tc.ctex"]
 
 [params]
 
@@ -29,8 +29,8 @@ compress/normal_map=0
 compress/channel_pack=0
 mipmaps/generate=true
 mipmaps/limit=-1
-roughness/mode=0
-roughness/src_normal=""
+roughness/mode=8
+roughness/src_normal="res://asset/Platform/well_2.png"
 process/channel_remap/red=0
 process/channel_remap/green=1
 process/channel_remap/blue=2

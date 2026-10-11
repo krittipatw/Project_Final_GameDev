@@ -1,11 +1,12 @@
 extends CharacterBody3D
 
-const WALK_SPEED = 5.0
+const WALK_SPEED = 3.5
 const SPRINT_SPEED = 8.0
 const CROUCH_SPEED = 2.5
 const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.003
 const MAX_STEP_HEIGHT = 0.4
+const STEP_FORWARD_DIST = 0.1	# ระยะก้าวไปข้างหน้าขั้นต่ำตอนขึ้นขั้น (ไม่ขึ้นกับความเร็ว)
 
 # ตัวแปรสำหรับความเร็วปัจจุบัน
 var current_speed = WALK_SPEED
@@ -325,6 +326,7 @@ func _update_prompt() -> void:
 func _try_step_up(start_position: Vector3, start_velocity: Vector3, delta: float) -> void:
 	var end_position := global_position
 
+	# 1) ย้อนกลับไปตำแหน่งก่อนชน แล้วยกขึ้นตามความสูงขั้นบันได
 	global_position = start_position
 	var up_motion := Vector3.UP * MAX_STEP_HEIGHT
 	var up_collision := KinematicCollision3D.new()
@@ -332,16 +334,20 @@ func _try_step_up(start_position: Vector3, start_velocity: Vector3, delta: float
 		up_motion = up_collision.get_travel()
 	global_position += up_motion
 
-	var forward_motion := Vector3(start_velocity.x, 0, start_velocity.z) * delta
+	# 2) ก้าวไปข้างหน้า (ใช้ระยะขั้นต่ำ เพื่อให้เดินช้าก็ขึ้นขั้นได้)
+	var horizontal_vel := Vector3(start_velocity.x, 0, start_velocity.z)
+	var forward_motion := horizontal_vel.normalized() * maxf(horizontal_vel.length() * delta, STEP_FORWARD_DIST)
 	if test_move(global_transform, forward_motion):
 		global_position = end_position
 		return
 	global_position += forward_motion
 
+	# 3) กดตัวลงมาให้ติดพื้นขั้นบันได
 	var down_collision := KinematicCollision3D.new()
 	if test_move(global_transform, Vector3.DOWN * (up_motion.y + 0.05), down_collision):
 		if down_collision.get_normal().angle_to(Vector3.UP) <= floor_max_angle:
 			global_position += down_collision.get_travel()
 			return
 
+	# 4) ถ้าไม่ผ่านเงื่อนไข ให้กลับตำแหน่งเดิม
 	global_position = end_position

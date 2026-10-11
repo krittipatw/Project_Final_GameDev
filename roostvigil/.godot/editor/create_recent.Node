@@ -1,6 +1,6 @@
-ProgressBar
 CollisionShape3D
 StaticBody3D
+ProgressBar
 OmniLight3D
 Node3D
 ColorRect
@@ -12,4 +12,3 @@ RichTextLabel
 Panel
 RayCast3D
 Control
-MeshInstance3D
