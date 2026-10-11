@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dny2sm6x1dtwc"]
+
+[ext_resource type="Script" uid="uid://ciei0ivlfsc4l" path="res://Scenes/CeilingLight.gd" id="1_r435u"]
+[ext_resource type="PackedScene" uid="uid://cgn0y4p501gjh" path="res://asset/Object/led_ceiling_light.glb" id="2_6vjk8"]
+
+[node name="CeilingLight" type="Node3D" unique_id=17304891]
+script = ExtResource("1_r435u")
+
+[node name="led_ceiling_light_glb" parent="." unique_id=866182286 instance=ExtResource("2_6vjk8")]
+transform = Transform3D(1, 0, 0, 0, 0.42137212, 0.9068879, 0, -0.9068879, 0.42137212, -0.031254888, 0, -0.14745522)
+
+[node name="Light" type="OmniLight3D" parent="." unique_id=1410969618]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0033274293, -0.077891245, -0.14087415)
+light_energy = 2.0
+light_size = 1.0
+shadow_enabled = true
+omni_range = 10.0

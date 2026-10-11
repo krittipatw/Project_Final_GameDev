@@ -1,6 +1,8 @@
-ColorRect
 CollisionShape3D
 StaticBody3D
+OmniLight3D
+Node3D
+ColorRect
 Label
 SpotLight3D
 CanvasLayer
@@ -10,5 +12,3 @@ Panel
 RayCast3D
 Control
 MeshInstance3D
-DirectionalLight3D
-WorldEnvironment

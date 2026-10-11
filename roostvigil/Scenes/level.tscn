@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c6pn8g2j5my" path="res://asset/Platform/WatchTower.glb" id="6_0f350"]
 [ext_resource type="PackedScene" uid="uid://bt6gysljnshgo" path="res://asset/Platform/forest.glb" id="6_8c0lf"]
 [ext_resource type="PackedScene" uid="uid://uyug7yc8hyxh" path="res://Scenes/BatteryPickup.tscn" id="7_8c0lf"]
+[ext_resource type="PackedScene" uid="uid://dny2sm6x1dtwc" path="res://Scenes/CeilingLight.tscn" id="7_bvt00"]
+[ext_resource type="PackedScene" uid="uid://b0y517npi8g3d" path="res://Scenes/LightSwitch.tscn" id="9_oqgf2"]
 [ext_resource type="PackedScene" uid="uid://b6no1rx3nmb6g" path="res://Scenes/player.tscn" id="11_qxfql"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_754fn"]
@@ -34,10 +36,10 @@ fog_light_color = Color(0.49803922, 0.5529412, 0.60784316, 1)
 [node name="level" type="Node3D" unique_id=693394831]
 
 [node name="StaticBody3D" parent="." unique_id=1439344814 instance=ExtResource("1_wqkje")]
-transform = Transform3D(0.6670716, 0, 0.7449936, 0, 1, 0, -0.7449936, 0, 0.6670716, -71.062294, 8.324321, -49.389923)
+transform = Transform3D(0.6670716, 0, 0.7449936, 0, 1, 0, -0.7449936, 0, 0.6670716, -71.062294, 8.265126, -49.389923)
 
 [node name="FlashlightPickup" parent="." unique_id=1324179059 instance=ExtResource("2_0f350")]
-transform = Transform3D(0.7928674, 0, 0.6093942, 0, 1, 0, -0.6093942, 0, 0.7928674, -71.405655, 8.385405, -44.484253)
+transform = Transform3D(0.7928674, 0, 0.6093942, 0, 1, 0, -0.6093942, 0, 0.7928674, -71.405655, 8.292803, -44.484253)
 
 [node name="Forest" parent="." unique_id=628709874 instance=ExtResource("6_8c0lf")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -33.05035, -1.758873, -38.929073)
@@ -157,11 +159,17 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(1, 1, 1, 0.4627451)
 
+[node name="CeilingLight" parent="CanvasLayer" unique_id=17304891 instance=ExtResource("7_bvt00")]
+transform = Transform3D(0.9995959, -0.028405834, -0.0010883689, 0.028426677, 0.99886304, 0.03827142, 3.1271326e-11, -0.038286883, 0.99926674, -71.3464, 10.887944, -47.262417)
+
 [node name="BatteryPickup" parent="." unique_id=1598016108 instance=ExtResource("7_8c0lf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.65325, 8.307843, -44.90517)
 
 [node name="BatteryPickup2" parent="." unique_id=1808903169 instance=ExtResource("7_8c0lf")]
 transform = Transform3D(-0.036391336, -0.99933773, -0.0003497162, 0.99930537, -0.036387343, -0.008070555, 0.008052485, -0.0006431714, 0.9999674, -72.014465, 8.606098, -45.100883)
+
+[node name="LightSwitch" parent="." unique_id=1151340956 instance=ExtResource("9_oqgf2")]
+transform = Transform3D(-0.014763913, 0, 0.49978197, 0, 0.5, 0, -0.49978197, 0, -0.014763913, -73.25536, 9.431672, -45.796562)
 
 [editable path="Forest"]
 [editable path="WatchTower"]

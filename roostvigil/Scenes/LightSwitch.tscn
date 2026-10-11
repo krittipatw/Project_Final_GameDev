@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b0y517npi8g3d"]
+
+[ext_resource type="Script" uid="uid://dqkttli7ge5x" path="res://Scenes/LightSwitch.gd" id="1_2ch34"]
+[ext_resource type="PackedScene" uid="uid://ynkiafbx08oq" path="res://asset/Object/tumblers.glb" id="2_xny18"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xrivr"]
+size = Vector3(0.5743103, 0.52770233, 0.3508606)
+
+[node name="LightSwitch" type="StaticBody3D" unique_id=1151340956]
+script = ExtResource("1_2ch34")
+
+[node name="tumblers_glb" parent="." unique_id=1139082369 instance=ExtResource("2_xny18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8559866, -1.1920929e-07, -0.34785748)
+
+[node name="Armature" parent="tumblers_glb/Sketchfab_model/Root" parent_id_path=PackedInt32Array(1139082369, 1773151434) index="0" unique_id=511160984]
+visible = false
+
+[node name="Armature_001" parent="tumblers_glb/Sketchfab_model/Root" parent_id_path=PackedInt32Array(1139082369, 1773151434) index="1" unique_id=632677913]
+visible = false
+
+[node name="Skeleton3D" parent="tumblers_glb/Sketchfab_model/Root/Armature_002" parent_id_path=PackedInt32Array(1139082369, 1100612364) index="0" unique_id=1900473657]
+bones/2/rotation = Quaternion(-0.7071068, 0, 0, 0.7071068)
+
+[node name="Armature_003" parent="tumblers_glb/Sketchfab_model/Root" parent_id_path=PackedInt32Array(1139082369, 1773151434) index="3" unique_id=384938570]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1451523674]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.47916466, 0.45066947, -0.19210517)
+shape = SubResource("BoxShape3D_xrivr")
+
+[editable path="tumblers_glb"]
