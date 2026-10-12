@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dls2kj8qxu2uo"]
+
+[ext_resource type="Script" uid="uid://cgkwnd4fsphj1" path="res://Scenes/tscn/main_menu.gd" id="1_uhp0t"]
+
+[node name="MainMenu" type="Control" unique_id=207692184]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 5.0
+offset_right = 18.0
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uhp0t")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1733395566]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 1161.0
+offset_bottom = 654.0
+color = Color(0.05621396, 0.05621396, 0.05621396, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1159109307]
+layout_mode = 0
+offset_left = 441.0
+offset_top = 213.0
+offset_right = 747.0
+offset_bottom = 297.0
+theme_override_colors/font_color = Color(0.47058824, 0.07450981, 0, 1)
+theme_override_font_sizes/font_size = 61
+text = "Roost Vigil"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=252454493]
+layout_mode = 0
+offset_left = 458.0
+offset_top = 331.0
+offset_right = 712.0
+offset_bottom = 473.0
+
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=1963507667]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7019608, 0.10980392, 0, 1)
+theme_override_colors/font_hover_color = Color(0.985012, 0.93921816, 0.92671126, 1)
+text = "START"
+
+[node name="Options" type="Button" parent="VBoxContainer" unique_id=1155901091]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7019608, 0.10980392, 0, 1)
+text = "OPTIONS"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer" unique_id=761509245]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7019608, 0.10980392, 0, 1)
+text = "QUIT"
