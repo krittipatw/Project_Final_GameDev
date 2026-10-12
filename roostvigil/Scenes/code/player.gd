@@ -101,6 +101,7 @@ var message_token := 0
 @onready var restart_button: Button = _scene.get_node_or_null("GameOverLayer/GameOverUI/RestartButton")
 
 func _ready() -> void:
+	add_to_group("player")
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	head_start_y = head.position.y
 	head_crouch_y = head_start_y - CROUCH_DEPTH
