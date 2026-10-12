@@ -1,0 +1,123 @@
+[gd_scene format=3 uid="uid://c7epuf2epi0pf"]
+
+[ext_resource type="Script" uid="uid://dm8t3hm7cupw7" path="res://Scenes/code/Credit.gd" id="1_txjyk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_goveo"]
+bg_color = Color(0.72412676, 0, 0.14528164, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4oyfo"]
+
+[node name="Credit" type="Control" unique_id=1504352410]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_txjyk")
+next_scene = "uid://dls2kj8qxu2uo"
+
+[node name="Background" type="ColorRect" parent="." unique_id=1347024650]
+layout_mode = 0
+offset_left = -8.0
+offset_top = -11.0
+offset_right = 1167.0
+offset_bottom = 657.0
+color = Color(0, 0, 0, 1)
+
+[node name="credit" type="RichTextLabel" parent="." unique_id=34009642]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.061000004
+anchor_bottom = 0.134
+offset_left = 266.0
+offset_top = 71.0
+offset_right = 865.728
+offset_bottom = 791.16797
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center][font_size=64]Roost Vigil[/font_size]
+
+[center][font_size=36]Background[/font_size]
+[font_size=28]Forest
+- Author: rhfqcntrkf
+- License: CC BY 4.0[/font_size]
+
+
+[font_size=36]Object[/font_size]
+[font_size=28]Watch tower Remastered Wide 
+- Author: 00amza
+- License: CC BY 4.0
+
+Vintage Radio 
+- Author: MinFeng
+- License: CC BY 4.0
+
+Flashlight 
+- Author: sookendestroy1
+- License: CC BY 4.0
+
+Flashlight Battery 
+- Author: CanVas Dev
+- License: CC BY 4.0
+
+Led Ceiling Light 
+- Author: nikki.patel59896
+- License: CC BY 4.0
+
+Tumblers 
+- Author: blenderist
+- License: CC BY 4.0
+
+Plan Student's record book Залікова студента
+- Author: Laryok_k
+- License: CC BY 4.0][/font_size]
+
+
+[font_size=36]Ghost[/font_size]
+[font_size=28]Ghost Girl Animated 
+- Author: Shaban Hafizsalim
+- License: CC BY 4.0
+
+Smily horror monster 
+- Author: Bento 
+- License: CC BY 4.0
+
+Horror Skunx Retexterd Siren Head [UPDATED] 
+- Author: Horror BigGameRR Green Screens
+- License: CC BY 4.0
+
+Grandpa animated Make Joke Horror Gulli Bulli 
+- Author: Make Joke Horror Official
+- License: CC BY 4.0
+
+Jötunn creature inspired by \"The ritual\"  
+- Author: ps2enthusiast
+- License: CC BY 4.0
+
+
+[font_size=36]Members[/font_size]
+- นายกฤติพัฒน์ หวังมะโน 683380065-7
+- นายพีรัชชัย เจริญตา 683380088-5
+- นายพงศธร นันทะ 683380307-9
+-นางสาวมุกรวี เจนกุลประสูตร 683380586-9 
+
+Thank you for playing[/font_size][/center]
+"
+fit_content = true
+scroll_active = false
+
+[node name="exit" type="Button" parent="." unique_id=384412627]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -55.0
+offset_top = 17.0
+offset_right = -18.0
+offset_bottom = 52.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_goveo")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxFlat_4oyfo")
+text = "Exit"
