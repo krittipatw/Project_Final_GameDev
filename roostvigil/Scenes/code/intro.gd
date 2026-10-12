@@ -8,8 +8,8 @@ const GAP_TIME := 0.5
 
 @export_multiline var lines: Array[String] = [
 	"คืนนั้น ไม่มีใครบอกเธอว่าป่านี้มีอะไรอยู่",
-	"อย่าให้ความมืดเข้าใกล้",
-	"และอย่าฟังเสียงที่ร้องขอความช่วยเหลือ",
+	"Always stay away from the DARK.",
+	"Don't listen to them asking for Help.",
 ]
 
 @onready var label: Label = $Label
