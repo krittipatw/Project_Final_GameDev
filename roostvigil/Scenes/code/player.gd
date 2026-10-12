@@ -290,13 +290,25 @@ func _update_sanity(delta: float) -> void:
 
 	_update_sanity_bar()
 
+# [GHOST] ลด Sanity ทันที เรียกจากผี/ศัตรู เช่น player.lose_sanity(20)
+func lose_sanity(amount: float) -> void:
+	if is_dead:
+		return
+	sanity = max(sanity - amount, 0.0)
+	var new_tier := _sanity_tier_for(sanity)
+	if new_tier > sanity_tier and SANITY_MESSAGES.has(new_tier):
+		show_message(SANITY_MESSAGES[new_tier], 3.0)
+	sanity_tier = new_tier
+	_update_sanity_bar()
+
 # อยู่ในที่สว่างไหม: เปิดไฟฉาย หรืออยู่ในระยะแสงของโคมที่เปิดอยู่
 func _is_in_light() -> bool:
 	if flashlight_on:
 		return true
 
 	for node in get_tree().root.find_children("*", "Light3D", true, false):
-		if node == flashlight_light:
+		# [GHOST] ข้ามไฟฉายตัวเอง และแสงเรืองของผี (group ghost_light)
+		if node == flashlight_light or node.is_in_group("ghost_light"):
 			continue
 		var light := node as Light3D
 		if light == null or not light.is_visible_in_tree() or light.light_energy <= 0.0:
