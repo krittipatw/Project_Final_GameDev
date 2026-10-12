@@ -2,6 +2,7 @@ extends Control
 
 # ---------- เปลี่ยนฉาก ----------
 @export_file("*.tscn") var game_scene: String = "res://Scenes/intro.tscn"
+@export_file("*.tscn") var credit_scene: String = "res://Scenes/Credit.tscn"
 
 # ---------- สไลด์พื้นหลัง ----------
 @export var hold_time: float = 2.5
@@ -60,7 +61,10 @@ func _on_options_pressed() -> void:
 	print("Options: ยังไม่ได้ทำ")  # ใส่ฉาก Options ภายหลัง
 
 func _on_credit_pressed() -> void:
-	print("Credit: ยังไม่ได้ทำ")   # ใส่ฉาก Credit ภายหลัง
+	if ResourceLoader.exists(credit_scene):
+		get_tree().change_scene_to_file(credit_scene)
+	else:
+		push_warning("ไม่พบฉาก Credit ที่พาธ: " + credit_scene)
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()

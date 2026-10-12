@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dls2kj8qxu2uo"]
 
 [ext_resource type="Script" uid="uid://cgkwnd4fsphj1" path="res://Scenes/code/main_menu.gd" id="1_uhp0t"]
-[ext_resource type="Texture2D" uid="uid://c4qxwh2er1i06" path="res://asset/Platform/BG1.png" id="2_f18gq"]
-[ext_resource type="Texture2D" uid="uid://dgr4plp2g8g4s" path="res://asset/Platform/BG2.png" id="3_ag7ny"]
-[ext_resource type="Texture2D" uid="uid://b35sxhag2pxdo" path="res://asset/Platform/BG3.png" id="4_w2qf1"]
-[ext_resource type="Texture2D" uid="uid://dr5l5cgojrxqg" path="res://asset/Platform/BG4.png" id="5_vjb54"]
+[ext_resource type="Texture2D" uid="uid://pojaqpmgtx4u" path="res://asset/Platform/Texture/BG1.png" id="2_f18gq"]
+[ext_resource type="Texture2D" uid="uid://c34642bje4psa" path="res://asset/Platform/Texture/BG2.png" id="3_ag7ny"]
+[ext_resource type="Texture2D" uid="uid://cdy8bkn7e8xbp" path="res://asset/Platform/Texture/BG3.png" id="4_w2qf1"]
+[ext_resource type="Texture2D" uid="uid://c41phafelneb3" path="res://asset/Platform/Texture/BG4.png" id="5_vjb54"]
 
 [node name="MainMenu" type="Control" unique_id=207692184]
 layout_mode = 3
@@ -18,6 +18,7 @@ offset_bottom = 7.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_uhp0t")
+credit_scene = "uid://c7epuf2epi0pf"
 
 [node name="BG1" type="TextureRect" parent="." unique_id=363162642]
 layout_mode = 0
