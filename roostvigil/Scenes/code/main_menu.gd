@@ -3,6 +3,7 @@ extends Control
 # ---------- เปลี่ยนฉาก ----------
 @export_file("*.tscn") var game_scene: String = "res://Scenes/intro.tscn"
 @export_file("*.tscn") var credit_scene: String = "res://Scenes/Credit.tscn"
+@export_file("*.tscn") var options_scene: String = "res://Scenes/tscn/options_menu.tscn"  # <-- เพิ่ม
 
 # ---------- สไลด์พื้นหลัง ----------
 @export var hold_time: float = 2.5
@@ -57,8 +58,14 @@ func _cycle() -> void:
 func _on_start_pressed() -> void:
 	get_tree().change_scene_to_file(game_scene)
 
-func _on_options_pressed() -> void:
-	print("Options: ยังไม่ได้ทำ")  # ใส่ฉาก Options ภายหลัง
+func _on_options_pressed() -> void:  # <-- แก้
+	if not ResourceLoader.exists(options_scene):
+		push_warning("ไม่พบฉาก Options ที่พาธ: " + options_scene)
+		return
+	var packed: PackedScene = load(options_scene)
+	var options := packed.instantiate()
+	add_child(options)  # อยู่ท้ายสุด จึงวาดทับปุ่มและพื้นหลัง
+	options.closed.connect(options_button.grab_focus)
 
 func _on_credit_pressed() -> void:
 	if ResourceLoader.exists(credit_scene):

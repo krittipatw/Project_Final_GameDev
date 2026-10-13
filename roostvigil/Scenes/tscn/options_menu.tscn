@@ -1,0 +1,130 @@
+[gd_scene format=3 uid="uid://7kfoxx3ub4ev"]
+
+[ext_resource type="Script" uid="uid://c8abdho83hkq6" path="res://Scenes/code/options_menu.gd" id="1_5v3f4"]
+[ext_resource type="Texture2D" uid="uid://pojaqpmgtx4u" path="res://asset/Platform/Texture/BG1.png" id="2_5q5ms"]
+[ext_resource type="Texture2D" uid="uid://c34642bje4psa" path="res://asset/Platform/Texture/BG2.png" id="3_1lurn"]
+[ext_resource type="Texture2D" uid="uid://cdy8bkn7e8xbp" path="res://asset/Platform/Texture/BG3.png" id="4_2b583"]
+[ext_resource type="Texture2D" uid="uid://c41phafelneb3" path="res://asset/Platform/Texture/BG4.png" id="5_nsjfd"]
+
+[node name="OptionsMenu" type="Control" unique_id=966169874]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_5v3f4")
+
+[node name="BG1" type="TextureRect" parent="." unique_id=169075388]
+layout_mode = 0
+offset_left = -17.0
+offset_top = -4.0
+offset_right = 1138.0
+offset_bottom = 651.0
+texture = ExtResource("2_5q5ms")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ColorRect" type="ColorRect" parent="BG1" unique_id=1522906731]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.024
+anchor_right = -0.024
+offset_left = 28.72
+offset_top = -5.0
+offset_right = 1193.72
+offset_bottom = 656.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.43137255)
+
+[node name="BG2" type="TextureRect" parent="." unique_id=1840781960]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -10.0
+offset_right = 1146.0
+offset_bottom = 655.0
+texture = ExtResource("3_1lurn")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ColorRect" type="ColorRect" parent="BG2" unique_id=1053659088]
+layout_mode = 0
+offset_right = 1177.0
+offset_bottom = 667.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.43137255)
+
+[node name="BG3" type="TextureRect" parent="." unique_id=1531231191]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -10.0
+offset_right = 1146.0
+offset_bottom = 655.0
+texture = ExtResource("4_2b583")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ColorRect" type="ColorRect" parent="BG3" unique_id=1375588681]
+layout_mode = 0
+offset_right = 1177.0
+offset_bottom = 667.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.43137255)
+
+[node name="BG4" type="TextureRect" parent="." unique_id=1404783177]
+layout_mode = 0
+offset_left = -27.0
+offset_top = -10.0
+offset_right = 1146.0
+offset_bottom = 655.0
+texture = ExtResource("5_nsjfd")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="ColorRect" type="ColorRect" parent="BG4" unique_id=270994521]
+layout_mode = 0
+offset_right = 1177.0
+offset_bottom = 667.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.43137255)
+
+[node name="Title" type="Label" parent="." unique_id=1978734176]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 465.0
+offset_top = -5.0
+offset_right = 660.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 56
+text = "Setting"
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1705851800]
+layout_mode = 0
+offset_left = 459.0
+offset_top = 248.0
+offset_right = 694.0
+offset_bottom = 317.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1988949234]
+layout_mode = 2
+
+[node name="VolumeLabel" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1847788199]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+text = "Sound Setting"
+
+[node name="MasterSlider" type="HSlider" parent="PanelContainer/VBoxContainer" unique_id=1648344674]
+layout_mode = 2
+
+[node name="BackButton" type="Button" parent="." unique_id=184339648]
+layout_mode = 0
+offset_left = 531.0
+offset_top = 510.0
+offset_right = 613.0
+offset_bottom = 563.0
+theme_override_font_sizes/font_size = 32
+text = "Back"
