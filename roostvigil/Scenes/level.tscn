@@ -105,6 +105,13 @@ albedo_texture = ExtResource("14_crh0w")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vofx3"]
 albedo_texture = ExtResource("15_c7le1")
 
+[sub_resource type="Environment" id="Environment_xrivr"]
+background_mode = 1
+background_energy_multiplier = 0.3
+tonemap_exposure = 0.2
+fog_enabled = true
+fog_light_color = Color(0.06003517, 0.2273008, 0.41505763, 1)
+
 [node name="level" type="Node3D" unique_id=693394831]
 
 [node name="StaticBody3D" parent="." unique_id=1439344814 instance=ExtResource("1_wqkje")]
@@ -556,6 +563,9 @@ gizmo_extents = 1.0
 transform = Transform3D(-0.89836395, 0, -0.43925184, 0, 1, 0, 0.43925184, 0, -0.89836395, -10.138784, -0.5484779, -4.744735)
 
 [node name="PauseMenu" parent="." unique_id=1500843216 instance=ExtResource("22_pnhnk")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=70470794]
+environment = SubResource("Environment_xrivr")
 
 [editable path="WatchTower"]
 [editable path="Well"]

@@ -1,4 +1,3 @@
-
 extends Control
 
 const CORRECT_CODE := "0867"
@@ -21,6 +20,21 @@ const COL_BTN_PRESSED := Color(0.4, 0.1, 0.1)
 const COL_OK := Color(0.2, 1.0, 0.3)
 const COL_BAD := Color(0.95, 0.15, 0.15)
 
+# ---------- เสียง ----------
+const CLICK_SOUND_PATH := "res://asset/Sound/Password.mp3"
+const WRONG_SOUND_PATH := "res://asset/Sound/Wrong.mp3"
+const SUCCESS_SOUND_PATH := "res://asset/Sound/Correct.mp3"
+
+# ปกติไม่ต้องตั้งใน Inspector (ใช้ไฟล์จาก path ด้านบนอัตโนมัติ)
+# ถ้าลากไฟล์ใส่ช่องเหล่านี้ จะใช้ไฟล์ที่ลากแทน path เริ่มต้น
+@export var click_sound: AudioStream		# ตอนกดแป้น 0-9 / Clear / Enter (Password.mp3)
+@export var wrong_sound: AudioStream		# ตอนใส่รหัสผิด (WRONG)
+@export var success_sound: AudioStream		# ตอนใส่รหัสถูก (SUCCESS)
+
+var click_player: AudioStreamPlayer
+var wrong_player: AudioStreamPlayer
+var success_player: AudioStreamPlayer
+
 var display: Label
 var screen_box: StyleBoxFlat
 var grid: GridContainer
@@ -38,7 +52,41 @@ func _ready() -> void:
 		child.queue_free()
 
 	_build_ui()
+	_setup_sounds()
 	_refresh()
+
+
+# ---------- Sound helpers ----------
+
+# สร้าง AudioStreamPlayer ด้วยโค้ด (เพราะ _ready ลบลูกทั้งหมดทิ้งก่อนสร้าง UI
+# ถ้าเพิ่ม node เสียงใน scene จะถูกลบไปด้วย)
+func _setup_sounds() -> void:
+	click_player = _make_player(_stream_or_load(click_sound, CLICK_SOUND_PATH))
+	click_player.max_polyphony = 4		# กดรัวๆ เสียงซ้อนกันได้ ไม่ตัดกัน
+	wrong_player = _make_player(_stream_or_load(wrong_sound, WRONG_SOUND_PATH))
+	success_player = _make_player(_stream_or_load(success_sound, SUCCESS_SOUND_PATH))
+
+
+# ใช้ไฟล์ที่ลากใน Inspector ก่อน ถ้าไม่มีให้โหลดจาก path (ไม่พบไฟล์ = เตือน แต่ไม่ crash)
+func _stream_or_load(custom: AudioStream, path: String) -> AudioStream:
+	if custom:
+		return custom
+	if ResourceLoader.exists(path):
+		return load(path) as AudioStream
+	push_warning("keypad_ui: ไม่พบไฟล์เสียง " + path)
+	return null
+
+
+func _make_player(stream: AudioStream) -> AudioStreamPlayer:
+	var p := AudioStreamPlayer.new()
+	p.stream = stream
+	add_child(p)
+	return p
+
+
+func _play_sfx(p: AudioStreamPlayer) -> void:
+	if p and p.stream:
+		p.play()
 
 
 # ---------- Style helpers ----------
@@ -245,6 +293,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			_on_button(c)
 
 		elif event.keycode == KEY_BACKSPACE and not locked:
+			_play_sfx(click_player)		# เสียงกดลบ (คีย์บอร์ด)
 			if entered.length() > 0:
 				entered = entered.substr(
 					0,
@@ -256,6 +305,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			event.keycode == KEY_ENTER
 			or event.keycode == KEY_KP_ENTER
 		):
+			if not locked:
+				_play_sfx(click_player)		# เสียงกด Enter (คีย์บอร์ด)
 			_submit()
 
 		get_viewport().set_input_as_handled()
@@ -268,9 +319,11 @@ func _on_button(label: String) -> void:
 		return
 
 	if label == "Clear":
+		_play_sfx(click_player)		# เสียงกด Clear
 		entered = ""
 
 	elif label == "Enter":
+		_play_sfx(click_player)		# เสียงกด Enter
 		_submit()
 		return
 
@@ -278,6 +331,7 @@ func _on_button(label: String) -> void:
 		label.is_valid_int()
 		and entered.length() < CORRECT_CODE.length()
 	):
+		_play_sfx(click_player)		# เสียงกดแป้น 0-9
 		entered += label
 
 		if entered.length() == CORRECT_CODE.length():
@@ -305,6 +359,7 @@ func _submit() -> void:
 func _wrong() -> void:
 	display.text = "WRONG"
 	_set_display_state(COL_BAD, COL_BAD)
+	_play_sfx(wrong_player)		# เสียงรหัสผิด
 
 	# กะพริบ 3 ครั้ง
 	var tween := create_tween()
@@ -344,6 +399,7 @@ func _win() -> void:
 
 	display.text = "SUCCESS"
 	_set_display_state(COL_OK, COL_OK)
+	_play_sfx(success_player)	# เสียงรหัสถูก
 
 	await get_tree().create_timer(SUCCESS_DELAY).timeout
 

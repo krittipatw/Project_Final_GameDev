@@ -78,6 +78,9 @@ var in_light := true
 var light_check_timer := 0.0
 var blink_timer := 3.0
 
+# ---------- เสียงผู้เล่น ----------
+const PANTING_MIN_HP = 30.0		# HP ต้องมากกว่านี้ถึงจะหอบ
+
 # ข้อความแจ้งเตือน
 var message_token := 0
 
@@ -97,7 +100,10 @@ var stumble_tween: Tween = null
 @onready var camera = $Head/Camera3D
 @onready var interact_ray: RayCast3D = $Head/Camera3D/InteractRay
 @onready var flashlight_light: SpotLight3D = $Head/Camera3D/Flashlight
-
+@onready var walk_sound: AudioStreamPlayer3D = $WalkSound
+@onready var run_sound: AudioStreamPlayer3D = $RunSound
+@onready var panting_sound: AudioStreamPlayer3D = $PantingSound
+@onready var gasp_sound: AudioStreamPlayer3D = $GaspSound
 @onready var _scene = get_tree().current_scene
 @onready var prompt_label: Label = _scene.get_node_or_null("CanvasLayer/PromptLabel")
 @onready var battery_label: Label = _scene.get_node_or_null("CanvasLayer/BatteryLabel")
@@ -277,6 +283,32 @@ func _update_stamina_bar(sprinting: bool) -> void:
 	stamina_bar.value = stamina
 	# เต็มและไม่ได้วิ่ง = ซ่อน
 	stamina_bar.visible = stamina < STAMINA_MAX or sprinting
+
+# ---------- เสียงผู้เล่น ----------
+# เรียกทุกเฟรมใน _physics_process: เดิน / วิ่ง / หอบ
+func _update_player_sounds(is_sprinting: bool) -> void:
+	var speed := Vector2(velocity.x, velocity.z).length()
+	var moving := is_on_floor() and speed > 0.1 and not is_dead
+
+	_set_loop_sound(walk_sound, moving and not is_sprinting)
+	_set_loop_sound(run_sound, moving and is_sprinting)
+
+	# หอบ: Stamina หมด (ช่วงพักชาร์จ) + HP มากกว่า 30 + ยังไม่ตาย
+	var panting := exhausted and hp > PANTING_MIN_HP and not is_dead
+	_set_loop_sound(panting_sound, panting)
+
+func _set_loop_sound(node: AudioStreamPlayer3D, should_play: bool) -> void:
+	if node == null:
+		return
+	if should_play and not node.playing:
+		node.play()
+	elif not should_play and node.playing:
+		node.stop()
+
+# เสียงตกใจ: ผีเรียกตอน jumpscare
+func play_gasp() -> void:
+	if gasp_sound:
+		gasp_sound.play()
 
 # ---------- Sanity ----------
 func _sanity_tier_for(value: float) -> int:
@@ -640,6 +672,7 @@ func _physics_process(delta: float) -> void:
 
 	_update_head_bob(delta, is_sprinting, is_crouching)
 	_update_prompt()
+	_update_player_sounds(is_sprinting)	# เสียงเดิน / วิ่ง / หอบ
 
 # ---------- Boundary Wall ----------
 # [WALL] ถ้าชนกำแพงที่อยู่ใน group "boundary_wall" ให้ขึ้นข้อความ (มี cooldown กันรัว)

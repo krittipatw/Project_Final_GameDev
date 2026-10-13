@@ -2,6 +2,10 @@
 
 [ext_resource type="Script" uid="uid://c2q87k87o487w" path="res://Scenes/code/player.gd" id="1_v0iea"]
 [ext_resource type="Script" uid="uid://dploxjwb6jiq7" path="res://Scenes/code/fps.gd" id="2_cvnsp"]
+[ext_resource type="AudioStream" uid="uid://cc3cgg8txnsgi" path="res://asset/Sound/Walk.mp3" id="3_x3wgy"]
+[ext_resource type="AudioStream" uid="uid://cwme2h6y2c3um" path="res://asset/Sound/Run.mp3" id="4_3smsa"]
+[ext_resource type="AudioStream" uid="uid://d1m3tfjyarkft" path="res://asset/Sound/Panting.mp3" id="5_8erm5"]
+[ext_resource type="AudioStream" uid="uid://bn1gam4hmnamr" path="res://asset/Sound/Gasp.mp3" id="6_f1ek2"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_13qdw"]
 
@@ -36,6 +40,28 @@ light_energy = 6.0
 light_size = 2.0
 shadow_enabled = true
 spot_range = 20.0
+
+[node name="WalkSound" type="AudioStreamPlayer3D" parent="CharacterBody3D" unique_id=1790140208]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+stream = ExtResource("3_x3wgy")
+volume_db = 0.5
+
+[node name="GaspSound" type="AudioStreamPlayer3D" parent="CharacterBody3D" unique_id=1042364188]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+stream = ExtResource("6_f1ek2")
+volume_db = 0.5
+
+[node name="PantingSound" type="AudioStreamPlayer3D" parent="CharacterBody3D" unique_id=1117287883]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+stream = ExtResource("5_8erm5")
+volume_db = 0.01
+max_db = 0.03
+
+[node name="RunSound" type="AudioStreamPlayer3D" parent="CharacterBody3D" unique_id=446093886]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+stream = ExtResource("4_3smsa")
+volume_db = 0.01
+max_db = 0.03
 
 [node name="FPS" type="Label" parent="." unique_id=1685928955]
 offset_right = 40.0
