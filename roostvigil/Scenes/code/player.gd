@@ -84,6 +84,10 @@ var message_token := 0
 # FOV ปกติ (ใช้กับ punch_fov)
 var base_fov := 0.0
 
+# ตัวคูณความเร็วเดิน (ลดชั่วคราวตอนสะดุด)
+var speed_mult := 1.0
+var stumble_tween: Tween = null
+
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 @onready var interact_ray: RayCast3D = $Head/Camera3D/InteractRay
@@ -446,6 +450,18 @@ func look_at_point(point: Vector3, duration: float = 0.1) -> void:
 		camera.rotation.x = lerpf(start_pitch, target_pitch, t)
 	, 0.0, 1.0, maxf(duration, 0.01))
 
+# เดินสะดุด: ช้าลงชั่วคราวแล้วค่อยๆ กลับมาเร็วปกติ (เรียกจากผีที่คลาน)
+func stumble(duration: float = 0.9, slow_factor: float = 0.35) -> void:
+	if is_dead:
+		return
+	if stumble_tween and stumble_tween.is_valid():
+		stumble_tween.kill()
+	speed_mult = slow_factor
+	shake_camera(0.12, 0.4)
+	stumble_tween = create_tween()
+	stumble_tween.tween_interval(duration * 0.4)
+	stumble_tween.tween_property(self, "speed_mult", 1.0, duration * 0.6)
+
 # FOV กระแทก (zoom เข้าแล้วคืนค่า) ถ้าอยากให้กว้างขึ้นแทน เปลี่ยน base_fov - amount เป็น base_fov + amount
 func punch_fov(amount: float = 18.0, duration: float = 0.5) -> void:
 	var tween := create_tween()
@@ -593,6 +609,7 @@ func _physics_process(delta: float) -> void:
 		current_speed = SPRINT_SPEED
 	else:
 		current_speed = WALK_SPEED
+	current_speed *= speed_mult
 
 	# กระโดด (ถ้ากำลังย่อตัวอยู่ จะไม่อนุญาตให้กระโดด)
 	if can_control and Input.is_action_just_pressed("jump") and is_on_floor() and not is_crouching:

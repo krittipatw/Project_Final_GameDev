@@ -1,3 +1,5 @@
+CollisionShape3D
+CharacterBody3D
 Control
 Container
 GridContainer
@@ -5,10 +7,8 @@ Label
 VBoxContainer
 Panel
 CanvasLayer
-CollisionShape3D
 StaticBody3D
 ColorRect
 MeshInstance3D
 Marker3D
 Node3D
-CSGBox3D
