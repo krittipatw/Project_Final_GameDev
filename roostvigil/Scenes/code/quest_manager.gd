@@ -5,7 +5,7 @@ signal quest_completed(id: String)
 signal all_completed
 
 const QUESTS := [
-	{"id": "find_watch_tower", "text": "Find Watchtower"},
+	{"id": "find_watch_tower", "text": "Find a flashlight"},
 	{"id": "read_notebook", "text": "Read Notebook"},
 	{"id": "find_pass_code", "text": "Find passcode"},
 ]
