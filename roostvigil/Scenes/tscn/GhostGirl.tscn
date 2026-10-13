@@ -14,7 +14,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33063424, -1.1920929e-07, 0
 
 [node name="WalkSound" type="AudioStreamPlayer3D" parent="." unique_id=198806447]
 stream = ExtResource("3_h5e7p")
-max_distance = 14.0
+max_distance = 20.0
 
 [node name="StareSound" type="AudioStreamPlayer3D" parent="." unique_id=1699047700]
 stream = ExtResource("4_pjvfg")
