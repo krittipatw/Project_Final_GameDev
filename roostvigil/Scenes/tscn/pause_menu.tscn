@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://bpidyrkv0c2t"]
+
+[ext_resource type="Script" uid="uid://dit38yj5tm7n6" path="res://Scenes/code/pause_menu.gd" id="1_gu6vc"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=1500843216]
+process_mode = 3
+layer = 10
+script = ExtResource("1_gu6vc")
+
+[node name="Root" type="Control" parent="." unique_id=1978408391]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Dim" type="ColorRect" parent="Root" unique_id=75109496]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -3.0
+offset_right = 1.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3529412, 0.3529412, 0.3529412, 0.44313726)
+
+[node name="Title" type="Label" parent="Root" unique_id=757965951]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -100.5
+offset_top = 144.0
+offset_right = 100.5
+offset_bottom = 216.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.972549, 0.2, 0, 1)
+theme_override_font_sizes/font_size = 80
+text = "PAUSED"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Root" unique_id=884964196]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -52.0
+offset_right = 56.0
+offset_bottom = 148.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ResumeButton" type="Button" parent="Root/VBoxContainer" unique_id=1402174328]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.972549, 0.2, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "Resume"
+
+[node name="RestartButton" type="Button" parent="Root/VBoxContainer" unique_id=2080408273]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.972549, 0.2, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "Restart"
+
+[node name="OptionsButton" type="Button" parent="Root/VBoxContainer" unique_id=1274139153]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.972549, 0.2, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "Options"
+
+[node name="ExitButton" type="Button" parent="Root/VBoxContainer" unique_id=1608864899]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.972549, 0.2, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "Exit"
