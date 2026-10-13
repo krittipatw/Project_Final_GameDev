@@ -19,6 +19,51 @@ const GAZE_TIME_TO_SCARE = 3.0		# จ้องครบกี่วินาท�
 const GAZE_DECAY_MULT = 1.0			# หันหนีแล้ว static ลดลงเร็วแค่ไหน (1 = เท่ากับตอนขึ้น)
 const START_GRACE = 8.0				# ช่วงเว้นตอนเริ่มเกม ผียังไม่ตอบสนองต่อสายตา (วินาที)
 
+# ---------- ขยับเข้ามาตอนถูกมอง ----------
+const CREEP_TIMES = [1.0, 2.0]		# จ้องครบกี่วินาที ผีถึงจะขยับเข้ามา 1 ก้าว
+const CREEP_STEP = 1.0				# ก้าวละกี่เมตร
+const CREEP_MIN_DISTANCE = 3.0		# ไม่เข้าใกล้กว่านี้ (จนกว่าจะ jumpscare)
+
+# ---------- Jumpscare ----------
+const SANITY_DAMAGE = 20.0			# ลด Sanity เท่าไหร่
+const SCARE_START_DISTANCE = 2.8	# ผีโผล่ห่างหน้าผู้เล่นกี่เมตร ก่อนพุ่งเข้าใส่
+const SCARE_DISTANCE = 1.0			# ระยะที่ผีหยุดหน้าผู้เล่น (เมตร)
+const SCARE_LIFT = 0.6				# ยกผีลอยขึ้นจากพื้นกี่เมตร (กล้องจะเงยมองเห็นใบหน้า)
+const SCARE_LUNGE_TIME = 0.18		# เวลาที่พุ่งเข้าใส่ (วินาที)
+const SCARE_HOLD = 1.2				# ค้างให้เห็นหน้าผีกี่วินาที ก่อนวาร์ปหนี (ผู้เล่นขยับไม่ได้)
+const FACE_HEIGHT = 1.4				# ความสูงใบหน้าผี นับจากเท้า (กล้องจะเล็งตรงนี้)
+const SCARE_LIGHT_BOOST = 4.0		# คูณความสว่างของแสงส่องหน้าตอน jumpscare
+const SCARE_YAW_FIX_DEG = -15.0		# หมุนผีเพิ่มตอน jumpscare ให้หันหน้าตรง (กด K ทดสอบทีละ 45°)
+const SCARE_POSE_FRACTION = 0.0		# ท่าค้างตอน jumpscare เป็นกี่ส่วนของท่าเดิน (0.0 ถึง 0.99)
+const SCARE_TILT_DEG = 0.0			# เอนตัวผีไปด้านหลัง (ห่างจากผู้เล่น) ให้หน้าเงยขึ้น (ลอง 20 หรือ -20 ถ้าก้มหนักกว่าเดิม)
+const POST_SCARE_GRACE = 10.0		# หลังวาร์ป ผีไม่ตอบสนองต่อสายตากี่วินาที
+const TELEPORT_MIN_DISTANCE = 6.0	# วาร์ปไปจุดที่ห่างผู้เล่นอย่างน้อยกี่เมตร
+
+# ปุ่มทดสอบ (J = jumpscare ทันที, K = เปลี่ยนทิศหน้า, L = เปลี่ยนท่าค้าง) ปิดได้เมื่อได้ค่าที่ชอบแล้ว
+const DEBUG_KEYS = true
+
+# ---------- แสงเรือง ----------
+const GLOW_COLOR = Color(0.2, 1.0, 0.8)	# ฟ้าอมเขียว
+const GLOW_LIGHT_ENERGY = 0.4			# ความสว่างของแสงที่ส่องพื้นรอบตัว
+const GLOW_LIGHT_RANGE = 4.0			# ระยะแสง (เมตร)
+const GLOW_LIGHT_POS = Vector3(0.0, 1.0, 0.0)	# ตำแหน่งแสงตอนปกติ (กลางลำตัว)
+const GLOW_PULSE_SPEED = 2.0			# ความเร็วที่แสงหายใจเข้าออก
+const GLOW_SHADER_CODE = """
+shader_type spatial;
+render_mode unshaded, blend_add, depth_draw_never, cull_back;
+
+uniform vec4 glow_color : source_color = vec4(0.2, 1.0, 0.8, 1.0);
+uniform float intensity = 1.0;
+uniform float rim_power = 2.0;
+uniform float base_glow = 0.12;
+
+void fragment() {
+	float fres = pow(1.0 - clamp(dot(normalize(NORMAL), normalize(VIEW)), 0.0, 1.0), rim_power);
+	ALBEDO = glow_color.rgb;
+	ALPHA = clamp((base_glow + fres) * intensity, 0.0, 1.0);
+}
+"""
+
 # เว้นว่างไว้ = ใช้อนิเมชันแรกที่เจอในโมเดล
 @export var walk_animation: String = ""
 
@@ -28,18 +73,28 @@ var wait_timer := 0.0
 var anim: AnimationPlayer
 var anim_playing := false
 
-var player: CharacterBody3D = null
+var player = null					# ไม่ระบุชนิด เพราะต้องเรียกฟังก์ชันของ player.gd
 var screen_fx = null
 var frozen := false					# true = กำลังถูกมอง แข็งทื่อ
+var scaring := false				# true = กำลังอยู่ในจังหวะ jumpscare
 var stare_time := 0.0
 var static_value := 0.0
 var grace_timer := START_GRACE
-var scare_triggered := false
+var creep_index := 0
+
+var glow_light: OmniLight3D = null
+var glow_material: ShaderMaterial = null
+var glow_time := 0.0
+var glow_boost := 1.0				# ตัวคูณความสว่างของแสงส่อง (เพิ่มชั่วคราวตอน jumpscare)
+
+var scare_yaw_fix_deg := SCARE_YAW_FIX_DEG
+var scare_pose_fraction := SCARE_POSE_FRACTION
 
 func _ready() -> void:
 	add_to_group("ghost_girl")
 	_find_waypoints()
 	_setup_animation()
+	_setup_glow()
 	_pick_next_waypoint()
 
 # ---------- Waypoints ----------
@@ -107,8 +162,54 @@ func _apply_anim_state() -> void:
 		anim.pause()
 		anim_playing = false
 
+# ค้างท่าเดินที่เฟรมที่กำหนด ให้ท่าตอน jumpscare เหมือนเดิมทุกครั้ง
+func _set_scare_pose() -> void:
+	if anim == null or walk_animation == "" or not anim.has_animation(walk_animation):
+		return
+	var length := anim.get_animation(walk_animation).length
+	anim.play(walk_animation)
+	anim.pause()
+	anim.seek(length * scare_pose_fraction, true)
+	anim_playing = false
+
+# ---------- แสงเรือง ----------
+func _setup_glow() -> void:
+	# 1) แสงสีฟ้าอมเขียวส่องพื้นและต้นไม้รอบตัว (สร้างเป็นลูกของผี)
+	glow_light = OmniLight3D.new()
+	glow_light.name = "GlowLight"
+	glow_light.light_color = GLOW_COLOR
+	glow_light.light_energy = GLOW_LIGHT_ENERGY
+	glow_light.omni_range = GLOW_LIGHT_RANGE
+	glow_light.shadow_enabled = false
+	glow_light.position = GLOW_LIGHT_POS
+	glow_light.add_to_group("ghost_light")	# ระบบ Sanity จะไม่นับแสงนี้เป็นที่สว่าง
+	add_child(glow_light)
+
+	# 2) ขอบเรืองแสงบนผิวโมเดล (material overlay ทับตัวเดิมทุกชิ้น)
+	var shader := Shader.new()
+	shader.code = GLOW_SHADER_CODE
+	glow_material = ShaderMaterial.new()
+	glow_material.shader = shader
+	glow_material.set_shader_parameter("glow_color", GLOW_COLOR)
+	for mesh in find_children("*", "MeshInstance3D", true, false):
+		(mesh as MeshInstance3D).material_overlay = glow_material
+
+func _update_glow(delta: float) -> void:
+	glow_time += delta
+	var pulse := 1.0 + 0.2 * sin(glow_time * GLOW_PULSE_SPEED)
+	if glow_light:
+		glow_light.light_energy = GLOW_LIGHT_ENERGY * pulse * glow_boost
+	if glow_material:
+		glow_material.set_shader_parameter("intensity", pulse)	# ไม่คูณ boost เพื่อไม่ให้ทับพื้นผิวโมเดล
+
 # ---------- ทุกเฟรม ----------
 func _process(delta: float) -> void:
+	_update_glow(delta)
+
+	# ระหว่าง jumpscare ให้ _jumpscare() คุมทิศทางเอง ไม่ให้ _face_player มาทับ
+	if scaring:
+		return
+
 	if frozen:
 		_face_player(delta)
 	else:
@@ -141,30 +242,39 @@ func _patrol(delta: float) -> void:
 func _face_player(delta: float) -> void:
 	if player == null:
 		return
-	var to_player := player.global_position - global_position
+	var to_player: Vector3 = player.global_position - global_position
 	_turn_toward(Vector3(to_player.x, 0.0, to_player.z), delta, 2.0)
+
+func _yaw_for(flat_dir: Vector3) -> float:
+	return atan2(-flat_dir.x, -flat_dir.z) + deg_to_rad(MODEL_YAW_OFFSET_DEG)
 
 func _turn_toward(flat_dir: Vector3, delta: float, speed_mult: float) -> void:
 	if flat_dir.length() < 0.01:
 		return
-	var desired_yaw := atan2(-flat_dir.x, -flat_dir.z) + deg_to_rad(MODEL_YAW_OFFSET_DEG)
-	rotation.y = lerp_angle(rotation.y, desired_yaw, clamp(TURN_SPEED * speed_mult * delta, 0.0, 1.0))
+	rotation.y = lerp_angle(rotation.y, _yaw_for(flat_dir), clamp(TURN_SPEED * speed_mult * delta, 0.0, 1.0))
 
 # ---------- ตรวจการถูกมอง (ต้องอยู่ใน physics เพราะใช้ raycast) ----------
 func _physics_process(delta: float) -> void:
 	if player == null:
-		player = get_tree().get_first_node_in_group("player") as CharacterBody3D
+		player = get_tree().get_first_node_in_group("player")
 		if player == null:
-			return  # ยังไม่เจอ player (ตรวจว่าเพิ่ม add_to_group("player") ใน player.gd แล้ว)
+			return  # ยังไม่เจอ player (ตรวจว่ามี add_to_group("player") ใน player.gd แล้ว)
+
+	# กำลัง jumpscare อยู่ ให้ลำดับเหตุการณ์ใน _jumpscare() จัดการเอง
+	if scaring:
+		return
 
 	# ผู้เล่นตายแล้ว: เลิกตอบสนอง
 	if player.get("is_dead"):
+		frozen = false
 		_set_static(0.0)
 		return
 
-	# กำลังอ่านสมุด: ผีหยุดนิ่ง และไม่นับเวลาจ้อง
+	# กำลังอ่านสมุด: ผีหยุดนิ่ง ไม่นับเวลาจ้อง และ static ค่อยๆ จาง
 	if _notebook_open():
 		frozen = true
+		static_value = move_toward(static_value, 0.0, delta * 4.0)
+		_set_static(static_value)
 		return
 
 	if grace_timer > 0.0:
@@ -175,14 +285,19 @@ func _physics_process(delta: float) -> void:
 
 	if seen:
 		stare_time = minf(stare_time + delta, GAZE_TIME_TO_SCARE)
+		# ขยับเข้ามาทีละก้าวตามเวลาที่จ้อง
+		if creep_index < CREEP_TIMES.size() and stare_time >= CREEP_TIMES[creep_index]:
+			_creep_closer()
+			creep_index += 1
 	else:
 		stare_time = maxf(stare_time - delta * GAZE_DECAY_MULT, 0.0)
 		if stare_time <= 0.0:
-			scare_triggered = false
+			creep_index = 0
 
-	if stare_time >= GAZE_TIME_TO_SCARE and not scare_triggered:
-		scare_triggered = true
-		_on_scare()
+	# จ้องครบเวลา -> jumpscare
+	if stare_time >= GAZE_TIME_TO_SCARE:
+		_jumpscare()
+		return
 
 	# static ค่อยๆ แรงขึ้นตามเวลาที่จ้อง (เริ่มเร็ว แล้วค่อยๆ เต็ม)
 	var target_static := sqrt(stare_time / GAZE_TIME_TO_SCARE)
@@ -225,6 +340,156 @@ func _set_static(value: float) -> void:
 	if screen_fx:
 		screen_fx.set_static(value)
 
-func _on_scare() -> void:
-	# ขั้นที่ 3 จะเติม jumpscare ตรงนี้ (ตอนนี้แค่พิมพ์ข้อความทดสอบ)
-	print("GhostGirl: จ้องครบ ", GAZE_TIME_TO_SCARE, " วินาที -> JUMPSCARE (ยังไม่ทำ)")
+# ---------- ขยับเข้ามา ----------
+func _creep_closer() -> void:
+	var to_player: Vector3 = player.global_position - global_position
+	var flat := Vector3(to_player.x, 0.0, to_player.z)
+	var dist := flat.length()
+	var step := minf(CREEP_STEP, dist - CREEP_MIN_DISTANCE)
+	if step <= 0.0:
+		return
+	global_position += flat.normalized() * step
+	static_value = 1.0  # static วูบเต็มจอ บังตอนผีขยับ แล้วค่อยๆ ลดลง
+
+# ---------- Jumpscare ----------
+# ตั้งทิศหน้า + เอนตัวไปด้านหลัง (เอนในพิกัดโลก เทียบกับทิศที่มองผู้เล่น ไม่ขึ้นกับทิศหน้าของโมเดล)
+func _set_scare_orientation() -> void:
+	var to_player: Vector3 = player.global_position - global_position
+	var flat := Vector3(to_player.x, 0.0, to_player.z)
+	if flat.length() < 0.01:
+		return
+	# รีเซ็ตเป็นตั้งตรงก่อน แล้วหมุนทิศหน้า
+	rotation = Vector3(0.0, _yaw_for(flat) + deg_to_rad(scare_yaw_fix_deg), 0.0)
+	# เอนส่วนบนของตัวให้ห่างจากผู้เล่น (หน้าจะเงยขึ้นมาหากล้อง)
+	var away := -flat.normalized()
+	var axis := Vector3.UP.cross(away)
+	if axis.length() > 0.001 and not is_zero_approx(SCARE_TILT_DEG):
+		global_transform.basis = Basis(axis.normalized(), deg_to_rad(SCARE_TILT_DEG)) * global_transform.basis
+
+func _jumpscare() -> void:
+	scaring = true
+	frozen = true
+	_set_static(0.0)
+
+	# ผีโผล่ตรงหน้าผู้เล่น (ไกลหน่อย) แล้วพุ่งเข้าใส่ ขณะพุ่งลอยสูงขึ้นจากพื้น
+	var forward: Vector3 = -player.global_transform.basis.z
+	forward.y = 0.0
+	forward = forward.normalized()
+	var ground_y := global_position.y
+	var start_pos: Vector3 = player.global_position + forward * SCARE_START_DISTANCE
+	var final_pos: Vector3 = player.global_position + forward * SCARE_DISTANCE
+	start_pos.y = ground_y
+	final_pos.y = ground_y + SCARE_LIFT
+
+	global_position = start_pos
+	_set_scare_pose()  # ค้างท่าเดียวกันทุกครั้ง
+	_set_scare_orientation()
+
+	# ล็อกผู้เล่น แล้วบังคับให้กล้องเล็งไปที่ใบหน้าผี
+	var face_point := final_pos + Vector3(0.0, FACE_HEIGHT, 0.0)
+	if player.has_method("lock_input"):
+		player.lock_input(SCARE_LUNGE_TIME + SCARE_HOLD)
+	if player.has_method("look_at_point"):
+		player.look_at_point(face_point, 0.1)
+
+	# พุ่งเข้าหา (ช้าก่อนแล้วเร็วขึ้นท้ายๆ)
+	var lunge := create_tween()
+	lunge.tween_property(self, "global_position", final_pos, SCARE_LUNGE_TIME) \
+		.set_trans(Tween.TRANS_EXPO).set_ease(Tween.EASE_IN)
+	await lunge.finished
+
+	# ถึงหน้าผู้เล่นแล้ว: หันหน้าเข้าหาอีกครั้งให้แม่นยำ
+	_set_scare_orientation()
+
+	# แสงส่องหน้า + เอฟเฟกต์ทั้งหมดพร้อมกัน
+	# TODO: เสียง jumpscare ใส่ตรงนี้ทีหลัง
+	if glow_light:
+		var toward_player: Vector3 = player.global_position - final_pos
+		toward_player.y = 0.0
+		glow_light.global_position = face_point + toward_player.normalized() * 0.8	# ย้ายแสงมาอยู่หน้าใบหน้า
+	glow_boost = SCARE_LIGHT_BOOST
+	create_tween().tween_property(self, "glow_boost", 1.0, SCARE_HOLD)
+
+	if screen_fx and screen_fx.has_method("flash"):
+		screen_fx.flash(0.35, 0.8)
+	if player.has_method("shake_camera"):
+		player.shake_camera(0.2, 0.6)
+	if player.has_method("punch_fov"):
+		player.punch_fov(18.0, 0.5)
+	if player.has_method("reduce_sanity"):
+		player.reduce_sanity(SANITY_DAMAGE)
+
+	await get_tree().create_timer(SCARE_HOLD).timeout
+
+	# คืนค่าต่างๆ แล้ววาร์ปหนีไปจุดอื่น กลับไปเดินวนเหมือนเดิม
+	glow_boost = 1.0
+	if glow_light:
+		glow_light.position = GLOW_LIGHT_POS
+	rotation = Vector3(0.0, rotation.y, 0.0)	# เลิกเอนตัว กลับมาตั้งตรง
+	_teleport_away()
+	stare_time = 0.0
+	static_value = 0.0
+	creep_index = 0
+	wait_timer = 0.0
+	grace_timer = POST_SCARE_GRACE
+	frozen = false
+	_set_static(0.0)
+	scaring = false
+
+# วาร์ปไปที่จุดที่อยู่นอกสายตา และห่างจากผู้เล่นพอสมควร
+func _teleport_away() -> void:
+	if waypoints.is_empty():
+		return
+
+	var cam := get_viewport().get_camera_3d()
+	var candidates: Array[Node3D] = []
+	for p in waypoints:
+		if p.global_position.distance_to(player.global_position) < TELEPORT_MIN_DISTANCE:
+			continue
+		if cam and cam.is_position_in_frustum(p.global_position + GAZE_TARGET_OFFSET):
+			continue
+		candidates.append(p)
+
+	var chosen: Node3D = null
+	if candidates.is_empty():
+		# ไม่มีจุดที่เหมาะ: เลือกจุดที่ไกลผู้เล่นที่สุด
+		var best := -1.0
+		for p in waypoints:
+			var d := p.global_position.distance_to(player.global_position)
+			if d > best:
+				best = d
+				chosen = p
+	else:
+		chosen = candidates.pick_random()
+
+	global_position = chosen.global_position
+	target = chosen
+	_pick_next_waypoint()
+
+# ---------- ปุ่มทดสอบ (ตั้ง DEBUG_KEYS = false เมื่อเสร็จ) ----------
+const _TEST_YAWS = [0.0, 45.0, 90.0, 135.0, 180.0, -135.0, -90.0, -45.0]
+const _TEST_POSES = [0.0, 0.25, 0.5, 0.75]
+var _test_yaw_index := 0
+var _test_pose_index := 0
+
+func _unhandled_input(event: InputEvent) -> void:
+	if not DEBUG_KEYS:
+		return
+	var key := event as InputEventKey
+	if key == null or not key.pressed or key.echo:
+		return
+
+	if key.keycode == KEY_J:
+		if player == null:
+			player = get_tree().get_first_node_in_group("player")
+		if player != null and not scaring:
+			print("JUMPSCARE ทดสอบ: ทิศหน้า = ", scare_yaw_fix_deg, " | ท่า = ", scare_pose_fraction, " | เอน = ", SCARE_TILT_DEG)
+			_jumpscare()
+	elif key.keycode == KEY_K:
+		_test_yaw_index = (_test_yaw_index + 1) % _TEST_YAWS.size()
+		scare_yaw_fix_deg = _TEST_YAWS[_test_yaw_index]
+		print("ทิศหน้า SCARE_YAW_FIX_DEG = ", scare_yaw_fix_deg)
+	elif key.keycode == KEY_L:
+		_test_pose_index = (_test_pose_index + 1) % _TEST_POSES.size()
+		scare_pose_fraction = _TEST_POSES[_test_pose_index]
+		print("ท่าค้าง SCARE_POSE_FRACTION = ", scare_pose_fraction)

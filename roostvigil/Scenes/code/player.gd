@@ -56,6 +56,7 @@ var hp := HP_MAX
 var hp_tier := 0
 var vignette_value := 0.0
 var is_dead := false
+var input_locked := false			# true = ล็อกการควบคุมชั่วคราว (ตอนโดน jumpscare)
 
 # ---------- ระบบ Sanity ----------
 const SANITY_MAX = 100.0
@@ -79,6 +80,9 @@ var blink_timer := 3.0
 
 # ข้อความแจ้งเตือน
 var message_token := 0
+
+# FOV ปกติ (ใช้กับ punch_fov)
+var base_fov := 0.0
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
@@ -105,6 +109,7 @@ func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	head_start_y = head.position.y
 	head_crouch_y = head_start_y - CROUCH_DEPTH
+	base_fov = camera.fov
 
 	if prompt_label:
 		prompt_label.visible = false
@@ -178,12 +183,12 @@ func _ui_open() -> bool:
 	return ui != null and ui.visible
 
 func _can_control() -> bool:
-	return not is_dead and not _ui_open() and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED
+	return not is_dead and not input_locked and not _ui_open() and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED
 
 # ---------- Input ----------
 func _unhandled_input(event: InputEvent) -> void:
 	# ตายแล้ว ไม่รับการควบคุมใดๆ
-	if is_dead:
+	if is_dead or input_locked:
 		return
 
 	# ถ้า UI สมุดเปิดอยู่ ไม่หมุนกล้อง ไม่ interact
@@ -308,9 +313,10 @@ func _is_in_light() -> bool:
 		return true
 
 	for node in get_tree().root.find_children("*", "Light3D", true, false):
-		# [GHOST] ข้ามไฟฉายตัวเอง และแสงเรืองของผี (group ghost_light)
-		if node == flashlight_light or node.is_in_group("ghost_light"):
+		if node == flashlight_light:
 			continue
+		if node.is_in_group("ghost_light"):
+			continue  # แสงเรืองของผีไม่นับเป็นที่สว่าง
 		var light := node as Light3D
 		if light == null or not light.is_visible_in_tree() or light.light_energy <= 0.0:
 			continue
@@ -389,6 +395,55 @@ func heal(amount: float) -> void:
 		return
 	hp += amount
 	_apply_hp_change()
+
+# ลด Sanity ทันที (เรียกจากศัตรู)
+func reduce_sanity(amount: float) -> void:
+	if is_dead:
+		return
+	sanity = max(sanity - amount, 0.0)
+	_update_sanity_bar()
+
+# กล้องสั่น (strength = ความแรง, duration = วินาที)
+func shake_camera(strength: float = 0.15, duration: float = 0.5) -> void:
+	var tween := create_tween()
+	tween.tween_method(_apply_shake.bind(strength), 1.0, 0.0, duration)
+	tween.tween_callback(_end_shake)
+
+func _apply_shake(t: float, strength: float) -> void:
+	camera.h_offset = randf_range(-1.0, 1.0) * strength * t
+	camera.v_offset = randf_range(-1.0, 1.0) * strength * t
+
+func _end_shake() -> void:
+	camera.h_offset = 0.0
+	camera.v_offset = 0.0
+
+# ล็อกการเดินและหมุนกล้องชั่วคราว
+func lock_input(duration: float) -> void:
+	input_locked = true
+	await get_tree().create_timer(duration).timeout
+	input_locked = false
+
+# หันกล้องไปมองจุดที่กำหนด (ใช้ตอน jumpscare ให้เห็นหน้าผี)
+func look_at_point(point: Vector3, duration: float = 0.1) -> void:
+	var dir: Vector3 = point - camera.global_position
+	if dir.length() < 0.01:
+		return
+	dir = dir.normalized()
+	var target_yaw := atan2(-dir.x, -dir.z)
+	var target_pitch := clampf(asin(dir.y), deg_to_rad(-40), deg_to_rad(60))
+	var start_yaw := rotation.y
+	var start_pitch: float = camera.rotation.x
+	var tween := create_tween()
+	tween.tween_method(func(t: float) -> void:
+		rotation.y = lerp_angle(start_yaw, target_yaw, t)
+		camera.rotation.x = lerpf(start_pitch, target_pitch, t)
+	, 0.0, 1.0, maxf(duration, 0.01))
+
+# FOV กระแทก (zoom เข้าแล้วคืนค่า) ถ้าอยากให้กว้างขึ้นแทน เปลี่ยน base_fov - amount เป็น base_fov + amount
+func punch_fov(amount: float = 18.0, duration: float = 0.5) -> void:
+	var tween := create_tween()
+	tween.tween_property(camera, "fov", base_fov - amount, 0.08)
+	tween.tween_property(camera, "fov", base_fov, duration)
 
 func _apply_hp_change() -> void:
 	hp = clamp(hp, 0.0, HP_MAX)
