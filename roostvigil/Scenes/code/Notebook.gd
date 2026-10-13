@@ -11,6 +11,7 @@ func get_prompt() -> String:
 	return notebook_title
 
 func interact(_player = null) -> void:
+	QuestManager.complete("read_notebook")      # <-- เปลี่ยนจาก find_pass_code
 	var ui = get_tree().get_first_node_in_group("notebook_ui")
 	if ui:
 		ui.show_note(notebook_title, notebook_content)
