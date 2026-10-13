@@ -1,14 +1,14 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1791876202
+::res://::1791887380
 desktop.ini::TextFile::-1::1791612696::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::1302822273084641005::1791562179::1791562201::1::::<><><>0<>0<>134bedc47880350765b199bac62e9605<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 LICENSE.txt::TextFile::-1::1791630928::0::1::::<><><>0<>0<><>::
 watchtower.tscn::PackedScene::3370376660442352298::1791630928::0::1::::<><><>0<>0<><>::uid://c6pn8g2j5my::::res://asset/Platform/WatchTower.glb
-::res://asset/::1791802767
-::res://asset/Enemy/::1791826041
-creature.glb::PackedScene::6432104331762486168::1791612696::1791612696::1::::<><><>0<>0<>7eeccbb10c8079ac0c8d6ea0f6221476<>res://.godot/imported/creature.glb-f9dbda98bfd5f789ae946d91bc81fa5a.scn::uid://compcvi5pngjw::::res://asset/Enemy/creature_0.png<>uid://bw7sucd4r31x1::::res://asset/Enemy/creature_1.png
-creature_0.png::CompressedTexture2D::5781173154579093880::1791809459::1791809459::1::::<><><>0<>0<>dbaf6b661ee8f6c082bb086c80aa1c80<>res://.godot/imported/creature_0.png-f5d0cf269309a215f7a0be74706c0325.s3tc.ctex::
-creature_1.png::CompressedTexture2D::3997764064630210528::1791809459::1791809459::1::::<><><>0<>0<>b0ea3766d5f099e319779145e3b68692<>res://.godot/imported/creature_1.png-ae47a4f8dc9b00228679a3413ebad099.s3tc.ctex::
+::res://asset/::1791887380
+::res://asset/Enemy/::1791887380
+crawling_mutated_human.glb::PackedScene::975370770002133655::1791887310::1791887380::1::::<><><>0<>0<>b633b47dec91898d6d5db17431f3b931<>res://.godot/imported/crawling_mutated_human.glb-f6798db1094360e18598cea8eb50a29d.scn::uid://cr70rq121kc64::::res://asset/Enemy/crawling_mutated_human_0.png<>uid://blsvyeso48ddd::::res://asset/Enemy/crawling_mutated_human_1.png
+crawling_mutated_human_0.png::CompressedTexture2D::6033660962478625043::1791887352::1791887380::1::::<><><>0<>0<>75d0ff9a762081e542f2d1056b624138<>res://.godot/imported/crawling_mutated_human_0.png-d42c8dac78665b599b2ba130b85a563e.s3tc.ctex::
+crawling_mutated_human_1.png::CompressedTexture2D::3196974917762376845::1791887353::1791887380::1::::<><><>0<>0<>7fa742455294403edb80c80155d43bb4<>res://.godot/imported/crawling_mutated_human_1.png-16f91ecd2cb6ccd79c57b89bd85bdda1.s3tc.ctex::
 ghostgirl.glb::PackedScene::4058850219479837682::1791612696::1791612696::1::::<><><>0<>0<>d180da2d0d0836664cfb7a8daddec04b<>res://.godot/imported/ghostgirl.glb-de42cac5783312eb86bccfd10c6682f6.scn::uid://x4lfgabhmid1::::res://asset/Enemy/ghostgirl_7.png<>uid://d4aeryf6333e6::::res://asset/Enemy/ghostgirl_2.png<>uid://bjcokw0fhwny7::::res://asset/Enemy/ghostgirl_3.png<>uid://dvttwpmxx8j4e::::res://asset/Enemy/ghostgirl_4.png
 ghostgirl_0.png::CompressedTexture2D::1338626405873783341::1791809459::1791809459::1::::<><><>0<>0<>12b667d60c48b824d56770940e46d1f7<>res://.godot/imported/ghostgirl_0.png-186e901b28e23fc6a8abce913b0fd704.ctex::
 ghostgirl_1.png::CompressedTexture2D::9189439557188654550::1791809459::1791809459::1::::<><><>0<>0<>9e86d0da4b25230069d06213e83cabf4<>res://.godot/imported/ghostgirl_1.png-bdd71632a7be623b6c9247f930d03960.ctex::
@@ -30,10 +30,8 @@ smily.glb::PackedScene::6006436029533143882::1791612696::1791612696::1::::<><><>
 smily_0.png::CompressedTexture2D::1123153536668124075::1791809459::1791809459::1::::<><><>0<>0<>0c9cc30718c3b7b85817839b6ff46862<>res://.godot/imported/smily_0.png-896752b53f90b745c7c4f2604ef5cf1f.s3tc.ctex::
 smily_1.png::CompressedTexture2D::7009824513864673691::1791809459::1791809459::1::::<><><>0<>0<>cdad2f62f3d7f8aebce66af846d84b64<>res://.godot/imported/smily_1.png-860d29cef7829e389b44c3ad322b9345.s3tc.ctex::
 smily_2.png::CompressedTexture2D::7243532197214370346::1791809459::1791809459::1::::<><><>0<>0<>466e2b731db04ab4c3101aa075741cd5<>res://.godot/imported/smily_2.png-2a4d11e5bdf47350705a0c48edc30bf8.s3tc.ctex::
-::res://asset/Enemy/Texture/::1791829871
+::res://asset/Enemy/Texture/::1791886426
 14060-1-numero-residencial-em-aluminio-preto-n-8-185mm-numeral.webp::CompressedTexture2D::5766071356542938119::1791829434::1791829434::1::::<><><>0<>0<>f398be3bc43e52e116447e6a5afc44af<>res://.godot/imported/14060-1-numero-residencial-em-aluminio-preto-n-8-185mm-numeral.webp-47e06ce34f4f2a3e6bb0ff761c7fcc55.ctex::
-creature_0.png::CompressedTexture2D::4625557675176297937::1791612696::1791612696::1::::<><><>0<>0<>1424093e34c02066c151e6131f010ba7<>res://.godot/imported/creature_0.png-ed447dbfe0deb8cc6c491b77c6b4b277.s3tc.ctex::
-creature_1.png::CompressedTexture2D::5492226169090569548::1791612696::1791612696::1::::<><><>0<>0<>121b210299a891cd92455dac4ee8b8ad<>res://.godot/imported/creature_1.png-9017734ca703e79b30fbf3726540fe54.s3tc.ctex::
 ghostgirl_0.png::CompressedTexture2D::9056985664763641906::1791612696::1791612696::1::::<><><>0<>0<>a58ae0bb3c31a94e8e22a60d7042a7d1<>res://.godot/imported/ghostgirl_0.png-ba3c6b6fb54617647a9facac247bd98a.ctex::
 ghostgirl_1.png::CompressedTexture2D::8400884055058783854::1791612696::1791612696::1::::<><><>0<>0<>cc5e7e0e73c5787b57323d268adb56af<>res://.godot/imported/ghostgirl_1.png-f91010d191792c6eefe3efed046c0ecc.ctex::
 ghostgirl_2.png::CompressedTexture2D::3109210617568983771::1791612696::1791612696::1::::<><><>0<>0<>06b8802eda151e6adbe835ffa14c1746<>res://.godot/imported/ghostgirl_2.png-ebdebf9ecb0cc5567c25851fe91ea769.s3tc.ctex::
@@ -140,16 +138,16 @@ well_9.png::CompressedTexture2D::824230029506020075::1791712121::1791712145::1::
 well_10.png::CompressedTexture2D::5338776799026921613::1791712121::1791712145::1::::<><><>0<>0<>ffd4b710d962ea8369d9d9b2423bdb76<>res://.godot/imported/well_10.png-65591b44d98a9919034419b058b69d8c.s3tc.ctex::
 ::res://Human/::1791612696
 ::res://Platform/::1791612696
-::res://Scenes/::1791848414
-GhostGirl.gd::GDScript::6918221499100957945::1791848183::0::1::::<>Node3D<><>0<>0<><>::
-GhostGirl.tscn::PackedScene::8677465100698012717::1791836946::0::1::::<><><>0<>0<><>::uid://c5tidkrjn87nh::::res://Scenes/GhostGirl.gd<>uid://bx3ew1v8kpwt3::::res://asset/Enemy/ghostgirl.glb
+::res://Scenes/::1791885975
+GhostGirl.gd::GDScript::6918221499100957945::1791885975::0::1::::<>Node3D<><>0<>0<><>::
+GhostGirl.tscn::PackedScene::8677465100698012717::1791885975::0::1::::<><><>0<>0<><>::uid://c5tidkrjn87nh::::res://Scenes/GhostGirl.gd<>uid://bx3ew1v8kpwt3::::res://asset/Enemy/ghostgirl.glb
 intro.tscn::PackedScene::1105447517441553301::1791809459::0::1::::<><><>0<>0<><>::uid://madoiblmh6vx::::res://Scenes/code/intro.gd
-level.gdshader::Shader::2188599165860154446::1791847867::0::1::::<><><>0<>0<><>::
-level.tscn::PackedScene::1881775733496991934::1791848414::0::1::::<><><>0<>0<><>::uid://clabrtl68y5is::::res://Scenes/tscn/Notebook.tscn<>uid://5dn2j4rea1f::::res://Scenes/tscn/FlashlightPickup.tscn<>uid://bwdt4engvq0nk::::res://Scenes/tscn/NotebookUI.tscn<>uid://cp8u6pypqgu54::::res://asset/Platform/well.glb<>uid://c6pn8g2j5my::::res://asset/Platform/WatchTower.glb<>uid://bt6gysljnshgo::::res://asset/Platform/forest.glb<>uid://uyug7yc8hyxh::::res://Scenes/tscn/BatteryPickup.tscn<>uid://dny2sm6x1dtwc::::res://Scenes/tscn/CeilingLight.tscn<>uid://b0y517npi8g3d::::res://Scenes/tscn/LightSwitch.tscn<>uid://6gf55h21eqqo::::res://Scenes/level.gdshader<>uid://b6no1rx3nmb6g::::res://Scenes/player.tscn<>uid://b7dpvk85agdqh::::res://Scenes/ScreenEffects.gd<>uid://budlgtvd1uct7::::res://Scenes/static.gdshader<>uid://cewvvk6ikwi8q::::res://asset/Enemy/Texture/Screenshot 2026-10-13 013027.png<>uid://8bh6by2bxvhv::::res://asset/Enemy/Texture/s0.webp<>uid://cpmgki07ryddm::::res://asset/Object/Texture/number8.jpg<>uid://b65jbax6e4jh5::::res://asset/Object/Texture/number9.jpg<>uid://dvvot2jidq57f::::res://Scenes/GhostGirl.tscn
+level.gdshader::Shader::2188599165860154446::1791885975::0::1::::<><><>0<>0<><>::
+level.tscn::PackedScene::1881775733496991934::1791881065::0::1::::<><><>0<>0<><>::uid://clabrtl68y5is::::res://Scenes/tscn/Notebook.tscn<>uid://5dn2j4rea1f::::res://Scenes/tscn/FlashlightPickup.tscn<>uid://bwdt4engvq0nk::::res://Scenes/tscn/NotebookUI.tscn<>uid://cp8u6pypqgu54::::res://asset/Platform/well.glb<>uid://c6pn8g2j5my::::res://asset/Platform/WatchTower.glb<>uid://bt6gysljnshgo::::res://asset/Platform/forest.glb<>uid://uyug7yc8hyxh::::res://Scenes/tscn/BatteryPickup.tscn<>uid://dny2sm6x1dtwc::::res://Scenes/tscn/CeilingLight.tscn<>uid://b0y517npi8g3d::::res://Scenes/tscn/LightSwitch.tscn<>uid://6gf55h21eqqo::::res://Scenes/level.gdshader<>uid://b6no1rx3nmb6g::::res://Scenes/player.tscn<>uid://b7dpvk85agdqh::::res://Scenes/ScreenEffects.gd<>uid://budlgtvd1uct7::::res://Scenes/static.gdshader<>uid://cewvvk6ikwi8q::::res://asset/Enemy/Texture/Screenshot 2026-10-13 013027.png<>uid://8bh6by2bxvhv::::res://asset/Enemy/Texture/s0.webp<>uid://cpmgki07ryddm::::res://asset/Object/Texture/number8.jpg<>uid://b65jbax6e4jh5::::res://asset/Object/Texture/number9.jpg<>uid://dvvot2jidq57f::::res://Scenes/GhostGirl.tscn
 player.tscn::PackedScene::4590009145532631960::1791707198::0::1::::<><><>0<>0<><>::uid://c2q87k87o487w::::res://Scenes/code/player.gd<>uid://dploxjwb6jiq7::::res://Scenes/code/fps.gd
-ScreenEffects.gd::GDScript::4639605647511166179::1791847867::0::1::::<>CanvasLayer<><>0<>0<><>::
-static.gdshader::Shader::3797070321956174094::1791847867::0::1::::<><><>0<>0<><>::
-::res://Scenes/code/::1791848162
+ScreenEffects.gd::GDScript::4639605647511166179::1791876678::0::1::::<>CanvasLayer<><>0<>0<><>::
+static.gdshader::Shader::3797070321956174094::1791885975::0::1::::<><><>0<>0<><>::
+::res://Scenes/code/::1791880391
 BatteryPickup.gd::GDScript::862408704617271163::1791663735::0::1::::<>StaticBody3D<><>0<>0<><>::
 CeilingLight.gd::GDScript::5343140461431330413::1791676941::0::1::::<>Node3D<><>0<>0<><>::
 Credit.gd::GDScript::8070856653370078728::1791830181::0::1::::<>Control<><>0<>0<><>::
@@ -160,7 +158,7 @@ LightSwitch.gd::GDScript::244238690333900179::1791676941::0::1::::<>StaticBody3D
 main_menu.gd::GDScript::5215977398537827680::1791830181::0::1::::<>Control<><>0<>0<><>::
 Notebook.gd::GDScript::3068094235618154613::1791650727::0::1::::<>StaticBody3D<><>0<>0<><>::
 NotebookUI.gd::GDScript::4712479610281803512::1791651517::0::1::::<>CanvasLayer<><>0<>0<><>::
-player.gd::GDScript::6703031573530151394::1791848162::0::1::::<>CharacterBody3D<><>0<>0<><>::
+player.gd::GDScript::6703031573530151394::1791880391::0::1::::<>CharacterBody3D<><>0<>0<><>::
 ::res://Scenes/tscn/::1791830184
 BatteryPickup.tscn::PackedScene::1454548711434625149::1791663774::0::1::::<><><>0<>0<><>::uid://mj00lv33fjbn::::res://Scenes/code/BatteryPickup.gd<>uid://oo741jqppurp::::res://asset/Object/flashlightbattery.glb
 CeilingLight.tscn::PackedScene::8122934266815180178::1791705702::0::1::::<><><>0<>0<><>::uid://ciei0ivlfsc4l::::res://Scenes/code/CeilingLight.gd<>uid://cgn0y4p501gjh::::res://asset/Object/led_ceiling_light.glb
