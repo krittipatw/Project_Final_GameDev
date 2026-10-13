@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 # วิธีใช้: ทำ CrawlerGhost.tscn (root = CharacterBody3D + ลูกชื่อ "Model" เป็นโมเดล .glb) แล้วแนบสคริปต์นี้ที่ root
-# ลากไฟล์ .tscn ลง level สคริปต์จะย้ายตัวเองไปเกิดห่างผู้เล่นเอง
+# ลากไฟล์ .tscn ลง level ผีจะซ่อนอยู่จนกว่าเควส SPAWN_AFTER_QUEST จะสำเร็จ แล้วย้ายตัวเองไปเกิดห่างผู้เล่นเอง
 # (ถ้าไม่มีลูกชื่อ Model สคริปต์จะโหลดโมเดลจาก MODEL_PATH ให้เอง)
 
 # ---------- โมเดล ----------
@@ -10,11 +10,35 @@ const MODEL_SCALE = 1.0				# ใช้เฉพาะตอนโหลดจา
 const MODEL_OFFSET = Vector3(0.0, 0.0, 0.0)	# ขยับโมเดลเทียบกับจุดศูนย์กลางตัวผี (ถ้าลอยหรือจมพื้น ปรับ y)
 const MODEL_YAW_OFFSET_DEG = 180.0	# ทิศหน้าของโมเดล (ถ้าคลานถอยหลัง ลอง 0)
 const BODY_RADIUS = 0.4				# ขนาดตัวสำหรับชนกับต้นไม้/กำแพง
+const BODY_LAYER = 2				# collision layer ของผี (คนละ layer กับโลก เพื่อไม่บังสายตา/ray ของระบบอื่น)
+const BODY_MASK = 1					# ผีชนกับอะไร (พื้น ต้นไม้ กำแพง)
+
+# ---------- เสียง ----------
+# ถ้า path ไม่ตรง: คลิกขวาที่ไฟล์เสียงใน FileSystem > Copy Path แล้ววางแทน
+const SOUND_HELP = "res://asset/Sound/Help.mp3"		# เล่นตอนเดินหาผู้เล่น
+const SOUND_HUNT = "res://asset/Sound/Hunt.mp3"		# เล่นตอนวิ่งไล่
+const SOUND_HURT = "res://asset/Sound/Hurt.mp3"		# เล่นตอนทำร้ายผู้เล่น
+const HELP_VOLUME_DB = 0.0			# ความดังของแต่ละเสียง (ลบ = เบาลง, บวก = ดังขึ้น)
+const HUNT_VOLUME_DB = 0.0
+const HURT_VOLUME_DB = 3.0
+const HELP_FIRST_DELAY = 3.0		# เริ่มเดินหาแล้วรอกี่วินาทีก่อนเล่นครั้งแรก
+const HELP_GAP_MIN = 6.0			# ห่างกี่วินาทีระหว่างเสียง Help แต่ละครั้ง (นับหลังเสียงก่อนหน้าจบ)
+const HELP_GAP_MAX = 12.0
+const HUNT_GAP_MIN = 0.0			# ห่างกี่วินาทีระหว่างเสียง Hunt ตอนไล่ (0 = เล่นต่อเนื่อง)
+const HUNT_GAP_MAX = 1.5
+const AUDIO_UNIT_SIZE = 8.0			# ยิ่งมาก เสียงยิ่งได้ยินไกลก่อนจะเบาลง
+const AUDIO_MAX_DISTANCE = 45.0		# ไกลกว่านี้ไม่ได้ยิน (เมตร)
+const AUDIO_FADE_TIME = 0.4			# เสียงค่อยๆ เบาลงกี่วินาทีตอนเปลี่ยนสถานะ
+
+# ---------- เงื่อนไขการเกิด ----------
+const SPAWN_AFTER_QUEST = "find_watch_tower"	# id เควสที่ต้องสำเร็จก่อนผีจะเกิด (ตอนนี้คือเควสเก็บไฟฉาย) เว้นว่าง "" = เกิดตั้งแต่เริ่มเกม
+const SPAWN_DELAY_AFTER_QUEST = 10.0			# หลังเควสสำเร็จ รออีกกี่วินาทีผีถึงจะเกิด (0 = เกิดทันที)
+const SPAWN_OUT_OF_VIEW = true					# เกิดนอกกรอบภาพของผู้เล่นเสมอ (ไม่ให้เห็นตอนโผล่)
 
 # ---------- เกิด ----------
 const SPAWN_DISTANCE = 10.0			# เกิดห่างผู้เล่นประมาณกี่เมตร
 const SPAWN_DISTANCE_JITTER = 2.0	# สุ่มคลาดเคลื่อน +/- กี่เมตร
-const START_IDLE_TIME = 8.0			# ช่วงต้นเกมที่ผียังไม่ขยับ (วินาที)
+const START_IDLE_TIME = 8.0			# หลังเกิดแล้ว ผียังไม่ขยับกี่วินาที (ถ้านานไป ลดค่านี้)
 
 # ---------- ขอบเขตแมพ ----------
 const MAP_RADIUS = 45.0				# ผีเดินเล่นไม่ไกลเกินนี้จากจุดที่ผู้เล่นเริ่มเกม (ปรับให้พอดีกับแมพ)
@@ -91,7 +115,8 @@ enum State { IDLE, WANDER, CHASE, FLEE }
 
 var state: State = State.IDLE
 var player = null					# ไม่ระบุชนิด เพราะต้องเรียกฟังก์ชันของ player.gd
-var spawned := false
+var dormant := true					# true = ยังไม่เกิด (ซ่อนอยู่)
+var wake_timer := -1.0
 var model: Node3D = null
 var anim: AnimationPlayer = null
 var anim_playing := false
@@ -129,14 +154,61 @@ var glow_light: OmniLight3D = null
 var glow_material: ShaderMaterial = null
 var glow_time := 0.0
 
+# เสียง
+var help_sound: AudioStreamPlayer3D = null
+var hunt_sound: AudioStreamPlayer3D = null
+var hurt_sound: AudioStreamPlayer3D = null
+var fade_tweens := {}
+var prev_state: State = State.IDLE
+var help_gap := 0.0
+var hunt_gap := 0.0
+
 func _ready() -> void:
 	add_to_group("crawler_ghost")
-	collision_layer = 2		# อยู่คนละ layer กับโลก เพื่อไม่บังสายตา/ray ของระบบอื่น
-	collision_mask = 1		# ชนกับพื้น ต้นไม้ กำแพง
 	floor_snap_length = 0.6
 	_setup_body()
 	_setup_animation()
 	_setup_glow()
+	_setup_audio()
+	_go_dormant()	# ซ่อนไว้ก่อน จนกว่าเควสจะสำเร็จ
+
+# ---------- ซ่อน / ปลุก ----------
+func _go_dormant() -> void:
+	dormant = true
+	wake_timer = -1.0
+	visible = false
+	collision_layer = 0
+	collision_mask = 0
+	set_process(false)
+
+func _quest_done() -> bool:
+	if SPAWN_AFTER_QUEST == "":
+		return true
+	return QuestManager.done.has(SPAWN_AFTER_QUEST)
+
+func _check_wake(delta: float) -> void:
+	if not _quest_done():
+		wake_timer = -1.0
+		return
+	if wake_timer < 0.0:
+		wake_timer = SPAWN_DELAY_AFTER_QUEST if SPAWN_AFTER_QUEST != "" else 0.0
+	wake_timer -= delta
+	if wake_timer <= 0.0:
+		_wake_up()
+
+func _wake_up() -> void:
+	dormant = false
+	collision_layer = BODY_LAYER
+	collision_mask = BODY_MASK
+	velocity = Vector3.ZERO
+	idle_timer = START_IDLE_TIME
+	state = State.IDLE
+	prev_state = State.IDLE
+	help_gap = HELP_FIRST_DELAY
+	_spawn_near_player()
+	visible = true
+	set_process(true)
+	print("CrawlerGhost: เกิดแล้ว (เควส '", SPAWN_AFTER_QUEST, "' สำเร็จ)")
 
 # ---------- สร้างตัว ----------
 func _setup_body() -> void:
@@ -232,6 +304,96 @@ func _process(delta: float) -> void:
 	if glow_material:
 		glow_material.set_shader_parameter("intensity", pulse)
 
+# ---------- เสียง ----------
+func _setup_audio() -> void:
+	help_sound = _make_audio(SOUND_HELP, HELP_VOLUME_DB)
+	hunt_sound = _make_audio(SOUND_HUNT, HUNT_VOLUME_DB)
+	hurt_sound = _make_audio(SOUND_HURT, HURT_VOLUME_DB)
+
+func _make_audio(path: String, volume_db: float) -> AudioStreamPlayer3D:
+	var p := AudioStreamPlayer3D.new()
+	p.unit_size = AUDIO_UNIT_SIZE
+	p.max_distance = AUDIO_MAX_DISTANCE
+	p.volume_db = volume_db
+	p.position = Vector3(0.0, 0.5, 0.0)
+	if ResourceLoader.exists(path):
+		p.stream = load(path) as AudioStream
+	else:
+		push_warning("CrawlerGhost: ไม่พบไฟล์เสียง " + path + " (แก้ path ด้านบนไฟล์)")
+	add_child(p)
+	return p
+
+func _play_sound(p: AudioStreamPlayer3D, base_db: float, key: String) -> void:
+	if p == null or p.stream == null:
+		return
+	_kill_fade(key)
+	p.volume_db = base_db
+	p.play()
+
+func _is_fading(key: String) -> bool:
+	var t = fade_tweens.get(key)
+	return t != null and t.is_valid()
+
+func _kill_fade(key: String) -> void:
+	var t = fade_tweens.get(key)
+	if t != null and t.is_valid():
+		t.kill()
+	fade_tweens.erase(key)
+
+# ค่อยๆ เบาลงจนเงียบแล้วหยุด (เรียกซ้ำได้ ไม่เริ่ม fade ใหม่ถ้ากำลัง fade อยู่)
+func _fade_out(p: AudioStreamPlayer3D, base_db: float, key: String) -> void:
+	if p == null or not p.playing or _is_fading(key):
+		return
+	var t := create_tween()
+	t.tween_property(p, "volume_db", -40.0, AUDIO_FADE_TIME)
+	t.tween_callback(_stop_sound.bind(p, base_db))
+	fade_tweens[key] = t
+
+func _stop_sound(p: AudioStreamPlayer3D, base_db: float) -> void:
+	p.stop()
+	p.volume_db = base_db
+
+func _on_state_changed(new_state: State) -> void:
+	match new_state:
+		State.CHASE:
+			# เริ่มไล่: เสียง Help เบาลง เสียง Hunt เล่นทันที
+			_fade_out(help_sound, HELP_VOLUME_DB, "help")
+			_play_sound(hunt_sound, HUNT_VOLUME_DB, "hunt")
+			hunt_gap = randf_range(HUNT_GAP_MIN, HUNT_GAP_MAX)
+		State.WANDER:
+			# กลับมาเดินหา: เสียง Hunt เบาลง แล้วรอสักครู่ก่อนเสียง Help
+			_fade_out(hunt_sound, HUNT_VOLUME_DB, "hunt")
+			help_gap = HELP_FIRST_DELAY
+		_:
+			# หยุดนิ่ง หรือกำลังหนีไฟฉาย: เงียบ
+			_fade_out(help_sound, HELP_VOLUME_DB, "help")
+			_fade_out(hunt_sound, HUNT_VOLUME_DB, "hunt")
+
+func _update_audio(delta: float) -> void:
+	# ผู้เล่นตายแล้ว: เสียงค่อยๆ เงียบ
+	if bool(player.get("is_dead")):
+		_fade_out(help_sound, HELP_VOLUME_DB, "help")
+		_fade_out(hunt_sound, HUNT_VOLUME_DB, "hunt")
+		return
+
+	if state != prev_state:
+		prev_state = state
+		_on_state_changed(state)
+
+	match state:
+		State.WANDER:
+			if help_sound and not help_sound.playing:
+				help_gap -= delta
+				if help_gap <= 0.0:
+					_play_sound(help_sound, HELP_VOLUME_DB, "help")
+					help_gap = randf_range(HELP_GAP_MIN, HELP_GAP_MAX)
+		State.CHASE:
+			if hunt_sound and not hunt_sound.playing:
+				hunt_gap -= delta
+				if hunt_gap <= 0.0:
+					_play_sound(hunt_sound, HUNT_VOLUME_DB, "hunt")
+					hunt_gap = randf_range(HUNT_GAP_MIN, HUNT_GAP_MAX)
+
 # ---------- หอคอย ----------
 func _compute_tower_rect() -> void:
 	var tower := get_tree().current_scene.get_node_or_null(TOWER_NODE_NAME) as Node3D
@@ -300,27 +462,40 @@ func _outside_map(p: Vector3) -> bool:
 
 func _spawn_near_player() -> void:
 	_compute_tower_rect()
-	map_center = player.global_position
+	var cam := get_viewport().get_camera_3d()
+	var fallback := Vector3.ZERO
+	var has_fallback := false
 	var placed := false
-	for i in 30:
+
+	for i in 40:
 		var ang := randf() * TAU
 		var d := SPAWN_DISTANCE + randf_range(-SPAWN_DISTANCE_JITTER, SPAWN_DISTANCE_JITTER)
 		var p: Vector3 = player.global_position + Vector3(cos(ang), 0.0, sin(ang)) * d
 		var g = _ground_at(p)
 		if g == null or _in_tower_zone(g):
 			continue
-		global_position = (g as Vector3) + Vector3.UP * 0.1
+		var pos: Vector3 = (g as Vector3) + Vector3.UP * 0.1
+		if not has_fallback:
+			fallback = pos
+			has_fallback = true
+		# ไม่เกิดในกรอบภาพของผู้เล่น (กันผีโผล่ต่อหน้า)
+		if SPAWN_OUT_OF_VIEW and cam and cam.is_position_in_frustum(pos + Vector3(0.0, 0.5, 0.0)):
+			continue
+		global_position = pos
 		placed = true
 		break
+
 	if not placed:
-		global_position = player.global_position + Vector3(SPAWN_DISTANCE, 0.0, 0.0)
+		if has_fallback:
+			global_position = fallback
+		else:
+			global_position = player.global_position + Vector3(SPAWN_DISTANCE, 0.0, 0.0)
 
 	var to_player: Vector3 = player.global_position - global_position
 	to_player.y = 0.0
 	if to_player.length() > 0.01:
 		facing = to_player.normalized()
 		rotation.y = atan2(-facing.x, -facing.z)
-	spawned = true
 
 # ---------- ทุกเฟรมฟิสิกส์ ----------
 func _physics_process(delta: float) -> void:
@@ -329,9 +504,11 @@ func _physics_process(delta: float) -> void:
 		if player == null:
 			return
 		add_collision_exception_with(player)
+		map_center = player.global_position	# จุดเริ่มเกมของผู้เล่น = ศูนย์กลางขอบเขตแมพ
 
-	if not spawned:
-		_spawn_near_player()
+	# ยังไม่เกิด: คอยเช็คเควสอย่างเดียว
+	if dormant:
+		_check_wake(delta)
 		return
 
 	if not is_on_floor():
@@ -358,6 +535,7 @@ func _physics_process(delta: float) -> void:
 	_apply_movement(delta)
 	move_and_slide()
 	_push_out_of_tower()
+	_update_audio(delta)
 
 func _apply_movement(delta: float) -> void:
 	if want_speed > 0.0 and attack_pause <= 0.0:
@@ -489,6 +667,7 @@ func _is_stuck(delta: float) -> bool:
 func _attack() -> void:
 	attack_cooldown = ATTACK_COOLDOWN
 	attack_pause = ATTACK_PAUSE
+	_play_sound(hurt_sound, HURT_VOLUME_DB, "hurt")
 	if player.has_method("take_damage"):
 		player.take_damage(ATTACK_DAMAGE)
 	if player.has_method("stumble"):
