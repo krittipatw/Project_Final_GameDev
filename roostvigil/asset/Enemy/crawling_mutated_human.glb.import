@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cxv023klhr00k"
-path="res://.godot/imported/creature.glb-f9dbda98bfd5f789ae946d91bc81fa5a.scn"
+uid="uid://n5qhjqe1uxsx"
+path="res://.godot/imported/crawling_mutated_human.glb-f6798db1094360e18598cea8eb50a29d.scn"
 
 [deps]
 
-source_file="res://asset/Enemy/creature.glb"
-dest_files=["res://.godot/imported/creature.glb-f9dbda98bfd5f789ae946d91bc81fa5a.scn"]
+source_file="res://asset/Enemy/crawling_mutated_human.glb"
+dest_files=["res://.godot/imported/crawling_mutated_human.glb-f6798db1094360e18598cea8eb50a29d.scn"]
 
 [params]
 
