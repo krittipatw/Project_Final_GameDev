@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 QuestManager="*uid://bdl62j64spn2"
 Settings="*uid://bi6301wdk81w3"
+UiSound="*uid://mkbdulltg3a4"
 
 [display]
 

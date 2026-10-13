@@ -7,9 +7,9 @@ const HOLD_TIME := 2.5
 const GAP_TIME := 0.5
 
 @export_multiline var lines: Array[String] = [
-	"คืนนั้น ไม่มีใครบอกเธอว่าป่านี้มีอะไรอยู่",
-	"Always stay away from the DARK.",
-	"Don't listen to them asking for Help.",
+	"Do not gaze into what should remain unseen",
+	"Not all calls for help come from the living.",
+	"Remain forever in the light, far from the reach of darkness..",
 ]
 
 @onready var label: Label = $Label

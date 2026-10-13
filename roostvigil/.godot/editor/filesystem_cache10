@@ -1,5 +1,5 @@
 78098b89c88a74ebe8c20117b8754620
-::res://::1791924857
+::res://::1791925107
 desktop.ini::TextFile::-1::1791612696::0::1::::<><><>0<>0<><>::
 icon.svg::CompressedTexture2D::1302822273084641005::1791562179::1791562201::1::::<><><>0<>0<>134bedc47880350765b199bac62e9605<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 LICENSE.txt::TextFile::-1::1791914310::0::1::::<><><>0<>0<><>::
@@ -146,7 +146,7 @@ level.tscn::PackedScene::1881775733496991934::1791924633::0::1::::<><><>0<>0<><>
 player.tscn::PackedScene::4590009145532631960::1791924619::0::1::::<><><>0<>0<><>::uid://c2q87k87o487w::::res://Scenes/code/player.gd<>uid://dploxjwb6jiq7::::res://Scenes/code/fps.gd<>uid://cc3cgg8txnsgi::::res://asset/Sound/Walk.mp3<>uid://cwme2h6y2c3um::::res://asset/Sound/Run.mp3<>uid://d1m3tfjyarkft::::res://asset/Sound/Panting.mp3<>uid://bn1gam4hmnamr::::res://asset/Sound/Gasp.mp3
 static.gdshader::Shader::3797070321956174094::1791913956::0::1::::<><><>0<>0<><>::
 win_screen.tscn::PackedScene::7741281348889286419::1791905103::0::1::::<><><>0<>0<><>::uid://co78gtosjhjlx::::res://Scenes/code/win_screen.gd
-::res://Scenes/code/::1791924857
+::res://Scenes/code/::1791924925
 BatteryPickup.gd::GDScript::862408704617271163::1791663735::0::1::::<>StaticBody3D<><>0<>0<><>::
 CeilingLight.gd::GDScript::5343140461431330413::1791676941::0::1::::<>Node3D<><>0<>0<><>::
 CrawlerGhost.gd::GDScript::7033228583024711906::1791916232::0::1::::<>CharacterBody3D<><>0<>0<><>::
@@ -166,10 +166,10 @@ phone.gd::GDScript::5487335800313362238::1791891051::0::1::::<>StaticBody3D<><>0
 player.gd::GDScript::6703031573530151394::1791924619::0::1::::<>CharacterBody3D<><>0<>0<><>::
 quest_manager.gd::GDScript::77106656913365393::1791891400::0::1::::<>Node<><>0<>0<><>::
 ScreenEffects.gd::GDScript::4639605647511166179::1791876678::0::1::::<>CanvasLayer<><>0<>0<><>::
-settings.gd::GDScript::3013673263562094968::1791924619::0::1::::<>Node<><>0<>0<><>::
+Settings.gd::GDScript::3013673263562094968::1791924619::0::1::::<>Node<><>0<>0<><>::
 ui_sound.gd::GDScript::862977043556767245::1791924619::0::1::::<>Node<><>0<>0<><>::
 win_screen.gd::GDScript::5823560662374356153::1791905103::0::1::::<>Control<><>0<>0<><>::
-::res://Scenes/tscn/::1791924672
+::res://Scenes/tscn/::1791924947
 BatteryPickup.tscn::PackedScene::1454548711434625149::1791663774::0::1::::<><><>0<>0<><>::uid://mj00lv33fjbn::::res://Scenes/code/BatteryPickup.gd<>uid://oo741jqppurp::::res://asset/Object/flashlightbattery.glb
 CeilingLight.tscn::PackedScene::8122934266815180178::1791705702::0::1::::<><><>0<>0<><>::uid://ciei0ivlfsc4l::::res://Scenes/code/CeilingLight.gd<>uid://cgn0y4p501gjh::::res://asset/Object/led_ceiling_light.glb
 character_body_3d.tscn::PackedScene::3437604912191678250::1791661888::0::1::::<><><>0<>0<><>::
@@ -183,7 +183,7 @@ Notebook.tscn::PackedScene::5545010739283784842::1791650874::0::1::::<><><>0<>0<
 NotebookUI.tscn::PackedScene::3937974018354989432::1791905110::0::1::::<><><>0<>0<><>::uid://b8e036ndtwtx5::::res://Scenes/code/NotebookUI.gd<>uid://datvch4fxhrru::::res://Scenes/tscn/png/OldPaper.jpg
 options_menu.tscn::PackedScene::2267016604902681369::1791924672::0::1::::<><><>0<>0<><>::uid://c8abdho83hkq6::::res://Scenes/code/options_menu.gd<>uid://pojaqpmgtx4u::::res://asset/Platform/Texture/BG1.png<>uid://c34642bje4psa::::res://asset/Platform/Texture/BG2.png<>uid://cdy8bkn7e8xbp::::res://asset/Platform/Texture/BG3.png<>uid://c41phafelneb3::::res://asset/Platform/Texture/BG4.png
 pause_menu.tscn::PackedScene::101646890578257097::1791909932::0::1::::<><><>0<>0<><>::uid://dit38yj5tm7n6::::res://Scenes/code/pause_menu.gd
-phone.tscn::PackedScene::7556375968111270409::1791924218::0::1::::<><><>0<>0<><>::uid://ckgdvbqc50juk::::res://Scenes/code/phone.gd<>uid://di1aj7c1pukvn::::res://asset/Object/phone.glb
+phone.tscn::PackedScene::7556375968111270409::1791924947::0::1::::<><><>0<>0<><>::uid://ckgdvbqc50juk::::res://Scenes/code/phone.gd<>uid://di1aj7c1pukvn::::res://asset/Object/phone.glb
 Tower.tscn::PackedScene::3963254271106528988::1791628547::0::1::::<><><>0<>0<><>::uid://c6pn8g2j5my::::res://asset/Platform/WatchTower.glb<>uid://bt6gysljnshgo::::res://asset/Platform/forest.glb<>uid://c87bimv4627yr::::res://asset/Object/radio.glb<>uid://cfaroef5nok7o::::res://asset/Object/flashlight.glb<>uid://oo741jqppurp::::res://asset/Object/flashlightbattery.glb<>uid://bx3ew1v8kpwt3::::res://asset/Enemy/ghostgirl.glb<>uid://baq46e6wl6fl0::::res://asset/Enemy/grandpa.glb<>uid://c8b40uywpg50p::::res://asset/Enemy/sirenhead.glb<>uid://crttehgacdelm::::res://asset/Enemy/smily.glb<>uid://cxv023klhr00k::::res://asset/Enemy/creature.glb<>uid://b6no1rx3nmb6g::::res://Scenes/player.tscn
 ::res://Scenes/tscn/png/::1791663790
 OldPaper.jpg::CompressedTexture2D::7199764269563331746::1791639916::1791663790::1::::<><><>0<>0<>d5c5c88f23c9cbf0a65e1dcbf0ee7dcb<>res://.godot/imported/OldPaper.jpg-1d40791cc26419857edc43c7b2c96845.ctex::
