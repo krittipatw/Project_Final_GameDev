@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c7g7in00nk50y" path="res://Scenes/code/CrawlerGhost.gd" id="1_ob3v3"]
 [ext_resource type="PackedScene" uid="uid://n5qhjqe1uxsx" path="res://asset/Enemy/crawling_mutated_human.glb" id="2_1l5j3"]
+[ext_resource type="AudioStream" uid="uid://c6q0q2csrnnes" path="res://asset/Sound/Help.mp3" id="3_2pb0o"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xrivr"]
 radius = 0.4
@@ -15,3 +16,6 @@ transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 0, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1380770849]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
 shape = SubResource("SphereShape3D_xrivr")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=399598997]
+stream = ExtResource("3_2pb0o")
