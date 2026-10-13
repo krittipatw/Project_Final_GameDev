@@ -177,10 +177,17 @@ func _ready() -> void:
 	_update_hp_bar()
 	_update_sanity_bar()
 
+	# [QUEST] เริ่มระบบเควส (fade ขึ้นหลังเข้า level)
+	QuestManager.start()
+
 # ---------- State ----------
+# [UI] เช็คทุก UI ที่บล็อกการควบคุม (สมุด + แป้นใส่รหัส)
 func _ui_open() -> bool:
-	var ui = get_tree().get_first_node_in_group("notebook_ui")
-	return ui != null and ui.visible
+	for group_name in ["notebook_ui", "blocking_ui"]:
+		for ui in get_tree().get_nodes_in_group(group_name):
+			if ui is CanvasItem and ui.visible:
+				return true
+	return false
 
 func _can_control() -> bool:
 	return not is_dead and not input_locked and not _ui_open() and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED
@@ -191,7 +198,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	if is_dead or input_locked:
 		return
 
-	# ถ้า UI สมุดเปิดอยู่ ไม่หมุนกล้อง ไม่ interact
+	# ถ้า UI เปิดอยู่ ไม่หมุนกล้อง ไม่ interact
 	if _ui_open():
 		return
 
@@ -491,11 +498,15 @@ func _show_game_over_ui() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 func _on_restart_pressed() -> void:
+	# [QUEST] รีเซ็ตเควส (ตอน reload ซีน _ready จะเรียก start() ใหม่ให้เอง)
+	QuestManager.reset()
 	get_tree().reload_current_scene()
 
 # ---------- Flashlight ----------
 func pick_up_flashlight() -> void:
 	has_flashlight = true
+	# [QUEST] เควส "Find watch tower" สำเร็จเมื่อเก็บไฟฉาย
+	QuestManager.complete("find_watch_tower")
 	if battery_label:
 		battery_label.visible = true
 	_update_battery_label()

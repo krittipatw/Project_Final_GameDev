@@ -26,7 +26,7 @@ var entered := ""
 var locked := false                 # true = ชนะ/ตอบผิดอยู่ ห้ามกดซ้ำ
 
 func _ready() -> void:
-	add_to_group("notebook_ui")
+	add_to_group("blocking_ui")     # แยกจาก notebook_ui เพื่อไม่ให้ชนกับสมุด
 	visible = false
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	mouse_filter = Control.MOUSE_FILTER_STOP
@@ -206,6 +206,7 @@ func _wrong() -> void:
 	_refresh()
 
 func _win() -> void:
+	QuestManager.complete("find_pass_code")     # <-- เพิ่มบรรทัดนี้
 	display.text = "SUCCESS"
 	_set_display_state(COL_OK, COL_OK)
 	await get_tree().create_timer(SUCCESS_DELAY).timeout
