@@ -8,7 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bt6gysljnshgo" path="res://asset/Platform/forest.glb" id="6_8c0lf"]
 [ext_resource type="PackedScene" uid="uid://uyug7yc8hyxh" path="res://Scenes/tscn/BatteryPickup.tscn" id="7_8c0lf"]
 [ext_resource type="PackedScene" uid="uid://dny2sm6x1dtwc" path="res://Scenes/tscn/CeilingLight.tscn" id="7_bvt00"]
+[ext_resource type="PackedScene" uid="uid://dfwmn44w61qtd" path="res://Scenes/phone.tscn" id="9_3a44l"]
 [ext_resource type="PackedScene" uid="uid://b0y517npi8g3d" path="res://Scenes/tscn/LightSwitch.tscn" id="9_oqgf2"]
+[ext_resource type="Script" uid="uid://dn0n22my2mhsp" path="res://Scenes/code/keypad_ui.gd" id="10_0cmrb"]
 [ext_resource type="Shader" uid="uid://6gf55h21eqqo" path="res://Scenes/level.gdshader" id="11_ha31o"]
 [ext_resource type="PackedScene" uid="uid://b6no1rx3nmb6g" path="res://Scenes/player.tscn" id="11_qxfql"]
 [ext_resource type="Script" uid="uid://b7dpvk85agdqh" path="res://Scenes/ScreenEffects.gd" id="11_vofx3"]
@@ -115,7 +117,7 @@ transform = Transform3D(0.7928674, 0, 0.6093942, 0, 1, 0, -0.6093942, 0, 0.79286
 [node name="WatchTower" parent="." unique_id=2069175028 instance=ExtResource("6_0f350")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.29455, -1.5689348, -47.316723)
 
-[node name="Watch tower_Watch tower_0" parent="WatchTower/Sketchfab_model/bf5d80bd0a4b404da2233dcd6e783991_fbx/RootNode/Watch tower" parent_id_path=PackedInt32Array(2069175028, 674884697) index="0" unique_id=1437277563]
+[node name="Watch tower_Watch tower_0" parent="WatchTower/Sketchfab_model/bf5d80bd0a4b404da2233dcd6e783991_fbx/RootNode/Watch tower" parent_id_path=PackedInt32Array(2069175028, 694590254) index="0" unique_id=904782867]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.676758, -18.436905, -81.118164)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="WatchTower/Sketchfab_model/bf5d80bd0a4b404da2233dcd6e783991_fbx/RootNode/Watch tower/Watch tower_Watch tower_0" index="0" unique_id=900469314]
@@ -136,7 +138,7 @@ debug_color = Color(0.10574644, 0.5228287, 0.9999998, 0.41960785)
 [node name="Forest" parent="." unique_id=628709874 instance=ExtResource("6_8c0lf")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -33.05035, -1.758873, -38.929073)
 
-[node name="Object_2" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(628709874, 1008060660) index="0" unique_id=2050476367]
+[node name="Object_2" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(628709874, 723809977) index="0" unique_id=55933977]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14872575, 0.5743525, 0.006350875)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_2" index="0" unique_id=1544042066]
@@ -144,23 +146,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14872575, 0.5743525, 0.006
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_2/StaticBody3D" unique_id=1089263950]
 shape = SubResource("ConcavePolygonShape3D_754fn")
 
-[node name="Object_10" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(628709874, 1008060660) index="8" unique_id=91619022]
+[node name="Object_10" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(628709874, 723809977) index="8" unique_id=1471964584]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6071215, 0, 0)
 
-[node name="Object_11" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(628709874, 1008060660) index="9" unique_id=1269735827]
+[node name="Object_11" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(628709874, 723809977) index="9" unique_id=820422960]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4775075, 0, 0)
 
-[node name="Object_12" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(628709874, 1008060660) index="10" unique_id=1764818058]
+[node name="Object_12" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(628709874, 723809977) index="10" unique_id=1233376249]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3256476, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13" parent_id_path=PackedInt32Array(628709874, 1193382338) index="0" unique_id=1364511748]
+[node name="StaticBody3D" type="StaticBody3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13" parent_id_path=PackedInt32Array(628709874, 840929509) index="0" unique_id=1364511748]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 2.4114594)
 
 [node name="all tree collisionD2" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=619275475]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 2.4114594, 0)
 shape = SubResource("ConcavePolygonShape3D_oqgf2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_14" parent_id_path=PackedInt32Array(628709874, 1861780248) index="0" unique_id=1422579738]
+[node name="StaticBody3D" type="StaticBody3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_14" parent_id_path=PackedInt32Array(628709874, 1948010798) index="0" unique_id=1422579738]
 
 [node name="all tree" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_14/StaticBody3D" unique_id=487729405]
 shape = SubResource("ConcavePolygonShape3D_qxfql")
@@ -307,6 +309,32 @@ theme_override_font_sizes/font_size = 14
 text = "Sanity 100/100"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="KeypadUI" type="Control" parent="CanvasLayer" unique_id=1963545985 groups=["notebook_u"]]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("10_0cmrb")
+
+[node name="Panel" type="Panel" parent="CanvasLayer/KeypadUI" unique_id=1952328315]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/KeypadUI/Panel" unique_id=1890237121]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DisplayLabel" type="Label" parent="CanvasLayer/KeypadUI/Panel/VBoxContainer" unique_id=1654669196]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/KeypadUI/Panel/VBoxContainer" unique_id=1432072175]
+layout_mode = 2
+columns = 3
+
+[node name="phone" parent="." unique_id=1716023230 instance=ExtResource("9_3a44l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.91344, 8.403316, -49.542004)
+keypad_path = NodePath("../CanvasLayer/KeypadUI")
 
 [node name="BatteryPickup" parent="." unique_id=1598016108 instance=ExtResource("7_8c0lf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.65325, 8.307843, -44.90517)
