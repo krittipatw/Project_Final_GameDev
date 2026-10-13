@@ -1,6 +1,6 @@
+Control
 CollisionShape3D
 CharacterBody3D
-Control
 Container
 GridContainer
 Label

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dij61jmfue3xv"]
+
+[ext_resource type="Script" uid="uid://co78gtosjhjlx" path="res://Scenes/code/win_screen.gd" id="1_l5sol"]
+
+[node name="WinScreen" type="Control" unique_id=2108651666]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_l5sol")
+level_scene = "uid://12stoskfdj07"

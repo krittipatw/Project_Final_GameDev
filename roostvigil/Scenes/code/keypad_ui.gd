@@ -1,7 +1,7 @@
 extends Control
 
-const CORRECT_CODE := "1234"        # แก้รหัสตรงนี้
-const WIN_SCENE := ""               # ใส่ path เช่น "res://win.tscn"
+const CORRECT_CODE := "0867"        # แก้รหัสตรงนี้
+const WIN_SCENE := "res://Scenes/win_screen.tscn"              # ใส่ path เช่น "res://win.tscn"
 const SUCCESS_DELAY := 1.8          # ค้างหน้า SUCCESS กี่วินาทีก่อนไปซีนถัดไป
 
 const BUTTON_SIZE := Vector2(150, 110)

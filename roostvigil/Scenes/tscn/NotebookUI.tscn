@@ -49,13 +49,13 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_aoy1x")
 
 [node name="TitleLabel" type="Label" parent="Control/Panel" unique_id=1887150348]
 layout_mode = 0
-offset_left = 141.0
-offset_top = 19.0
-offset_right = 231.0
-offset_bottom = 42.0
+offset_left = 127.0
+offset_top = 21.0
+offset_right = 240.0
+offset_bottom = 49.0
 theme_override_colors/font_color = Color(0.48235294, 0.03137255, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_wi6ju")
-theme_override_font_sizes/font_size = 15
+theme_override_font_sizes/font_size = 20
 text = "Ivan's Diary"
 horizontal_alignment = 1
 
@@ -66,7 +66,7 @@ offset_top = 55.0
 offset_right = 350.0
 offset_bottom = 488.0
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 5
+theme_override_font_sizes/normal_font_size = 12
 theme_override_font_sizes/italics_font_size = 16
 text = "Day 1
 Something strange happen here..
