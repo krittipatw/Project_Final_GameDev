@@ -81,6 +81,11 @@ var blink_timer := 3.0
 # ข้อความแจ้งเตือน
 var message_token := 0
 
+# [WALL] ข้อความตอนชนกำแพงขอบแมพ (ต้องติด group "boundary_wall" ที่ node Wall)
+const WALL_MESSAGE = "I shouldn't go too far, I might get lost."
+const WALL_MESSAGE_COOLDOWN = 4.0	# กันข้อความรัวตอนเดินติดกำแพง
+var wall_msg_timer := 0.0
+
 # FOV ปกติ (ใช้กับ punch_fov)
 var base_fov := 0.0
 
@@ -628,12 +633,26 @@ func _physics_process(delta: float) -> void:
 	var start_velocity := velocity
 
 	move_and_slide()
+	_check_wall_collision(delta)		# [WALL] เช็คชนกำแพงขอบแมพ
 
 	if was_on_floor and is_on_wall() and direction != Vector3.ZERO and velocity.y <= 0.0:
 		_try_step_up(start_position, start_velocity, delta)
 
 	_update_head_bob(delta, is_sprinting, is_crouching)
 	_update_prompt()
+
+# ---------- Boundary Wall ----------
+# [WALL] ถ้าชนกำแพงที่อยู่ใน group "boundary_wall" ให้ขึ้นข้อความ (มี cooldown กันรัว)
+func _check_wall_collision(delta: float) -> void:
+	wall_msg_timer = maxf(wall_msg_timer - delta, 0.0)
+	if wall_msg_timer > 0.0:
+		return
+	for i in get_slide_collision_count():
+		var collider := get_slide_collision(i).get_collider()
+		if collider is Node and (collider as Node).is_in_group("boundary_wall"):
+			show_message(WALL_MESSAGE, 3.0)
+			wall_msg_timer = WALL_MESSAGE_COOLDOWN
+			return
 
 # ---------- Head Bob & Crouch Position ----------
 func _update_head_bob(delta: float, is_sprinting: bool, is_crouching: bool) -> void:
