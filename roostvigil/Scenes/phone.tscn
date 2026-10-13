@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dfwmn44w61qtd"]
+
+[ext_resource type="Script" uid="uid://ckgdvbqc50juk" path="res://Scenes/code/phone.gd" id="1_knwvw"]
+[ext_resource type="PackedScene" uid="uid://di1aj7c1pukvn" path="res://asset/Object/phone.glb" id="2_m5ye2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xrivr"]
+
+[node name="phone" type="StaticBody3D" unique_id=1716023230]
+script = ExtResource("1_knwvw")
+
+[node name="Sketchfab_Scene" parent="." unique_id=1098585857 instance=ExtResource("2_m5ye2")]
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0.09550828, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1310046201]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+shape = SubResource("BoxShape3D_xrivr")
