@@ -227,6 +227,9 @@ func _unhandled_input(event: InputEvent) -> void:
 
 	if event.is_action_pressed("flashlight"):
 		_toggle_flashlight()
+		
+	if event.is_action_pressed("ui_cancel"):
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 # ---------- Message ----------
 func show_message(text: String, duration: float = 2.0) -> void:
