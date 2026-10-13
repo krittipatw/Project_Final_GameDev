@@ -108,9 +108,13 @@ albedo_texture = ExtResource("15_c7le1")
 
 [node name="StaticBody3D" parent="." unique_id=1439344814 instance=ExtResource("1_wqkje")]
 transform = Transform3D(0.6670716, 0, 0.7449936, 0, 1, 0, -0.7449936, 0, 0.6670716, -71.062294, 8.265126, -49.389923)
-notebook_content = "	If you are reading this you should know you shouldn't belong here. There's something very strange happen here.
-	I don't know what are THEY but here is what you should know about them..
-"
+notebook_content = "Ethan’s Journal
+		To whoever finds this... Actuually you shouldn't be here, I don’t know who you are, but if you’re reading this, it has chosen you. There's something very strange happen here. I don't know what are THEY but here is what you should know about them..
+		There's monster in this forest. Every night, it crawls around the watchtower before stopping at beneath this tower. Its claws scrape the ground, leaving strange drag marks in the mud.It has no legs and moves by using the claws but don't underestimate it, even though it has no legs but it fast enough to reach you if you don't try to run. No matter where I go in the forest, it always knows where to find me, following me wherever I go. The tower is the only place it cannot enter. Also it fears light, I tried shining my flashlight directly at its face once. It immediately retreated into the darkness. But it never stays away for long. It always comes back. Don’t let your guard down.
+		At The Well, there's a woman in white stands beside the well, her long black hair moving without wind. She doesn't moves, I made the mistake of looking at her face once... She raised her head and looked straight into my eyes. Ever since then, I’ve been hearing things that aren’t there. Seeing things I was never meant to see. Every time I meet her gaze, I feel my mind slipping away. If you pass the well, doesn't look into her eyes.
+		I’ve hidden four numbers throughout the forest, marked near claw-scratched trees, a wooden post, and the water. Find them to unlock the phone.
+		Remember, your flashlight is your only weapon. Shine it at the Crawler Monster to make it retreat. Return to the watchtower when it gets too close. Never look into the woman’s eyes. Also don't let yourself going insane, stay in light when your sanity is low. You can turn the light on in the Tower
+		I can't write any more right now. Something's outside again. Good luck."
 
 [node name="FlashlightPickup" parent="." unique_id=1324179059 instance=ExtResource("2_0f350")]
 transform = Transform3D(0.7928674, 0, 0.6093942, 0, 1, 0, -0.6093942, 0, 0.7928674, -71.405655, 8.292803, -44.484253)
@@ -118,7 +122,7 @@ transform = Transform3D(0.7928674, 0, 0.6093942, 0, 1, 0, -0.6093942, 0, 0.79286
 [node name="WatchTower" parent="." unique_id=2069175028 instance=ExtResource("6_0f350")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.29455, -1.5689348, -47.316723)
 
-[node name="Watch tower_Watch tower_0" parent="WatchTower/Sketchfab_model/bf5d80bd0a4b404da2233dcd6e783991_fbx/RootNode/Watch tower" parent_id_path=PackedInt32Array(2069175028, 694590254) index="0" unique_id=904782867]
+[node name="Watch tower_Watch tower_0" parent="WatchTower/Sketchfab_model/bf5d80bd0a4b404da2233dcd6e783991_fbx/RootNode/Watch tower" parent_id_path=PackedInt32Array(2069175028, 585043428) index="0" unique_id=426344624]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.676758, -18.436905, -81.118164)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="WatchTower/Sketchfab_model/bf5d80bd0a4b404da2233dcd6e783991_fbx/RootNode/Watch tower/Watch tower_Watch tower_0" index="0" unique_id=900469314]
@@ -139,7 +143,7 @@ debug_color = Color(0.10574644, 0.5228287, 0.9999998, 0.41960785)
 [node name="Forest" parent="." unique_id=628709874 instance=ExtResource("6_8c0lf")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -33.05035, -1.758873, -38.929073)
 
-[node name="Object_2" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(628709874, 723809977) index="0" unique_id=55933977]
+[node name="Object_2" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(628709874, 2015607790) index="0" unique_id=22788356]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14872575, 0.5743525, 0.006350875)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_2" index="0" unique_id=1544042066]
@@ -147,23 +151,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14872575, 0.5743525, 0.006
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_2/StaticBody3D" unique_id=1089263950]
 shape = SubResource("ConcavePolygonShape3D_754fn")
 
-[node name="Object_10" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(628709874, 723809977) index="8" unique_id=1471964584]
+[node name="Object_10" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(628709874, 2015607790) index="8" unique_id=1433503387]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6071215, 0, 0)
 
-[node name="Object_11" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(628709874, 723809977) index="9" unique_id=820422960]
+[node name="Object_11" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(628709874, 2015607790) index="9" unique_id=2100663219]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4775075, 0, 0)
 
-[node name="Object_12" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(628709874, 723809977) index="10" unique_id=1233376249]
+[node name="Object_12" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles" parent_id_path=PackedInt32Array(628709874, 2015607790) index="10" unique_id=1876270504]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3256476, 0)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13" parent_id_path=PackedInt32Array(628709874, 840929509) index="0" unique_id=1364511748]
+[node name="StaticBody3D" type="StaticBody3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13" parent_id_path=PackedInt32Array(628709874, 2141675521) index="0" unique_id=1364511748]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 2.4114594)
 
 [node name="all tree collisionD2" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_13/StaticBody3D" unique_id=619275475]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 2.4114594, 0)
 shape = SubResource("ConcavePolygonShape3D_oqgf2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_14" parent_id_path=PackedInt32Array(628709874, 1948010798) index="0" unique_id=1422579738]
+[node name="StaticBody3D" type="StaticBody3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_14" parent_id_path=PackedInt32Array(628709874, 1017914314) index="0" unique_id=1422579738]
 
 [node name="all tree" type="CollisionShape3D" parent="Forest/Sketchfab_model/Forest_obj_cleaner_materialmerger_gles/Object_14/StaticBody3D" unique_id=487729405]
 shape = SubResource("ConcavePolygonShape3D_qxfql")
