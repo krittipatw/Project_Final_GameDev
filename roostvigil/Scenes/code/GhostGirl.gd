@@ -33,14 +33,11 @@ const SCARE_LUNGE_TIME = 0.18		# เวลาที่พุ่งเข้า�
 const SCARE_HOLD = 1.2				# ค้างให้เห็นหน้าผีกี่วินาที ก่อนวาร์ปหนี (ผู้เล่นขยับไม่ได้)
 const FACE_HEIGHT = 1.4				# ความสูงใบหน้าผี นับจากเท้า (กล้องจะเล็งตรงนี้)
 const SCARE_LIGHT_BOOST = 4.0		# คูณความสว่างของแสงส่องหน้าตอน jumpscare
-const SCARE_YAW_FIX_DEG = -15.0		# หมุนผีเพิ่มตอน jumpscare ให้หันหน้าตรง (กด K ทดสอบทีละ 45°)
+const SCARE_YAW_FIX_DEG = -15.0		# หมุนผีเพิ่มตอน jumpscare ให้หันหน้าตรง
 const SCARE_POSE_FRACTION = 0.0		# ท่าค้างตอน jumpscare เป็นกี่ส่วนของท่าเดิน (0.0 ถึง 0.99)
-const SCARE_TILT_DEG = 0.0			# เอนตัวผีไปด้านหลัง (ห่างจากผู้เล่น) ให้หน้าเงยขึ้น (ลอง 20 หรือ -20 ถ้าก้มหนักกว่าเดิม)
+const SCARE_TILT_DEG = 0.0			# เอนตัวผีไปด้านหลัง (0 = ไม่เอน, ลอง 20 หรือ -20 ถ้าต้องการ)
 const POST_SCARE_GRACE = 10.0		# หลังวาร์ป ผีไม่ตอบสนองต่อสายตากี่วินาที
 const TELEPORT_MIN_DISTANCE = 6.0	# วาร์ปไปจุดที่ห่างผู้เล่นอย่างน้อยกี่เมตร
-
-# ปุ่มทดสอบ (J = jumpscare ทันที, K = เปลี่ยนทิศหน้า, L = เปลี่ยนท่าค้าง) ปิดได้เมื่อได้ค่าที่ชอบแล้ว
-const DEBUG_KEYS = true
 
 # ---------- แสงเรือง ----------
 const GLOW_COLOR = Color(0.2, 1.0, 0.8)	# ฟ้าอมเขียว
@@ -465,31 +462,3 @@ func _teleport_away() -> void:
 	global_position = chosen.global_position
 	target = chosen
 	_pick_next_waypoint()
-
-# ---------- ปุ่มทดสอบ (ตั้ง DEBUG_KEYS = false เมื่อเสร็จ) ----------
-const _TEST_YAWS = [0.0, 45.0, 90.0, 135.0, 180.0, -135.0, -90.0, -45.0]
-const _TEST_POSES = [0.0, 0.25, 0.5, 0.75]
-var _test_yaw_index := 0
-var _test_pose_index := 0
-
-func _unhandled_input(event: InputEvent) -> void:
-	if not DEBUG_KEYS:
-		return
-	var key := event as InputEventKey
-	if key == null or not key.pressed or key.echo:
-		return
-
-	if key.keycode == KEY_J:
-		if player == null:
-			player = get_tree().get_first_node_in_group("player")
-		if player != null and not scaring:
-			print("JUMPSCARE ทดสอบ: ทิศหน้า = ", scare_yaw_fix_deg, " | ท่า = ", scare_pose_fraction, " | เอน = ", SCARE_TILT_DEG)
-			_jumpscare()
-	elif key.keycode == KEY_K:
-		_test_yaw_index = (_test_yaw_index + 1) % _TEST_YAWS.size()
-		scare_yaw_fix_deg = _TEST_YAWS[_test_yaw_index]
-		print("ทิศหน้า SCARE_YAW_FIX_DEG = ", scare_yaw_fix_deg)
-	elif key.keycode == KEY_L:
-		_test_pose_index = (_test_pose_index + 1) % _TEST_POSES.size()
-		scare_pose_fraction = _TEST_POSES[_test_pose_index]
-		print("ท่าค้าง SCARE_POSE_FRACTION = ", scare_pose_fraction)
