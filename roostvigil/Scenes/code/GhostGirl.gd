@@ -87,12 +87,24 @@ var glow_boost := 1.0				# ตัวคูณความสว่างขอ�
 var scare_yaw_fix_deg := SCARE_YAW_FIX_DEG
 var scare_pose_fraction := SCARE_POSE_FRACTION
 
+# ---------- เสียง (ต้องเพิ่ม AudioStreamPlayer3D ชื่อเหล่านี้ใต้ root ของ GhostGirl) ----------
+@onready var walk_sound: AudioStreamPlayer3D = get_node_or_null("WalkSound") as AudioStreamPlayer3D		# GhostGirl.mp3 (Loop)
+@onready var stare_sound: AudioStreamPlayer3D = get_node_or_null("StareSound") as AudioStreamPlayer3D	# Softstatic.mp3 (Loop)
+@onready var scare_sound: AudioStreamPlayer3D = get_node_or_null("ScareSound") as AudioStreamPlayer3D	# JumpScare.mp3 (ไม่ Loop)
+
 func _ready() -> void:
 	add_to_group("ghost_girl")
 	_find_waypoints()
 	_setup_animation()
 	_setup_glow()
 	_pick_next_waypoint()
+
+	if walk_sound == null:
+		push_warning("GhostGirl: ไม่พบ node WalkSound")
+	if stare_sound == null:
+		push_warning("GhostGirl: ไม่พบ node StareSound")
+	if scare_sound == null:
+		push_warning("GhostGirl: ไม่พบ node ScareSound")
 
 # ---------- Waypoints ----------
 func _find_waypoints() -> void:
@@ -169,6 +181,22 @@ func _set_scare_pose() -> void:
 	anim.seek(length * scare_pose_fraction, true)
 	anim_playing = false
 
+# ---------- เสียง ----------
+# เปิด/ปิดเสียงแบบวนซ้ำ (เล่นเฉพาะตอนยังไม่เล่น / หยุดเฉพาะตอนกำลังเล่น)
+func _set_loop_sound(node: AudioStreamPlayer3D, should_play: bool) -> void:
+	if node == null:
+		return
+	if should_play and not node.playing:
+		node.play()
+	elif not should_play and node.playing:
+		node.stop()
+
+# เสียงเดิน: เล่นตอนผีเดินอยู่จริง (หยุดพัก / ถูกมอง / jumpscare / ผู้เล่นตาย = เงียบ)
+func _update_walk_sound() -> void:
+	var dead: bool = player != null and player.get("is_dead") == true
+	var walking := (not frozen) and wait_timer <= 0.0 and target != null and not dead
+	_set_loop_sound(walk_sound, walking)
+
 # ---------- แสงเรือง ----------
 func _setup_glow() -> void:
 	# 1) แสงสีฟ้าอมเขียวส่องพื้นและต้นไม้รอบตัว (สร้างเป็นลูกของผี)
@@ -212,6 +240,7 @@ func _process(delta: float) -> void:
 	else:
 		_patrol(delta)
 	_apply_anim_state()
+	_update_walk_sound()
 
 func _patrol(delta: float) -> void:
 	if waypoints.is_empty() or target == null:
@@ -264,12 +293,14 @@ func _physics_process(delta: float) -> void:
 	# ผู้เล่นตายแล้ว: เลิกตอบสนอง
 	if player.get("is_dead"):
 		frozen = false
+		_set_loop_sound(stare_sound, false)
 		_set_static(0.0)
 		return
 
 	# กำลังอ่านสมุด: ผีหยุดนิ่ง ไม่นับเวลาจ้อง และ static ค่อยๆ จาง
 	if _notebook_open():
 		frozen = true
+		_set_loop_sound(stare_sound, false)
 		static_value = move_toward(static_value, 0.0, delta * 4.0)
 		_set_static(static_value)
 		return
@@ -279,6 +310,7 @@ func _physics_process(delta: float) -> void:
 
 	var seen := grace_timer <= 0.0 and _can_player_see_me()
 	frozen = seen
+	_set_loop_sound(stare_sound, seen)	# เสียง static เล่นตอนผู้เล่นจ้องผีอยู่
 
 	if seen:
 		stare_time = minf(stare_time + delta, GAZE_TIME_TO_SCARE)
@@ -368,6 +400,10 @@ func _jumpscare() -> void:
 	frozen = true
 	_set_static(0.0)
 
+	# ปิดเสียงเดินและเสียง static ก่อน เหลือแต่เสียง jumpscare
+	_set_loop_sound(walk_sound, false)
+	_set_loop_sound(stare_sound, false)
+
 	# ผีโผล่ตรงหน้าผู้เล่น (ไกลหน่อย) แล้วพุ่งเข้าใส่ ขณะพุ่งลอยสูงขึ้นจากพื้น
 	var forward: Vector3 = -player.global_transform.basis.z
 	forward.y = 0.0
@@ -399,7 +435,6 @@ func _jumpscare() -> void:
 	_set_scare_orientation()
 
 	# แสงส่องหน้า + เอฟเฟกต์ทั้งหมดพร้อมกัน
-	# TODO: เสียง jumpscare ใส่ตรงนี้ทีหลัง
 	if glow_light:
 		var toward_player: Vector3 = player.global_position - final_pos
 		toward_player.y = 0.0
@@ -407,6 +442,8 @@ func _jumpscare() -> void:
 	glow_boost = SCARE_LIGHT_BOOST
 	create_tween().tween_property(self, "glow_boost", 1.0, SCARE_HOLD)
 
+	if scare_sound:
+		scare_sound.play()	# เสียง jumpscare ของผี เล่นตอนพุ่งถึงหน้า
 	if screen_fx and screen_fx.has_method("flash"):
 		screen_fx.flash(0.35, 0.8)
 	if player.has_method("shake_camera"):
@@ -415,6 +452,8 @@ func _jumpscare() -> void:
 		player.punch_fov(18.0, 0.5)
 	if player.has_method("reduce_sanity"):
 		player.reduce_sanity(SANITY_DAMAGE)
+	if player.has_method("play_gasp"):
+		player.play_gasp()	# เสียงตกใจของผู้เล่น เล่นทันทีที่ผีพุ่งถึงหน้า
 
 	await get_tree().create_timer(SCARE_HOLD).timeout
 
