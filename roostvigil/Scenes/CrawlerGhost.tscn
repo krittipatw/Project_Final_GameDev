@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://ox3tvtd74elj"]
+
+[ext_resource type="Script" uid="uid://c7g7in00nk50y" path="res://Scenes/code/CrawlerGhost.gd" id="1_ob3v3"]
+[ext_resource type="PackedScene" uid="uid://n5qhjqe1uxsx" path="res://asset/Enemy/crawling_mutated_human.glb" id="2_1l5j3"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xrivr"]
+radius = 0.4
+
+[node name="CrawlerGhost" type="CharacterBody3D" unique_id=31520217]
+script = ExtResource("1_ob3v3")
+
+[node name="Model" parent="." unique_id=1110568376 instance=ExtResource("2_1l5j3")]
+transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1380770849]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+shape = SubResource("SphereShape3D_xrivr")

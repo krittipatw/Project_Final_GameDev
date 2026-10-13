@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://1qu8tay4y81m"]
+
+[ext_resource type="Script" uid="uid://c5tidkrjn87nh" path="res://Scenes/code/GhostGirl.gd" id="1_ia6e6"]
+[ext_resource type="PackedScene" uid="uid://bx3ew1v8kpwt3" path="res://asset/Enemy/ghostgirl.glb" id="2_jnsf4"]
+
+[node name="GhostGirl" type="Node3D" unique_id=1478636530]
+script = ExtResource("1_ia6e6")
+
+[node name="Sketchfab_Scene" parent="." unique_id=941246684 instance=ExtResource("2_jnsf4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.33063424, -1.1920929e-07, 0.62738156)
